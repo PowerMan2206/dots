@@ -51,7 +51,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # above but for mpd control
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym XF86AudioPrev exec --no-startup-id mpc previous
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 
 # fullscreen for the focused container
 bindsym $mod+f fullscreen toggle
