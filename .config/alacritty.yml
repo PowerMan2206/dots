@@ -1,0 +1,138 @@
+# PowerMan2206's Alacritty config
+
+env:
+  # TERM variable or something
+  TERM: alacritty
+
+window:
+  # padding is nice
+  padding:
+    x: 3
+    y: 3
+  # padding all around the terminal
+  dynamic_padding: true
+
+scrolling:
+  # max number of lines in the scrollback buffer.
+  history: 10000
+  # scrolling distance multiplier
+  multiplier: 3
+
+# font config
+font:
+  # normal font
+    family: Hack Nerd Font
+    style: Regular
+    
+  # bold font
+    family: Hack Nerd Font
+    style: Bold
+
+  # italic font
+    family: Hack Nerd Font
+    style: Italic
+
+  # bold italic font
+    family: Hack Nerd Font
+    style: Bold Italic
+
+  # font size
+    size: 9.5
+
+# colors (Dracula, edited a bit)
+colors:
+  # default colors
+  primary:
+    background: '0x181b28'
+    foreground: '0xf8f8f2'
+    
+  # cursor colors
+  cursor:
+    text: '0x44475a'
+    cursor: '0xf8f8f2'
+
+  # selection colors
+  selection:
+    text: '0xf8f8f2'
+    background: '0x44475a'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xbd93f9'
+    magenta: '0xff79c6'
+    cyan:    '0x00d2ff'
+    white:   '0xbfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '0x4d4d4d'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
+
+# add a bit of transparency
+background_opacity: 0.90
+
+cursor:
+  # make the cursor an underline _
+  style: Underline
+
+  # make the cursor stay the same when unfocused
+  unfocused_hollow: false
+
+  # thickness of the cursor
+  thickness: 0.1
+
+# Alacritty reads the config file in-real-time 
+# (no need for a restart when configuring)
+live_config_reload: true
+
+# path to your shell
+# (kinda useless tbh but it's here)
+#shell: 
+
+# startup working directory
+# (again, useless)
+#working_directory: None
+
+mouse:
+  # hide mouse when typing
+  hide_when_typing: true
+
+  url:
+    # open a URL with the XDGF default program
+    launcher:
+      program: xdg-open
+
+# there was a fuckton of keybindings here that I didn't feel like configuring
+# so I'll just have to live with the defaults
+
+# in case I need it
+#debug:
+  # Display the time it takes to redraw each frame.
+  #render_timer: true
+
+  # Keep the log file after quitting Alacritty.
+  #persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  #log_level: Warn
+
+  # Print all received window events.
+  #print_events: false
