@@ -1,0 +1,11 @@
+#!/bin/bash
+# takes a screenshot of the screen, blurs it, and
+# sets it as the background to i3lock
+
+image=/tmp/temp.png
+blur_amount="6x4"
+
+scrot $image
+convert $image -blur $blur_amount $image
+i3lock -i $image
+rm $image
