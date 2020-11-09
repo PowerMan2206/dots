@@ -28,3 +28,5 @@ cp -r ~/dotfiles/* ~
 **Note: this will overwrite any previous config files you had, make sure to backup if you're running this!**
 
 Otherwise, you can just copy any specific config you want.
+
+*[Thanks to exorcist for sharing the Hack Nerd font](https://gitlab.com/exo-git/fonts/-/tree/master/hack-fonts)*
