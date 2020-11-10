@@ -22,7 +22,7 @@ other: `xorg-setxbmap`, `xorg-xinput`, `mpc`, `xclip`
 You can treat this repo as your home directory. So if you cloned the repo to `~/dotfiles`, for example, you could install it by simply running
 
 ```
-cp -r ~/dotfiles/* ~
+cp -rT ~/dotfiles/ ~
 ```
 
 **Note: this will overwrite any previous config files you had, make sure to backup if you're running this!**
