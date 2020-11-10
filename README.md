@@ -29,4 +29,7 @@ cp -rT ~/dotfiles/ ~
 
 Otherwise, you can just copy any specific config you want.
 
-*[Thanks to exorcist for sharing the Hack Nerd font](https://gitlab.com/exo-git/fonts/-/tree/master/hack-fonts)*
+### Thanks to 
+[exorcist](https://gitlab.com/exo-git/fonts/-/tree/master/hack-fonts) for the Hack Nerd font
+
+[Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Polybar script
