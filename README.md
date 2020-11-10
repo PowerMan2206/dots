@@ -7,7 +7,7 @@ package | why
 -|-
 `i3-gaps`|take a wild, wild guess
 `alacritty`|terminal
-`picom`|compositor
+[`picom-ibhagwan-git`](https://github.com/ibhagwan/picom) ([AUR](https://aur.archlinux.org/packages/picom-ibhagwan-git))|compositor
 `rofi`|launcher
 `nitrogen`|wallpapers
 `polybar`|bar
