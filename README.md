@@ -14,7 +14,7 @@ package | why
 `redshift`|screen light thing
 `scrot`|screenshots
 `mpd`|music playback
-
+[`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 other: `xorg-setxbmap`, `xorg-xinput`, `mpc`, `xclip`
 
 ## Installation
