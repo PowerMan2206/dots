@@ -16,7 +16,7 @@ package | why
 `mpd`|music playback
 [`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 
-other: `xorg-setxbmap`, `xorg-xinput`, `mpc` (XF86 mpd control), `scrot` (i3lock)
+other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), `scrot` (i3lock)
 
 ## Installation
 
