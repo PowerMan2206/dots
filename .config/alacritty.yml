@@ -20,24 +20,28 @@ scrolling:
 
 # font config
 font:
-  # normal font
-    family: Hack Nerd Font
-    style: Regular
-    
-  # bold font
-    family: Hack Nerd Font
+
+  # normal fonts
+  normal:
+    family: TerminessTTF Nerd Font
+    style: Medium
+
+  # bold fonts
+  bold:
+    family: TerminessTTF Nerd Font
     style: Bold
-
-  # italic font
-    family: Hack Nerd Font
+    
+  # italic fonts  
+  italic:
+    family: TerminessTTF Nerd Font
     style: Italic
-
-  # bold italic font
-    family: Hack Nerd Font
+    
+  # bold italic fonts  
+  italic:
+    family: TerminessTTF Nerd Font
     style: Bold Italic
-
-  # font size
-    size: 9.5
+    
+  size: 10
 
 # colors (Dracula, background changed)
 colors:
@@ -55,7 +59,6 @@ colors:
   selection:
     text: '0xf8f8f2'
     background: '0x44475a'
-
 
   # Normal colors
   normal:
