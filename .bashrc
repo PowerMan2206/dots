@@ -10,7 +10,7 @@
 # not used anymore since I have the systemd user service now,
 # but it's here in case someone without systemd uses this
 
-#autostartx
+# autostartx
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
@@ -20,5 +20,5 @@ source ~/.bash_aliases
 
 PS1="\w $ "
 
-#easier to use my custom commands this way
+# easier to use my custom commands this way
 export PATH="$PATH:$HOME/.local/bin"

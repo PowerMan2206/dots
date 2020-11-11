@@ -12,17 +12,20 @@ package | why
 `nitrogen`|wallpapers
 `polybar`|bar
 `redshift`|screen light thing
-`scrot`|screenshots
+`flameshot`|screenshots
 `mpd`|music playback
 [`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
-other: `xorg-setxbmap`, `xorg-xinput`, `mpc`, `xclip`
+
+other: `xorg-setxbmap`, `xorg-xinput`, `mpc` (XF86 mpd control), `scrot` (i3lock)
 
 ## Installation
 
-You can treat this repo as your home directory. So if you cloned the repo to `~/dotfiles`, for example, you could install it by simply running
+You can treat this repo as your home directory. So if you cloned the repo to `~/dotfiles`, for example, you can install it by running
 
 ```
-cp -rT ~/dotfiles/ ~
+cd ~/dotfiles
+rm -rf .git README.md
+cp -rT . ~
 ```
 
 **Note: this will overwrite any previous config files you had, make sure to backup if you're running this!**
@@ -30,6 +33,7 @@ cp -rT ~/dotfiles/ ~
 Otherwise, you can just copy any specific config you want.
 
 ### Thanks to 
+
 [exorcist](https://gitlab.com/exo-git/fonts/-/tree/master/hack-fonts) for the Hack Nerd font
 
 [Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Polybar script

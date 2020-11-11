@@ -39,7 +39,7 @@ font:
   # font size
     size: 9.5
 
-# colors (Dracula, edited a bit)
+# colors (Dracula, background changed)
 colors:
   # default colors
   primary:
@@ -56,6 +56,7 @@ colors:
     text: '0xf8f8f2'
     background: '0x44475a'
 
+
   # Normal colors
   normal:
     black:   '0x000000'
@@ -64,7 +65,7 @@ colors:
     yellow:  '0xf1fa8c'
     blue:    '0xbd93f9'
     magenta: '0xff79c6'
-    cyan:    '0x00d2ff'
+    cyan:    '0x8be9fd'
     white:   '0xbfbfbf'
 
   # Bright colors
@@ -78,8 +79,19 @@ colors:
     cyan:    '0x9aedfe'
     white:   '0xe6e6e6'
 
-# add a bit of transparency
-background_opacity: 0.90
+  # Dim colors
+  dim:
+    black:   '0x14151b'
+    red:     '0xff2222'
+    green:   '0x1ef956'
+    yellow:  '0xebf85b'
+    blue:    '0x4d5b86'
+    magenta: '0xff46b0'
+    cyan:    '0x59dffc'
+    white:   '0xe6e6d1'
+
+# add transparency
+background_opacity: 0.6
 
 cursor:
   # make the cursor an underline _
@@ -88,19 +100,18 @@ cursor:
   # make the cursor stay the same when unfocused
   unfocused_hollow: false
 
-  # thickness of the cursor
+  # thiccness of the cursor
   thickness: 0.1
 
-# Alacritty reads the config file in-real-time 
+# alacritty reads the config file in-real-time 
 # (no need for a restart when configuring)
 live_config_reload: true
 
 # path to your shell
 # (kinda useless tbh but it's here)
-#shell: 
+#shell: /bin/sh
 
 # startup working directory
-# (again, useless)
 #working_directory: None
 
 mouse:
@@ -108,12 +119,12 @@ mouse:
   hide_when_typing: true
 
   url:
-    # open a URL with the XDGF default program
+    # open a URL with the XDG default program
     launcher:
       program: xdg-open
 
-# there was a fuckton of keybindings here that I didn't feel like configuring
-# so I'll just have to live with the defaults
+# there was a fuckton of keybindings here that I didn't feel like 
+# configuring so I'll just have to live with the defaults
 
 # in case I need it
 #debug:

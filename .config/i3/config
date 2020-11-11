@@ -18,25 +18,24 @@ exec --no-startup-id redshift -P -O 4000 #redshift because I get a headache from
 exec --no-startup-id dunst #notifications
 exec --no-startup-id ~/.config/polybar/launch.sh #bar
 exec --no-startup-id discord-canary #discord
-exec --no-startup-id gwe --hide-window #runs hidden gwe
-exec --no-startup-id sh -c "QT_QPA_PLATFORMTHEME=gtk2 qbittorrent" #runs qbittorrent with the GTK2 theme
-exec --no-startup-id mullvad-vpn #a vpn
+exec --no-startup-id qbittorrent #torrent client
+exec --no-startup-id mullvad-vpn #vpn
 exec --no-startup-id setxkbmap -layout "us,hr" #I need a Croatian layout for school
 
 # powerstuff
 exec --no-startup-id nitrogen --restore #wallpapers
 exec --no-startup-id xinput --set-prop 8 'libinput Accel Speed' -0.9 #fixes the speedy mouse
-bindsym --release Print exec scrot -s -o -q 100 /tmp/scrot.png -e 'xclip -selection c -t image/png < $f' #screenshot because Flameshot freezes i3
+bindsym --release Print exec flameshot gui #screenshot tool
 
 # font for window titles (like I'm ever gonna use that lol)
 font pango:monospace 8
 
 # lock screen
-exec --no-startup-id xautolock -time 15 -locker "i3lock-fancy-cheap" #make sure to copy the script to your PATH
+exec --no-startup-id xautolock -time 15 -locker "i3lock-fancy-cheap" #like i3lock-fancy but smol
 
 # pactl to control pulseaudio volume with an XF86 keyboard
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
@@ -72,16 +71,14 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in a horizontal and vertical orientation
-# yeah it's switched, I like it more this way
+# yeah it's switched, makes more sense this way
 bindsym $mod+h split v
 bindsym $mod+v split h
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# toggle split
 bindsym $mod+e layout toggle split
 
-# idk why this is here, don't wanna touch it
+# sets the workspace numbers (?)
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -121,7 +118,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (everything stays the same, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (take a wild guess)
+# exit i3 (guess)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
