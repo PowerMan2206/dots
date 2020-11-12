@@ -40,7 +40,7 @@
 
 
     # text font
-    font = Hack Nerd Font 8
+    font = JetBrains Mono 7
 
     # the spacing between lines
     line_height = 1
