@@ -12,7 +12,7 @@
     shrink = yes
     
     # transparency
-    transparency = 20
+    transparency = 40
 
     # seperation between notifications
     separator_height = 2
