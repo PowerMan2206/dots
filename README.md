@@ -1,6 +1,8 @@
 # Dotfiles
 Everyone must have a dotfiles repo, right?
 
+![screenshot](https://raw.githubusercontent.com/PowerMan2206/dots/master/screenshot.png)
+
 ## Packages and stuff
 
 package | why
@@ -24,7 +26,7 @@ You can treat this repo as your home directory. So if you cloned the repo to `~/
 
 ```
 cd ~/dotfiles
-rm -rf .git README.md
+rm -rf .git README.md screenshot.png
 cp -rT . ~
 ```
 
