@@ -1,7 +1,6 @@
 # Dotfiles
 Everyone must have a dotfiles repo, right?
 
-### Note: The font may look bad, that's because it is. I'm working on fixing it. So just remember that I don't like it either and this can be called an "unfinished product" for the time being.
 ## Packages and stuff
 
 package | why

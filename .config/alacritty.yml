@@ -7,10 +7,10 @@ env:
 window:
   # padding is nice
   padding:
-    x: 3
-    y: 3
-  # padding all around the terminal
-  dynamic_padding: true
+    x: 6
+    y: 5
+  # makes padding look bad or something
+  dynamic_padding: false
 
 scrolling:
   # max number of lines in the scrollback buffer.
@@ -23,25 +23,20 @@ font:
 
   # normal fonts
   normal:
-    family: TerminessTTF Nerd Font
-    style: Medium
+    family: JetBrains Mono
+    style: Regular
 
   # bold fonts
   bold:
-    family: TerminessTTF Nerd Font
+    family: JetBrains Mono
     style: Bold
     
   # italic fonts  
   italic:
-    family: TerminessTTF Nerd Font
+    family: JetBrains Mono
     style: Italic
     
-  # bold italic fonts  
-  italic:
-    family: TerminessTTF Nerd Font
-    style: Bold Italic
-    
-  size: 10
+  size: 9
 
 # colors (Dracula, background changed)
 colors:
