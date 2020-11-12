@@ -41,7 +41,7 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
     
-  size: 9
+  size: 8.5
 
 # colors (Dracula, background changed)
 colors:
