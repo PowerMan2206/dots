@@ -20,6 +20,8 @@ package | why
 
 other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), `scrot` (i3lock), `noto-fonts`
 
+Note: the `pulseaudio-control` config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
+
 ## Installation
 
 You can treat this repo as your home directory. So if you cloned the repo to `~/dots`, for example, you can install it by running
@@ -37,3 +39,5 @@ Otherwise, you can just copy any specific config you want.
 ### Thanks to 
 
 [Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Polybar script
+
+[marioortizmanero](https://github.com/marioortizmanero/polybar-pulseaudio-control) for making the `pulseaudio-control.bash` Polybar script
