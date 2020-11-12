@@ -22,10 +22,10 @@ other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), `s
 
 ## Installation
 
-You can treat this repo as your home directory. So if you cloned the repo to `~/dotfiles`, for example, you can install it by running
+You can treat this repo as your home directory. So if you cloned the repo to `~/dots`, for example, you can install it by running
 
 ```
-cd ~/dotfiles
+cd ~/dots
 rm -rf .git README.md screenshot.png
 cp -rT . ~
 ```
