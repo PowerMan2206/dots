@@ -10,7 +10,7 @@ new_window 1pixel # titlebars are cringe
 
 # gaps pog
 gaps outer 0 # not needed but why not
-gaps inner 8
+gaps inner 5
 
 # autostart
 exec --no-startup-id picom #compositor 
