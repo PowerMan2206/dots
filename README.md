@@ -16,6 +16,7 @@ package | why
 `redshift`|screen light thing
 `flameshot`|screenshots
 `mpd`|music playback
+`mpv`|video playback
 [`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 
 other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), `scrot` (i3lock), `noto-fonts`
