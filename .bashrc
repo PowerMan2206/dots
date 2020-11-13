@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# save the last 10000 commands in the ~/.bash_history file
+HISTFILESIZE=10000
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
