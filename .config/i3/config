@@ -26,9 +26,11 @@ exec --no-startup-id setxkbmap -layout "us,hr" #I need a Croatian layout for sch
 exec --no-startup-id nitrogen --restore #wallpapers
 exec --no-startup-id xinput --set-prop 8 'libinput Accel Speed' -0.9 #fixes the speedy mouse
 bindsym --release Print exec flameshot gui #screenshot tool
+exec --no-startup-id unclutter #delet the cursor when not in use
 
-# make an mpv window always float
-for_window [class="mpv" instance="gl"] floating enable
+# make an mpv and feh windows always float
+for_window [class="mpv"] floating enable
+for_window [class="feh"] floating enable
 
 # font for window titles (like I'm ever gonna use that lol)
 font pango:monospace 8
