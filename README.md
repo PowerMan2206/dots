@@ -19,7 +19,7 @@ package | why
 `mpv`|video playback
 [`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 
-other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), `scrot` (i3lock), `noto-fonts`, `unclutter`
+other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), [`i3lock-fancy`](https://github.com/meskarune/i3lock-fancy) ([AUR](https://aur.archlinux.org/packages/i3lock-fancy-git)), `noto-fonts`, `unclutter`
 
 Note: the `pulseaudio-control` Polybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
 
