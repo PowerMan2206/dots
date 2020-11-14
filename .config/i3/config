@@ -40,7 +40,7 @@ for_window [class="feh"] floating enable
 font pango:monospace 8
 
 # lock screen
-exec --no-startup-id xautolock -time 15 -locker i3lock-fancy -g -t "" #grayscale lockscreen without text
+exec --no-startup-id xautolock -time 15 -locker 'i3lock-fancy -g -t ""' #grayscale lockscreen without text
 
 # pactl to control pulseaudio volume with an XF86 keyboard
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
