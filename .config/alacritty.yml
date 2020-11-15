@@ -94,7 +94,7 @@ colors:
     white:   '0xe6e6d1'
 
 # add transparency
-background_opacity: 0.6
+background_opacity: 0.75
 
 cursor:
   # make the cursor an underline _
