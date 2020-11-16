@@ -4,11 +4,12 @@
 # kill running polybar
 pkill polybar
 
-# run new polybar
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
-    MONITOR=$m polybar --reload main -c ~/.config/polybar/config.ini &
-  done
-else
-  polybar --reload main -c ~/.config/polybar/config.ini &
-fi
+# run bottom polybar
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
+	MONITOR=$m polybar --reload main -c ~/.config/polybar/config-bottom.ini &
+done
+
+# run top polybar
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
+	MONITOR=$m polybar --reload main -c ~/.config/polybar/config-top.ini &
+done
