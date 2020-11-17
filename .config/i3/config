@@ -32,8 +32,8 @@ exec --no-startup-id nitrogen --restore #wallpapers
 exec --no-startup-id xinput --set-prop 8 'libinput Accel Speed' -0.9 #fixes the speedy mouse
 bindsym --release Print exec --no-startup-id flameshot gui #screenshot tool
 
-# make mpv and feh windows always float
-for_window [class="mpv"] floating enable
+# make vlc and feh windows always float
+for_window [class="vlc"] floating enable
 for_window [class="feh"] floating enable
 
 # font for window titles (like I'm ever gonna use that lol)
