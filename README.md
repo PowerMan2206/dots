@@ -23,9 +23,7 @@ other: `xorg-setxbmap`, `xorg-xinput`, `xautolock`, `mpc` (XF86 mpd control), [`
 
 Note: the `pulseaudio-control` Polybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
 
-~~Note 2: my Powercord theme location is a little wonky, you can move it wherever you installed Powercord/BD.~~
-
-Note 2: for some reason I can't add my Powercord theme to the repo, will look into it
+Note 2: my Powercord theme location is a little wonky, you can move it wherever you installed Powercord/BD.
 
 ## Installation
 
