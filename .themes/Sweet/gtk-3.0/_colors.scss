@@ -29,16 +29,12 @@ $selected_bg_color: #c50ed2;
 $selected_borders_color: darken($selected_bg_color, 10%);
 $borders_color: if($variant == 'light', transparentize(black,0.87), transparentize(#0C0E15,0.2));
 $borders_edge: if($variant == 'light', transparentize(white, 0.8), transparentize(white, 0.9));
-
-$selected-tab-gradient-start: #5800E2;
-$selected-tab-gradient-end: #FF00E6;
-
 $link_color: $blue;
 $link_visited_color:transparentize($link_color,0.5);
 $top_highlight: if($variant == 'light', transparentize(white, 0.8), transparentize(white, 0.9));
 $bottom_highlight: if($variant == 'light', transparentize(black, 0.8), transparentize(black, 0.9));
 $dark_fill: mix($borders_color, $bg_color, 35%);
-$headerbar_color: mix($base_color, darken($bg_color, 8%), 30%);
+$headerbar_color: $bg_color;
 $headerbar_fg_color: $text_color;
 $menu_color: if($variant == 'light', $base_color, mix($bg_color, $base_color, 20%));
 $popover_bg_color: $base_color;
@@ -57,7 +53,7 @@ $suggested_color: if($variant == 'light', $selected_bg_color, darken($selected_b
 
 $osd_fg_color: #fefefe;
 $osd_text_color: white;
-$osd_bg_color:  transparentize(darken($_sidebar_color, 3%), 0.02);
+$osd_bg_color:  transparentize(#14171a, 0.2);
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: transparentize(black, 0.3);
@@ -73,14 +69,14 @@ $drop_target_color: #a1ce4b;
 $text_shadow_color: if($variant == 'dark', $shadow_color, transparentize(white, 0.9));
 $icon_shadow_color: $text_shadow_color;
 
-$drop_target_color: $lime;
+$drop_target_color: #4e9a06;
 
 // Infobar colors
 $info_color: $lime;
 $question_color: $cyan;
 
 // Panel colors
-$panel_bg_color: transparentize($base_color, 0);
+$panel_bg_color: transparentize($base_color, 0.3);
 $panel_fg_color: white;
 $panel_borders_color: transparentize($base_color, 0.8);
 
@@ -113,4 +109,4 @@ $scale_bg: if($variant == 'light', transparentize(black,0.86) ,transparentize(wh
 $scale_disabled_bg: if($variant == 'light', transparentize(black, 0.94) ,transparentize(white, 0.94));
 $suggested_bg_color: linear-gradient(to right, #654ea3 0%, #eaafc8 100%);
 $destructive_bg_color: linear-gradient(to right, #FF416C, #FF4B2B);
-$menu_shadow_color: $borders_color;
+$menu_shadow_color: if($variant == 'light', transparentize(rgb(122, 122, 122), 0.6), transparent);

@@ -5,10 +5,10 @@ widgetStyle=kvantum
 ColorScheme=Sweet
 
 [kdeglobals][Icons]
-Theme=candy-icons
+Theme=breeze-dark
 
 [kcminputrc][Mouse]
-cursorTheme=Sweet-cursors
+cursorTheme=breeze_cursors
 
 [plasmarc][Theme]
 name=Sweet

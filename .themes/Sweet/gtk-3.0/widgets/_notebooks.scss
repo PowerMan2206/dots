@@ -4,9 +4,9 @@
 notebook {
   > header {
     padding: 1px;
-    border-color: transparent;
+    border-color: $borders_color;
     border-width: 1px;
-    background-color: mix($base_color, $headerbar_color, 30%);
+    background-color: $base_color;
 
     &:backdrop {
       border-color: $backdrop_borders_color;
@@ -18,14 +18,15 @@ notebook {
     &.top {
       border-bottom-style: solid;
       > tabs {
-        margin-bottom: -2px;
+        margin-bottom: -3px;
         > tab {
 
 
           &:backdrop { box-shadow: none; }
 
           &:checked {
-            @include selected-tab(right);
+              background-color: $base_color;
+              &:hover{background-color: $base_color;}
           }
         }
       }
@@ -41,7 +42,10 @@ notebook {
           &:backdrop { box-shadow: none; }
 
           &:checked { 
-            @include selected-tab(right);
+            background-color: $base_color; 
+            box-shadow: -1px 0 0 $borders_color,
+            0px 1px 0 $borders_color,
+            1px 0 0 $borders_color;
           }
         }
       }
@@ -57,8 +61,11 @@ notebook {
           &:backdrop { box-shadow: none; }
 
           &:checked { 
-            @include selected-tab(bottom);
-          }
+            background-color: $base_color; 
+            box-shadow: 0px 1px 0 $borders_color,
+            0px -1px 0 $borders_color,
+            0px 1px 0 $borders_color;
+           }
         }
       }
     }
@@ -73,7 +80,10 @@ notebook {
           &:backdrop { box-shadow: none; }
 
           &:checked { 
-            @include selected-tab(bottom);
+            background-color: $base_color; 
+            box-shadow: 0px 1px 0 $borders_color,
+            0px -1px 0 $borders_color,
+            1px 0 0 $borders_color;
           }
         }
       }
@@ -153,7 +163,7 @@ notebook {
       outline-offset: -5px;
 
       color: $insensitive_fg_color;
-      font-weight: normal;
+      font-weight: bold;
 
       border-width: 1px;         // for reorderable tabs
       border-color: transparent; //
@@ -178,6 +188,9 @@ notebook {
 
       &:checked {
         color: $fg_color;
+        box-shadow: -1px 0 0 $borders_color,
+                    0px -1px 0 $borders_color,
+                    1px 0 0 $borders_color;
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.5);
           background-color: transparentize($bg_color, 0.5);
@@ -210,6 +223,16 @@ notebook {
         // FIXME: generalize .small-button?
         min-width: 20px;
         min-height: 20px;
+
+        &:last-child {
+          margin-left: 4px;
+          margin-right: -4px;
+        }
+
+        &:first-child {
+          margin-left: -4px;
+          margin-right: 4px;
+        }
       }
     }
 
@@ -272,5 +295,16 @@ notebook {
     background-color: $base_color;
 
     &:backdrop { background-color: $backdrop_base_color; }
+  }
+
+  button.flat{
+    &, &:backdrop {
+      border: none;
+      background-color: transparent;
+    }
+    &:hover, &:active, &:checked {
+      background: $selected_bg_color;
+    }
+    padding: 2px 4px;
   }
 }

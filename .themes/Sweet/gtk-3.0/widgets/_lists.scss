@@ -42,7 +42,7 @@ row {
       &:backdrop { background-color: $backdrop_selected_bg_color; }
     }
     
-    button.flat{
+    button:not(.image-button){
       background-color: transparent;
     }
   }

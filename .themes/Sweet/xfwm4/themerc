@@ -1,6 +1,6 @@
 #button_layout=O|HMC
 button_offset=2
-button_spacing=-1
+button_spacing=2
 
 full_width_title=true
 
@@ -21,5 +21,6 @@ shadow_delta_x=0
 shadow_delta_y=-4
 shadow_opacity=46
 
+show_frame_shadow=true
 show_popup_shadow=true
 show_app_icon=true
