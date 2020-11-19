@@ -13,9 +13,9 @@ HISTFILESIZE=10000
 # not used anymore since I have the systemd user service now,
 # but it's here in case someone without systemd uses this
 
-# autostartx
+# autostartway
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
+    exec sway
 fi
 
 # source the aliases
