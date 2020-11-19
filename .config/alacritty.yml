@@ -94,7 +94,8 @@ colors:
     white:   '0xe6e6d1'
 
 # add transparency
-background_opacity: 0.75
+# not for now, Sway doesn't have blur yet
+#background_opacity: 0.75
 
 cursor:
   # make the cursor an underline _

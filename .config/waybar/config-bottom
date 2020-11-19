@@ -1,0 +1,45 @@
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 15,
+	"output": "HDMI-A-1",
+
+	"modules-left": ["cpu", "custom/cpu-speed", "memory", "disk"],
+	"modules-center": ["mpd"],
+	"modules-right": ["tray"],
+
+	// Module configuration
+	"cpu": {
+		"interval": 1,
+		"format": " <span color='#BD93F9'></span> {usage}% ",
+		"tooltip": false,
+	},
+
+	"custom/cpu-speed": {
+		"interval": 1,
+		"exec": "~/.config/waybar/scripts/cpu-speed.sh",
+		"tooltip": false,
+	},
+
+	"memory": {
+		"interval": 1,
+		"format": " | <span color='#FF5555'></span> {used:0.2f} GiB | ",
+		"tooltip": false,
+	},
+
+	"disk": {
+		"interval": 45,
+		"format": "<span color='#8BE9FD'></span> {free}",
+		"tooltip": false,
+	},
+
+	"mpd": {
+		"format-disconnected": "mpd is offline",
+		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon}",
+		"state-icons": {
+			"playing": "契",
+			"paused": "",
+		"tooltip": false,
+		},
+	},
+},

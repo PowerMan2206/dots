@@ -1,0 +1,27 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 11px;
+    padding-left: 2px;
+}
+
+window#waybar {
+    background-color: #181b28;
+}
+
+#workspaces button {
+    padding: 0 2px;
+}
+
+#workspaces button.focused {
+    background-color: #64727d;
+}
+
+#workspaces button:hover {
+    background: #3d464c;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}

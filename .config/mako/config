@@ -1,0 +1,14 @@
+# show 6 notifications max
+max-visible=6
+
+font=JetBrainsMono Nerd Font 8
+
+# sort messages by urgency
+sort=+priority
+
+border-size=2
+border-color=#bbbbbb
+background-color=#181b28
+text-color=#bbbbbb
+icons=1
+max-icon-size=24

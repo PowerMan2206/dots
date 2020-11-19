@@ -1,0 +1,33 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 15,
+
+	"modules-left": ["sway/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["custom/pulseaudio-control"],
+
+	// Module configuration
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+		"format": "{name}",
+	},
+
+	"clock": {
+		"interval": 1,
+		"format": "<span color='#F1FA8C'></span> {:%Y-%m-%d %H:%M:%S}",
+		"format-alt": "<span color='#F1FA8C'></span> {:%H:%M}",
+		"tooltip": false,
+	},
+
+	// this is really messy and laggy, but it kinda works
+	"custom/pulseaudio-control": {
+		"exec": "~/.config/polybar/scripts/pulseaudio-control.bash --icons-volume ' , ' --icon-muted ' ' --sink-nicknames-from 'device.description' --sink-nickname 'alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1:Speakers' --sink-nickname 'alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.iec958-stereo: Headphones' listen",
+
+		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click": "~/.config/polybar/scripts/pulseaudio-control.bash --sink-blacklist 'alsa_output.pci-0000_0b_00.4.iec958-stereo' next-sink",
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+	},
+}
