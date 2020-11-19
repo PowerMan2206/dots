@@ -3,18 +3,22 @@ Everyone must have a dotfiles repo, right?
 
 ![screenshot](https://raw.githubusercontent.com/PowerMan2206/dots/master/screenshot.png)
 
+### Note to X users
+
+I am now using Wayland, so anything X-related isn't maintained anymore. Head into `.config/old-x-bloat` to use the X-compatible config files.
+
 ## Packages and stuff
 
-package | why
--|-
-`sway`|window manager and compositor
-`alacritty`|terminal
-`wofi`|launcher
-`waybar`|bar
-`gammastep`|screen light thing
-`grim`|screenshots
-`mpd`|music playback
-`mpv`|video playback
+package     | why
+------------|------------
+`sway`      | window manager and compositor
+`alacritty` | terminal
+`wofi`      | launcher
+`waybar`    | bar
+`gammastep` | screen light thing
+`grim`      | screenshots
+`mpd`       | music playback
+`mpv`       | video playback
 [`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 
 other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`
