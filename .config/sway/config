@@ -34,8 +34,8 @@ exec --no-startup-id qbittorrent #torrent client
 bindsym --release Print exec --no-startup-id grim -g "$(slurp)" - | wl-copy #screenshot tool
 
 # make mpv and imv windows always float
-for_window [class="mpv"] floating enable
-for_window [class="imv"] floating enable
+for_window [app_id="mpv"] floating enable
+for_window [app_id="imv"] floating enable
 
 # font for window titles (like I'm ever gonna use that lol)
 font pango:monospace 8
