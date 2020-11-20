@@ -12,9 +12,8 @@ default_border pixel 2 #titlebars are cringe
 gaps outer 0
 gaps inner 5
 
-# run rofi in drun mode
-# fix this and use wofi later
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -theme sidebar
+# run bemenu
+bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
@@ -25,7 +24,7 @@ output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch.png st
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 120 bg ~/walls/sweet_tux.png fill
 
 # autostart 
-exec --no-startup-id gammastep -m wayland -P -O 4000 #gammastep because I get a headache from too much screentime
+exec --no-startup-id gammastep -m wayland -P -O 4000 #gammastep because I get a headache from too much screentime, broken on Nouveau
 exec --no-startup-id mako #notifications
 exec --no-startup-id ~/.config/waybar/launch.sh #bar
 exec --no-startup-id discord-canary #discord

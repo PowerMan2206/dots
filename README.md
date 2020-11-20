@@ -13,13 +13,12 @@ package     | why
 ------------|------------
 `sway`      | window manager and compositor
 `alacritty` | terminal
-`wofi`      | launcher
+`bemenu`    | launcher
 `waybar`    | bar
 `gammastep` | screen light thing
 `grim`      | screenshots
 `mpd`       | music playback
 `mpv`       | video playback
-[`qt5-styleplugins`](https://aur.archlinux.org/packages/qt5-styleplugins)|uniformity between Qt and GTK
 
 other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`
 

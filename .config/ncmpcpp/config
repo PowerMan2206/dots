@@ -1,0 +1,36 @@
+# clean up ~ a bit
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/lyrics
+
+# something for the tag editor
+mpd_music_dir = ~/mus
+
+# doesn't work
+mpd_crossfade_time = 1
+
+# audio visualizer
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = Visualizer
+visualizer_in_stereo = yes
+visualizer_sync_interval = 20
+
+# can be: spectrum, wave, wave_filled, ellipse.
+visualizer_type = spectrum
+
+# looks nice
+visualizer_look = ●▮
+
+# epic 256 colors
+visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+
+# make the playlist look nice
+song_columns_list_format = (30)[]{a} (50)[white]{t|f:Title} (7f)[magenta]{l}
+
+# send a notification when the song changes
+#execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \nby %artist%' current)"
+
+# progress bar
+progressbar_look = ->
+
+# search in entire database, not just playlist
+default_place_to_search_in = database
