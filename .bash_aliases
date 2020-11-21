@@ -9,7 +9,7 @@ alias gc='git clone'
 alias pubip='curl ifconfig.me'
 alias tb='nc termbin.com 9999'
 alias micro='micro -colorscheme simple'
-alias grep='grep --color=auto'
+alias grep='grep -i --color=auto'
 alias gitconfig='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #the thing for a git bare repo
 
 #pacman
