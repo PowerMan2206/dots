@@ -11,7 +11,7 @@ I am now using Wayland, so anything X-related isn't maintained anymore. Head int
 
 package     | why
 ------------|------------
-`sway`      | window manager and compositor
+`sway`      | compositor
 `alacritty` | terminal
 `bemenu`    | launcher
 `waybar`    | bar
