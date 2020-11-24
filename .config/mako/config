@@ -6,6 +6,13 @@ font=JetBrainsMono Nerd Font 8
 # sort messages by urgency
 sort=+priority
 
+# delet the notification after 7.5 seconds
+default-timeout=7500
+
+# force the above timeout
+ignore-timeout=1
+
+# border stuff
 border-size=2
 border-color=#bbbbbb
 background-color=#181b28

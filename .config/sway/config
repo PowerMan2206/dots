@@ -15,9 +15,9 @@ gaps inner 5
 # run bemenu
 bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n
 
-# make the mouse not suck ass
+# make the mouse not suck ass and keyboard layout thing
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
-input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.8
+input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.96
 
 # arrange monitors correctly and set wallpapers
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch.png stretch
