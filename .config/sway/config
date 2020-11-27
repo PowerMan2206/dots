@@ -6,16 +6,16 @@ set $mod Mod4
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty #gpu acceleration good
 
-default_border pixel 2 #titlebars are cringe
+default_border pixel 1 #titlebars are cringe
 
 # gaps pog
 gaps outer 0
-gaps inner 5
+gaps inner 3
 
 # run bemenu
 bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n
 
-# make the mouse not suck ass and keyboard layout thing
+# make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
 input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.96
 
@@ -28,14 +28,14 @@ exec --no-startup-id gammastep -m wayland -P -O 4000 #gammastep because I get a 
 exec --no-startup-id mako #notifications
 exec --no-startup-id ~/.config/waybar/launch.sh #bar
 exec --no-startup-id discord-canary #discord
-exec --no-startup-id qbittorrent #torrent client
 
 # powerstuff
 bindsym --release Print exec --no-startup-id grim -g "$(slurp)" - | wl-copy #screenshot tool
 
-# make mpv and imv windows always float
+# make some windows always float
 for_window [app_id="mpv"] floating enable
 for_window [app_id="imv"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 
 # font for window titles (like I'm ever gonna use that lol)
 font pango:monospace 8
