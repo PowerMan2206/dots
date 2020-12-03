@@ -20,7 +20,7 @@ package     | why
 `mpd`       | music playback
 `mpv`       | video playback
 
-other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`
+other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`, `imv`
 
 Note: the `pulseaudio-control` Waybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
 
