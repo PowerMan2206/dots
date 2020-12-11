@@ -11,7 +11,6 @@ alias tb='nc termbin.com 9999'
 alias micro='micro -colorscheme simple'
 alias grep='grep -i --color=auto'
 alias gitconfig='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #the thing for a git bare repo
-alias 0x0="curl -F'file=@$1' http://0x0.st" #upload stuff, `0x0 <file>`
 
 #commands to switcharoo the keyboard layout because sway-input wack
 alias layout-hr="swaymsg input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard xkb_layout hr"
