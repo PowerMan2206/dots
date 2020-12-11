@@ -12,8 +12,8 @@ default_border pixel 1 #titlebars are cringe
 gaps outer 0
 gaps inner 3
 
-# run bemenu
-bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n
+# run bemenu case insensitively on the 1st monitor
+bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i -m 1
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
