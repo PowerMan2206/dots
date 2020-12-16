@@ -5,7 +5,7 @@ Everyone must have a dotfiles repo, right?
 
 ### Note to X users
 
-I am now using Wayland, so anything X-related isn't maintained anymore. Head into `.config/old-x-bloat` to use the X-compatible config files.
+I am now using Wayland, so anything X-related isn't maintained anymore. Head into the GitHub history thing to see the X files.
 
 ## Packages and stuff
 
