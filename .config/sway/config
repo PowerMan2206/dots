@@ -12,16 +12,23 @@ default_border pixel 1 #titlebars are cringe
 gaps outer 0
 gaps inner 3
 
+# lock screen
+exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
+
 # run bemenu case insensitively on the 1st monitor
 bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i -m 1
+
+# arrange monitors correctly and set wallpapers
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch.png stretch
+output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 120 bg ~/walls/sweet_tux.png fill
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
 input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.96
 
-# arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch.png stretch
-output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 120 bg ~/walls/sweet_tux.png fill
+# screenshot stuff
+bindsym Print exec --no-startup-id grimshot copy area #select area
+bindsym Shift+Print exec --no-startup-id grimshot copy active #active window
 
 # autostart 
 exec --no-startup-id gammastep -m wayland -P -O 4000 #gammastep because I get a headache from too much screentime, broken on Nouveau
@@ -29,19 +36,10 @@ exec --no-startup-id mako #notifications
 exec --no-startup-id ~/.config/waybar/launch.sh #bar
 exec --no-startup-id discord-canary #discord
 
-# powerstuff
-bindsym --release Print exec --no-startup-id grim -g "$(slurp)" - | wl-copy #screenshot tool
-
 # make some windows always float
 for_window [app_id="mpv"] floating enable
 for_window [app_id="imv"] floating enable
 for_window [app_id="pavucontrol"] floating enable
-
-# font for window titles (like I'm ever gonna use that lol)
-font pango:monospace 8
-
-# lock screen
-exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
 
 # pactl to control pulseaudio volume with an XF86 keyboard
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -86,10 +84,8 @@ bindsym $mod+e layout toggle split
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart sway inplace
-bindsym $mod+Shift+r restart
-# exit sway (guess)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+# exit sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit Sway?' -b 'Yes, exit Sway' 'swaymsg exit'
     
 # sets the workspace numbers (?)
 set $ws1 "1"

@@ -16,11 +16,10 @@ package     | why
 `bemenu`    | launcher
 `waybar`    | bar
 `gammastep` | screen light thing
-`grim`      | screenshots
 `mpd`       | music playback
 `mpv`       | video playback
 
-other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`, `imv`
+other: `swayidle`, `mpc` (XF86 mpd control), `swaylock-fancy`, `noto-fonts`, `exa`, `imv`, `grim`, `slurp`, `wl-clipboard`
 
 Note: the `pulseaudio-control` Waybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
 
