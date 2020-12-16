@@ -1,14 +1,22 @@
 {
 	"layer": "top",
+
+	// bottom bar
 	"position": "bottom",
-	"height": 15,
+
+	// 16px because 15 doesnt work
+	"height": 16,
+
+	// only on my main screen
 	"output": "HDMI-A-1",
 
+	// modules themselves
 	"modules-left": ["cpu", "custom/cpu-speed", "memory", "disk"],
 	"modules-center": ["mpd"],
 	"modules-right": ["tray"],
 
-	// Module configuration
+	// module configuration
+	// basically copy-pasted from Polybar, look at the notes there
 	"cpu": {
 		"interval": 1,
 		"format": " <span color='#BD93F9'></span> {usage}% ",

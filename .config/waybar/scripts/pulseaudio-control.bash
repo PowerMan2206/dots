@@ -319,7 +319,7 @@ function output() {
     if [ "$isMuted" = "yes" ]; then
         # shellcheck disable=SC2034
         VOL_ICON=$ICON_MUTED
-        echo "${COLOR_MUTED}$(eval echo "$FORMAT")${END_COLOR}"
+        echo "$(eval echo "$FORMAT") muted "
     else
         eval echo "$FORMAT"
     fi
