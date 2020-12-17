@@ -3,7 +3,8 @@
     border-radius: 0;
     font-family: JetBrains Mono Nerd Font;
     font-size: 11px;
-    padding-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 window#waybar {
