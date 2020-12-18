@@ -24,4 +24,8 @@ fi
 # source the aliases
 source ~/.bash_aliases
 
+# cd into dirs without writing cd
+# (`/mnt/chonk/` is the same as `cd /mnt/chonk/`)
+shopt -s autocd
+
 PS1="\w $ "
