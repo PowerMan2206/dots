@@ -19,7 +19,7 @@
 	// basically copy-pasted from Polybar, look at the notes there
 	"cpu": {
 		"interval": 1,
-		"format": " <span color='#BD93F9'></span> {usage}% ",
+		"format": " <span color='#2C78BF'></span> {usage}% ",
 		"tooltip": false,
 	},
 
@@ -31,13 +31,13 @@
 
 	"memory": {
 		"interval": 1,
-		"format": " | <span color='#FF5555'></span> {used:0.2f} GiB | ",
+		"format": " | <span color='#F75341'></span> {used:0.2f} GiB | ",
 		"tooltip": false,
 	},
 
 	"disk": {
 		"interval": 45,
-		"format": "<span color='#8BE9FD'></span> {free}",
+		"format": "<span color='#0AAEB3'></span> {free}",
 		"tooltip": false,
 	},
 

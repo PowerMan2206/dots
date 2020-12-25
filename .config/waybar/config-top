@@ -22,8 +22,8 @@
 
 	"clock": {
 		"interval": 1,
-		"format": "<span color='#F1FA8C'></span> {:%Y-%m-%d %H:%M:%S}",
-		"format-alt": "<span color='#F1FA8C'></span> {:%H:%M}",
+		"format": "<span color='#fbb829'></span> {:%Y-%m-%d %H:%M:%S}",
+		"format-alt": "<span color='#fbb829'></span> {:%H:%M}",
 		"tooltip": false,
 	},
 
