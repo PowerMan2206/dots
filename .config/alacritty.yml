@@ -43,7 +43,7 @@ font:
     
   size: 8.5
 
-# colors (Dracula, background changed)
+# colors (Srcery, background changed)
 colors:
   # default colors
   primary:
