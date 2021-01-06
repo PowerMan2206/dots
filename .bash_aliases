@@ -2,7 +2,7 @@ alias sudo='sudo ' #idk what this exactly does but its useful
 alias w2x='waifu2x-ncnn-vulkan'
 alias ls='exa'
 alias yt='youtube-dl'
-alias yt-mp3='youtube-dl --extract-audio --audio-format=mp3'
+alias yt-opus='youtube-dl --extract-audio --audio-format=opus'
 alias c='clear'
 alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 alias gc='git clone'
