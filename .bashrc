@@ -18,7 +18,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # start sway if running from tty1 and output to a logfile
 if [ "$(tty)" = "/dev/tty1" ]; then
-	exec sway -d 2> ~/.sway-logfile
+	exec sway 2> ~/.sway-logfile
 fi
 
 # source the aliases
