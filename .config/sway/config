@@ -26,6 +26,10 @@ output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/swee
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
 input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.966
 
+# change keyboard rate thing
+input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300
+input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_rate 30
+
 # screenshot stuff
 bindsym Print exec --no-startup-id grimshot copy area #select area
 bindsym Shift+Print exec --no-startup-id grimshot copy active #active window
