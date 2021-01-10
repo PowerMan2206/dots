@@ -12,6 +12,9 @@ default_border pixel 1 #titlebars are cringe
 gaps outer 0
 gaps inner 3
 
+# polkit thing
+exec --no-startup-id lxpolkit
+
 # lock screen
 exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
 
