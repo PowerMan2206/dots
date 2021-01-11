@@ -28,15 +28,15 @@ alias pcq='pacman -Q'
 alias pcqo='pacman -Qo'
 alias pcqi='pacman -Qi'
 alias pcqs='pacman -Qs'
-#yay
-alias y='yay' #running yay by itself is like an -Syu but shorter
-alias ys='yay -S'
-alias ysyu='yay -Syu'
-alias ysi='yay -Si'
-alias yss='yay -Ss'
-alias yscc='yay -Scc'
-alias yrs='yay -Rs'
-alias yq='yay -Q'
-alias yqo='yay -Qo'
-alias yqi='yay -Qi'
-alias yqs='yay -Qs'
+#paru
+alias p='paru' #running paru by itself is like an -Syu but shorter
+alias ps='paru -S' #if you wanna use actual `ps` just run `command ps`
+alias psyu='paru -Syu'
+alias psi='paru -Si'
+alias pss='paru -Ss'
+alias pscc='paru -Scc'
+alias prs='paru -Rs'
+alias pq='paru -Q'
+alias pqo='paru -Qo'
+alias pqi='paru -Qi'
+alias pqs='paru -Qs'

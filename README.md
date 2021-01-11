@@ -19,7 +19,7 @@ package     | why
 `mpd`       | music playback
 `mpv`       | video playback
 
-other: look into `.config/packagelist`, install with `yay -S - < packagelist` (on Arch)
+other: look into `.config/packagelist`, install with `[paru](https://aur.archlinux.org/packages/paru-bin) -S - < packagelist` (on Arch)
 
 Note: the `pulseaudio-control` Waybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
 
