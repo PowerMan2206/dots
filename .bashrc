@@ -16,11 +16,6 @@ export PATH="$PATH:$HOME/.local/bin"
 # not used anymore since I have the systemd user service now,
 # but it's here in case someone without systemd uses this
 
-# start sway if running from tty1 and output to a logfile
-if [ "$(tty)" = "/dev/tty1" ]; then
-	exec sway 2> ~/.sway-logfile
-fi
-
 # source the aliases
 source ~/.bash_aliases
 
