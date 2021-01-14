@@ -1,3 +1,17 @@
-#upload stuff, `0x0 <file>`
+#!/bin/bash
 
-curl -F file=@"$1" http://0x0.st
+while getopts "fps:" OPTION
+do case $OPTION in
+		f)
+			curl -F file=@"$2" https://0x0.st
+			;;
+		p)
+			curl -F url="$2" https://0x0.st
+			;;
+		s)
+			curl -F shorten="$2" https://0x0.st
+			;;
+		?)
+			echo "-f for files, -p for POSTing URLs, -s for shortening URLs"
+	esac
+done

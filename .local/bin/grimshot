@@ -9,7 +9,6 @@
 ##  - `jq`: json utility to parse swaymsg output
 ##  - `notify-send`: to show notifications
 ## Those are needed to be installed, if unsure, run `grimshot check`
-##
 
 getTargetDirectory() {
   test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && \
