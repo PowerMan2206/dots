@@ -1,6 +1,5 @@
 alias sudo='sudo ' #idk what this exactly does but its useful
 alias w2x='waifu2x-ncnn-vulkan'
-alias ls='exa'
 alias yt='youtube-dl'
 alias yt-opus='youtube-dl --extract-audio --audio-format=opus'
 alias c='clear'
