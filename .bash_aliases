@@ -1,6 +1,6 @@
 #system stuff
 alias sudo='sudo ' #idk what this exactly does but its useful
-alias ls='exa'
+alias ls='exa --icons'
 alias c='clear'
 alias grep='grep -i --color=auto'
 alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
