@@ -14,7 +14,7 @@ window:
 
 scrolling:
   # max number of lines in the scrollback buffer.
-  history: 10000
+  history: 100000
   # scrolling distance multiplier
   multiplier: 3
 
@@ -23,22 +23,22 @@ font:
 
   # normal fonts
   normal:
-    family: JetBrainsMono Nerd Font
+    family: monospace
     style: Regular
 
   # bold fonts
   bold:
-    family: JetBrainsMono Nerd Font
+    family: monospace
     style: Bold
     
   # italic fonts  
   italic:
-    family: JetBrainsMono Nerd Font
+    family: monospace
     style: Italic
     
   # bold italic fonts  
   italic:
-    family: JetBrainsMono Nerd Font
+    family: monospace
     style: Bold Italic
     
   size: 8.5

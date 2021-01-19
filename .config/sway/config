@@ -19,7 +19,9 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
 
 # run bemenu case insensitively on the 1st monitor
-bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i -m 1
+bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
+-m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
+
 
 # arrange monitors correctly and set wallpapers
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch.png stretch
