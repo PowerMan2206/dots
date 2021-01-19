@@ -88,8 +88,14 @@ colors:
 #background_opacity: 0.75
 
 cursor:
-  # make the cursor an underline _
-  style: Underline
+  style:
+    # make the cursor an underline _ 
+    shape: Underline
+
+    # blinking cursor
+    blinking: Always
+
+  blink_interval: 500
 
   # make the cursor stay the same when unfocused
   unfocused_hollow: false
