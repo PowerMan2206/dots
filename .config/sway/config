@@ -1,3 +1,6 @@
+#!/bin/bash
+# ^ just here for syntax highlighting 
+
 # PowerMan2206's Sway config file
 
 # set the modifier key to Win
@@ -17,6 +20,9 @@ exec --no-startup-id lxpolkit
 
 # lock screen
 exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
+
+# clipboard history
+exec --no-startup-id clipboard-history
 
 # run bemenu case insensitively on the focused monitor with the colors and all
 bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
