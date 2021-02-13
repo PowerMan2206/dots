@@ -28,14 +28,16 @@ bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
 --fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
 
-
 # arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch.png stretch
-output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/sweet_tux.png fill
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/sweet_tux_1080p.png fill
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
 input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.966
+
+# use correct cursor, idk if it actually works
+seat seat0 xcursor_theme win8
 
 # change keyboard rate thing
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300
@@ -48,7 +50,7 @@ bindsym Shift+Print exec --no-startup-id grimshot copy active #active window
 # autostart 
 exec --no-startup-id mako #notifications
 exec --no-startup-id ~/.config/waybar/launch.sh #bar
-exec --no-startup-id discord-canary #discord
+#exec --no-startup-id discord-canary #discord
 
 # make some windows always float
 for_window [app_id="pavucontrol"] floating enable
@@ -99,7 +101,7 @@ bindsym $mod+Shift+c reload
 # exit sway
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit Sway?' -b 'Yes, exit Sway' 'swaymsg exit'
     
-# sets the workspace numbers (?)
+# sets the workspace names (numbers)
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
