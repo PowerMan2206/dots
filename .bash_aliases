@@ -8,7 +8,7 @@ alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 #stuff
 alias micro='micro -colorscheme simple'
 alias yt='youtube-dl'
-alias yt-opus='youtube-dl --extract-audio --audio-format=opus'
+alias yt-opus='youtube-dl -x --audio-format=opus'
 alias gc='git clone'
 alias gitconfig='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #the thing for a git bare repo
 alias pubip='curl ifconfig.me'
