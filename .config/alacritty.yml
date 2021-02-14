@@ -9,7 +9,7 @@ window:
   padding:
     x: 6
     y: 5
-  # makes padding look bad or something
+  # makes padding look good
   dynamic_padding: false
 
 scrolling:
@@ -24,22 +24,22 @@ font:
   # normal fonts
   normal:
     family: monospace
-    style: Regular
+    #style: Regular
 
   # bold fonts
   bold:
     family: monospace
-    style: Bold
+    #style: Bold
     
   # italic fonts  
   italic:
     family: monospace
-    style: Italic
+    #style: Italic
     
   # bold italic fonts  
   italic:
     family: monospace
-    style: Bold Italic
+    #style: Bold Italic
     
   size: 8.5
 
