@@ -42,6 +42,6 @@ Otherwise, you can just copy any specific config you want.
 
 ### Thanks to 
 
-[Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Waybar script
+[Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Waybar script.
 
-The boys over on IRC for helping me with the pipewire-control script.
+The boys over on IRC for helping me with the `pipewire-control` Waybar script.
