@@ -13,6 +13,7 @@ package     | why
 ------------|------------
 `sway`      | compositor
 `alacritty` | terminal
+`pipewire`  | audio stuff
 `bemenu`    | launcher
 `waybar`    | bar
 `gammastep` | screen light thing
@@ -21,7 +22,7 @@ package     | why
 
 other: look into `.config/packagelist`, install with `paru -S - < packagelist` (on Arch)
 
-Note: the `pulseaudio-control` Waybar module config is customized to my specific setup. Go to [polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control) to see how to make it work for you.
+Note: the `pipewire-control` Waybar module is customized to my specific setup. Read into the script to see how to make it work for you.
 
 Note 2: my Powercord theme location is a little wonky, you can move it wherever you installed Powercord/BD.
 
@@ -43,4 +44,4 @@ Otherwise, you can just copy any specific config you want.
 
 [Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Waybar script
 
-[marioortizmanero](https://github.com/marioortizmanero/polybar-pulseaudio-control) for making the `pulseaudio-control.bash` Polybar script
+The boys over on IRC for helping me with the pipewire-control script.
