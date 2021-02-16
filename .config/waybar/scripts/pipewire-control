@@ -24,12 +24,12 @@ case $1 in
 			"$sink1" ) 
 				sink="$sink2"
 				echo $sink2 > ~/.config/waybar/scripts/pipewire-stuff/sink
-				echo "蓼 Speakers" > ~/.config/waybar/scripts/pipewire-stuff/nick
+				echo "Speakers 蓼 " > ~/.config/waybar/scripts/pipewire-stuff/nick
 				;;
 			"$sink2" ) 
 				sink="$sink1"
 				echo $sink1 > ~/.config/waybar/scripts/pipewire-stuff/sink
-				echo " Headphones" > ~/.config/waybar/scripts/pipewire-stuff/nick
+				echo "Headphones  " > ~/.config/waybar/scripts/pipewire-stuff/nick
 				;;
 		esac
 		
@@ -41,7 +41,7 @@ esac
 
 # yes I stole this from the mpd thing
 print_status() {
-	echo "$(cat ~/.config/waybar/scripts/pipewire-stuff/nick) ($(pamixer --get-volume)%)"
+	echo "$(pamixer --get-volume)% $(cat ~/.config/waybar/scripts/pipewire-stuff/nick)"
 }
 print_status
 pactl subscribe | grep --line-buffered "change" | while read _; do print_status; done
