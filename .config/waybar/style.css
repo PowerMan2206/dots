@@ -5,6 +5,7 @@
     font-size: 11px;
     padding-left: 1px;
     padding-right: 1px;
+    min-height: 0;
 }
 
 window#waybar {

@@ -4,13 +4,13 @@
 	// top bar
 	"position": "top",
 
-	// 16px because 15 doesnt work
+	// 16px because yes
 	"height": 16,
 
 	// modules themselves
 	"modules-left": ["sway/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/pulseaudio-control"],
+	"modules-right": ["custom/pipewire-control"],
 
 	// module configuration
 	// basically copy-pasted from Polybar, look at the notes there
@@ -28,13 +28,15 @@
 	},
 
 	// this is really messy and a little laggy, but it kinda works
-	"custom/pulseaudio-control": {
-		"exec": "~/.config/waybar/scripts/pulseaudio-control.bash --icons-volume ' , ' --icon-muted ' ' --sink-nicknames-from 'device.description' --sink-nickname 'alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1:Speakers' --sink-nickname 'alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo: Headphones' listen",
+	"custom/pipewire-control": {
+		"exec": "~/.config/waybar/scripts/pipewire-control",
 
-		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"on-click": "~/.config/waybar/scripts/pulseaudio-control.bash --sink-blacklist 'alsa_output.pci-0000_0b_00.4.iec958-stereo' next-sink",
+		"interval": "1",
+		"on-click-right": "pamixer -t",
+		"on-click": "~/.config/waybar/scripts/pipewire-control -c",
 		"on-click-middle": "pavucontrol",
-		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+		"on-scroll-up": "pamixer -i 5",
+		"on-scroll-down": "pamixer -d 5",
+		"tooltip": false,
 	},
 }

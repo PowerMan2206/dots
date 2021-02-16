@@ -4,7 +4,7 @@
 	// bottom bar
 	"position": "bottom",
 
-	// 16px because 15 doesnt work
+	// 16px because yes
 	"height": 16,
 
 	// only on my main screen
@@ -12,7 +12,7 @@
 
 	// modules themselves
 	"modules-left": ["cpu", "custom/cpu-speed", "memory", "disk"],
-	"modules-center": ["mpd"],
+	"modules-center": ["mpd", "custom/mpdvol"],
 	"modules-right": ["tray"],
 
 	// module configuration
@@ -49,5 +49,13 @@
 			"paused": "",
 		"tooltip": false,
 		},
+	},
+
+	"custom/mpdvol": {
+		"exec": "~/.config/waybar/scripts/mpdvol",	
+
+		"on-scroll-up": "mpc volume +5",
+		"on-scroll-down": "mpc volume -5",
+		"tooltip": false,
 	},
 },

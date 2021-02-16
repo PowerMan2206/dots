@@ -1,0 +1,9 @@
+#!/bin/bash
+
+print_status() {
+	echo " ("$(mpc status | grep volume | cut -d':' -f2 | cut -d' ' -f2)")"
+}
+
+print_status
+
+mpc idleloop mixer | while read _; do print_status; done

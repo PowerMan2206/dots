@@ -10,7 +10,10 @@ bemenu
 gammastep
 waybar
 imv
-pulseaudio
+pipewire
+pipewire-pulse
+pipewire-alsa
+pamixer
 pavucontrol
 swayidle
 swaylock-fancy-git

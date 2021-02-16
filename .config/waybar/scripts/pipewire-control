@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# CONFIGURATION (because I'm too lazy to make it automatic)
+#
+# 1. head into ~/.config/waybar/scripts/pipewire-stuff
+# 2. put your main sink into the sink file
+# 3. same for the nick file 
+# 4. uhh, try to kinda do what I did below. Edit the below two variables 
+#    to be what they gotta be, one sink is $sink1, the other is $sink2
+# 5. somethingsomething, you'll figure it out
+# 6. restart Waybar with the launch.sh script
+# 7. pray it works
+
+# sinks and their names and stuff
+sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
+sink2="alsa_output.pci-0000:09:00.1.hdmi-stereo-extra1"
+sink=$(cat ~/.config/waybar/scripts/pipewire-stuff/sink)
+pactl set-default-sink "$sink"
+
+case $1 in
+	-c ) 
+		# you get the point, just scrolls through them
+		case "$sink" in
+			"$sink1" ) 
+				sink="$sink2"
+				echo $sink2 > ~/.config/waybar/scripts/pipewire-stuff/sink
+				echo "蓼 Speakers" > ~/.config/waybar/scripts/pipewire-stuff/nick
+				;;
+			"$sink2" ) 
+				sink="$sink1"
+				echo $sink1 > ~/.config/waybar/scripts/pipewire-stuff/sink
+				echo " Headphones" > ~/.config/waybar/scripts/pipewire-stuff/nick
+				;;
+		esac
+		
+		pactl set-default-sink "$sink"
+		
+		exit
+		;;
+esac
+
+# yes I stole this from the mpd thing
+print_status() {
+	echo "$(cat ~/.config/waybar/scripts/pipewire-stuff/nick) ($(pamixer --get-volume)%)"
+}
+print_status
+pactl subscribe | grep --line-buffered "change" | while read _; do print_status; done
