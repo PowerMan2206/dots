@@ -32,7 +32,7 @@
 		"exec": "~/.config/waybar/scripts/pipewire-control",
 
 		"interval": "1",
-		"on-click-right": "pamixer -t",
+		"on-click-right": "~/.config/waybar/scripts/pipewire-control -m",
 		"on-click": "~/.config/waybar/scripts/pipewire-control -c",
 		"on-click-middle": "pavucontrol",
 		"on-scroll-up": "pamixer -i 5",

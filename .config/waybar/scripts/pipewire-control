@@ -11,10 +11,12 @@
 # 6. restart Waybar with the launch.sh script
 # 7. pray it works
 
+stuff="$HOME/.config/waybar/scripts/pipewire-stuff"
+
 # sinks and their names and stuff
 sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
 sink2="alsa_output.pci-0000:09:00.1.hdmi-stereo-extra1"
-sink=$(cat ~/.config/waybar/scripts/pipewire-stuff/sink)
+sink=$(cat $stuff/sink)
 pactl set-default-sink "$sink"
 
 case $1 in
@@ -23,25 +25,40 @@ case $1 in
 		case "$sink" in
 			"$sink1" ) 
 				sink="$sink2"
-				echo $sink2 > ~/.config/waybar/scripts/pipewire-stuff/sink
-				echo "Speakers 蓼 " > ~/.config/waybar/scripts/pipewire-stuff/nick
+				echo -n $sink2 > $stuff/sink
+				echo -n "Speakers 蓼" > $stuff/nick
 				;;
 			"$sink2" ) 
 				sink="$sink1"
-				echo $sink1 > ~/.config/waybar/scripts/pipewire-stuff/sink
-				echo "Headphones  " > ~/.config/waybar/scripts/pipewire-stuff/nick
+				echo -n $sink1 > $stuff/sink
+				echo -n "Headphones " > $stuff/nick
 				;;
 		esac
 		
 		pactl set-default-sink "$sink"
+
+		case $(pamixer --get-mute) in
+			false ) echo -n "" > $stuff/mute ;;
+			true ) echo -n "(muted)" > $stuff/mute ;;
+		esac
 		
+		exit
+		;;
+	-m )
+		case $(pamixer --get-mute) in
+			true ) echo -n "" > $stuff/mute ;;
+			false ) echo -n "(muted)" > $stuff/mute ;;
+		esac
+
+		pamixer -t
+
 		exit
 		;;
 esac
 
 # yes I stole this from the mpd thing
 print_status() {
-	echo "$(pamixer --get-volume)% $(cat ~/.config/waybar/scripts/pipewire-stuff/nick)"
+	echo "$(pamixer --get-volume)% $(cat $stuff/nick) $(cat $stuff/mute)"
 }
 print_status
 pactl subscribe | grep --line-buffered "change" | while read _; do print_status; done
