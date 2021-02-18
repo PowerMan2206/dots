@@ -1,3 +1,4 @@
-sink=alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output
-nick='Headphones '
-mute=""
+declare -- sink="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
+declare -- nick="Headphones "
+declare -- volume="50"
+declare -- mute=""

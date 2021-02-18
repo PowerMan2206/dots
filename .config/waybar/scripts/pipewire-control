@@ -1,65 +1,85 @@
 #!/bin/bash
+# thanks to sorpigal for basically rewriting a part of this to use declare
 
 # CONFIGURATION (because I'm too lazy to make it automatic)
 #
 # 1. edit $HOME/.config/waybar/scripts/pipewire-config
 # 2. put your main sink into the sink variable
 # 3. same for the nick variable
-# 4. uhh, try to kinda do what I did below. Edit the below two variables 
+# 4. uhh, try to kinda do what I did below. Edit the below two variables
 #    to be what they gotta be, one sink is $sink1, the other is $sink2
 # 5. somethingsomething, you'll figure it out
 # 6. restart Waybar with the launch.sh script
 # 7. pray it works
 
 config="$HOME/.config/waybar/scripts/pipewire-config"
-. $config
+. "$config"
+
+# yes I stole this from the mpd thing
+waybarstuff () {
+	. "$config"
+	echo "$volume% $nick $mute"
+}
 
 # sinks and their names and stuff
 sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
 sink2="alsa_output.pci-0000:09:00.1.hdmi-stereo-extra1"
 pactl set-default-sink "$sink"
 
-case $1 in
-	-c ) 
+case "$1" in
+	-c )
 		# you get the point, just scrolls through them
 		case "$sink" in
-			"$sink1" ) 
+			"$sink1" )
 				sink="$sink2"
-				sed -i "s/sink=.*/sink=$sink/g" $config
-				sed -i "s/nick=.*/nick='Speakers 蓼'/g" $config
+				nick='Speakers 蓼'
 				;;
+			
 			"$sink2" ) 
 				sink="$sink1"
-				sed -i "s/sink=.*/sink=$sink/g" $config
-				sed -i "s/nick=.*/nick='Headphones '/g" $config
+				nick='Headphones '
 				;;
 		esac
 		
 		pactl set-default-sink "$sink"
-
+		
 		case $(pamixer --get-mute) in
-			true ) sed -i 's/mute=""/mute="(muted)"/g' $config ;;
-			false ) sed -i 's/mute="(muted)"/mute=""/g' $config ;;
+			true ) mute='(muted)' ;;
+			false ) mute= ;;
 		esac
 		
+		volume=$(pamixer --get-volume)
+		
+		declare -p sink nick volume mute > "$config"
 		exit
 		;;
+	
 	-m )
 		pamixer -t
-
+		
 		case $(pamixer --get-mute) in
-			true ) sed -i 's/mute=""/mute="(muted)"/g' $config ;;
-			false ) sed -i 's/mute="(muted)"/mute=""/g' $config ;;
+			true ) mute='(muted)' ;;
+			false ) mute= ;;
 		esac
-
+		
+		declare -p sink nick volume mute > "$config"
+		exit
+		;;
+	
+	-i )
+		pamixer -i "$2"
+		volume=$(pamixer --get-volume)
+		declare -p sink nick volume mute > "$config"
+		exit
+		;;
+	-d )
+		pamixer -d "$2"
+		volume=$(pamixer --get-volume)
+		declare -p sink nick volume mute > "$config"
 		exit
 		;;
 esac
 
-# yes I stole this from the mpd thing
-print() {
-	. $config
-	echo "$(pamixer --get-volume)% $nick $mute"
-}
-print
-while ! inotifywait -q -e modify $config; do print; done
+waybarstuff
+
+while inotifywait -qq -e modify "$config"; do waybarstuff; done

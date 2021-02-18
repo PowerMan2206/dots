@@ -31,12 +31,11 @@
 	"custom/pipewire-control": {
 		"exec": "~/.config/waybar/scripts/pipewire-control",
 
-		"interval": "1",
 		"on-click-right": "~/.config/waybar/scripts/pipewire-control -m",
 		"on-click": "~/.config/waybar/scripts/pipewire-control -c",
 		"on-click-middle": "pavucontrol",
-		"on-scroll-up": "pamixer -i 5",
-		"on-scroll-down": "pamixer -d 5",
+		"on-scroll-up": "~/.config/waybar/scripts/pipewire-control -i 5",
+		"on-scroll-down": "~/.config/waybar/scripts/pipewire-control -d 5",
 		"tooltip": false,
 	},
 }
