@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_status() {
-	echo " ("$(mpc status | grep volume | cut -d':' -f2 | cut -d' ' -f2)")"
+	echo " ("$(mpc volume | sed 's/volume:  //' | sed 's/volume: //' | sed 's/volume://')")"
 }
 
 print_status
