@@ -20,6 +20,7 @@ exec --no-startup-id lxpolkit
 
 # lock screen
 exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
+bindsym $mod+Shift+Space exec --no-startup-id swaylock-fancy -g
 
 # run bemenu case insensitively on the focused monitor with the colors and all
 bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
@@ -29,8 +30,12 @@ bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
 
 # arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+#output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/sweet_tux_1080p.png fill
+
+# kill me
+exec --no-startup-id mpvpaper -o "--loop --no-audio" HDMI-A-1 vids/zero.webm
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
@@ -56,9 +61,9 @@ exec --no-startup-id ~/.config/waybar/launch.sh #bar
 for_window [app_id="pavucontrol"] floating enable
 
 # pactl to control pulseaudio volume with an XF86 keyboard
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -d 5
+bindsym XF86AudioMute exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -m
 
 # above but for mpd control
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
@@ -69,7 +74,7 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Space floating toggle
 # drag floating windows
 floating_modifier $mod
 
