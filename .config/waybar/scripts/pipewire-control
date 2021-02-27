@@ -12,71 +12,96 @@
 # 6. restart Waybar with the launch.sh script
 # 7. pray it works
 
+# vars and stuff
+sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.pro-output-0"
+sink2="alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1"
 config="$HOME/.config/waybar/scripts/pipewire-config"
 . "$config"
 
-# yes I stole this from the mpd thing
+# do function stuff
 waybarstuff () {
+	# put the actual output onto the bar
 	. "$config"
 	echo "$volume% $nick $mute"
 }
 
-# sinks and their names and stuff
-sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.pro-output-0"
-sink2="alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1"
+nextsink () {
+	# you get the point, just scrolls through them
+	case "$sink" in
+		"$sink1" )
+			sink="$sink2"
+			nick='Speakers 蓼'
+			;;
+		
+		"$sink2" ) 
+			sink="$sink1"
+			nick='Headphones '
+			;;
+	esac
+
+	pactl set-default-sink "$sink"
+	echo "sink set to: $sink ($nick)"
+}
+
+setmute () {
+	# set the mute variable
+	case $(pamixer --get-mute) in
+		true ) mute='(muted)' ;;
+		false ) mute= ;;
+	esac
+}
+
+# yes aliases as well because fuck you
+shopt -s expand_aliases # make aliases work
+alias declare-stuff='declare -p sink nick volume mute > "$config"'
+alias setvolume='volume=$(pamixer --get-volume)'
+
+# --------------------------------------------------
+# actual code starts here
+
+setmute
+setvolume
+
+# check if sink/nick variable is set and if not, default to the first sink 
+# (for some reason it nukes itself if you spam the volume)
+if [ -n "$sink" ] || [ -n "$nick" ]; then
+	:
+else
+	sink="$sink1"
+	nick='Headphones '
+fi
+
+
+declare-stuff
+
 pactl set-default-sink "$sink"
 
 case "$1" in
 	-c )
-		# you get the point, just scrolls through them
-		case "$sink" in
-			"$sink1" )
-				sink="$sink2"
-				nick='Speakers 蓼'
-				;;
-			
-			"$sink2" ) 
-				sink="$sink1"
-				nick='Headphones '
-				;;
-		esac
-		
-		pactl set-default-sink "$sink"
-		echo "sink set to: $sink"
-		
-		case $(pamixer --get-mute) in
-			true ) mute='(muted)' ;;
-			false ) mute= ;;
-		esac
-		
-		volume=$(pamixer --get-volume)
-		
-		declare -p sink nick volume mute > "$config"
+		nextsink
+		setmute
+		setvolume
+		declare-stuff
 		exit
 		;;
 	
 	-m )
 		pamixer -t
-		
-		case $(pamixer --get-mute) in
-			true ) mute='(muted)' ;;
-			false ) mute= ;;
-		esac
-		
-		declare -p sink nick volume mute > "$config"
+		setmute
+		declare-stuff
 		exit
 		;;
 	
 	-i )
 		pamixer -i "$2"
-		volume=$(pamixer --get-volume)
-		declare -p sink nick volume mute > "$config"
+		setvolume
+		declare-stuff
 		exit
 		;;
 	-d )
 		pamixer -d "$2"
-		volume=$(pamixer --get-volume)
-		declare -p sink nick volume mute > "$config"
+		setvolume
+		declare-stuff
 		exit
 		;;
 esac
