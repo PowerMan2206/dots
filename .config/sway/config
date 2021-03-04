@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty #gpu acceleration good
+bindsym $mod+Return exec alacritty #gpu acceleration good
 
 default_border pixel 1 #titlebars are cringe
 
@@ -16,14 +16,14 @@ gaps outer 0
 gaps inner 3
 
 # polkit thing
-exec --no-startup-id lxpolkit
+exec lxpolkit
 
 # lock screen
-exec --no-startup-id swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
-bindsym $mod+Shift+Space exec --no-startup-id swaylock-fancy -g
+exec swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
+bindsym $mod+Shift+Space exec swaylock-fancy -g
 
 # run bemenu case insensitively on the focused monitor with the colors and all
-bindsym $mod+d exec --no-startup-id bemenu-run -l 20 -n -i \
+bindsym $mod+d exec bemenu-run -l 20 -n -i \
 -m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
 --fn "monospace 9" \
 --fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
@@ -35,7 +35,7 @@ output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/sweet_tux_1080p.png fill
 
 # kill me
-exec --no-startup-id mpvpaper -o "--loop --no-audio" HDMI-A-1 vids/zero.webm
+exec mpvpaper -o "--loop" HDMI-A-1 ~/vids/zero.webm
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
@@ -49,26 +49,26 @@ input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_rate 30
 
 # screenshot stuff
-bindsym Print exec --no-startup-id grimshot copy area #select area
-bindsym Shift+Print exec --no-startup-id grimshot copy active #active window
+bindsym Print exec grimshot copy area #select area
+bindsym Shift+Print exec grimshot copy active #active window
 
 # autostart 
-exec --no-startup-id mako #notifications
-exec --no-startup-id ~/.config/waybar/launch.sh #bar
-#exec --no-startup-id discord-canary #discord
+exec mako #notifications
+exec ~/.config/waybar/launch.sh #bar
+#exec discord-canary #discord
 
 # make some windows always float
 for_window [app_id="pavucontrol"] floating enable
 
 # pactl to control pulseaudio volume with an XF86 keyboard
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -d 5
-bindsym XF86AudioMute exec --no-startup-id ~/.config/waybar/scripts/pipewire-control -m
+bindsym XF86AudioRaiseVolume exec ~/.config/waybar/scripts/pipewire-control -i 5
+bindsym XF86AudioLowerVolume exec ~/.config/waybar/scripts/pipewire-control -d 5
+bindsym XF86AudioMute exec ~/.config/waybar/scripts/pipewire-control -m
 
 # above but for mpd control
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
 # fullscreen for the focused container
 bindsym $mod+f fullscreen toggle
