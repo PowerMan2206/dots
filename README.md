@@ -24,7 +24,7 @@ other: look into `.config/packagelist`, install with `paru -S - < packagelist` (
 
 Note: the `pipewire-control` Waybar module is customized to my specific setup. Read into the script to see how to make it work for you.
 
-Note 2: my Powercord theme location is a little wonky, you can move it wherever you installed Powercord/BD.
+Note 2: Run `gsettings set org.gnome.desktop.interface gtk-theme Sweet` if the GTK theme is broken (which it most probably will be)
 
 ## Installation
 
