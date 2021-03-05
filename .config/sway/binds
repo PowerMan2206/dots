@@ -1,0 +1,94 @@
+#!/bin/bash
+# ^ just here for syntax highlighting 
+
+# PowerMan2206's Sway keybind config file
+
+# set the modifier key to Win
+set $mod Mod4
+
+# start a terminal
+bindsym $mod+Return exec alacritty #gpu acceleration good
+
+# swaylock
+bindsym $mod+Shift+Space exec swaylock-fancy -g
+
+# run bemenu case insensitively on the focused monitor with the colors and all
+bindsym $mod+d exec bemenu-run -l 20 -n -i \
+-m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
+--fn "monospace 9" \
+--fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
+--ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
+
+# screenshot stuff
+bindsym Print exec grimshot copy area #select area
+bindsym Shift+Print exec grimshot copy active #active window
+
+### nerd shit
+
+# pactl to control pulseaudio volume with an XF86 keyboard
+bindsym XF86AudioRaiseVolume exec ~/.config/waybar/scripts/pipewire-control -i 5
+bindsym XF86AudioLowerVolume exec ~/.config/waybar/scripts/pipewire-control -d 5
+bindsym XF86AudioMute exec ~/.config/waybar/scripts/pipewire-control -m
+
+# above but for mpd control
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
+# fullscreen for the focused container
+bindsym $mod+f fullscreen toggle
+# toggle tiling / floating
+bindsym $mod+Space floating toggle
+# drag floating windows
+floating_modifier $mod
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in a horizontal and vertical orientation
+# yeah it's switched, makes more sense this way
+bindsym $mod+h split v
+bindsym $mod+v split h
+# toggle split
+bindsym $mod+e layout toggle split
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# exit sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit Sway?' -b 'Yes, exit Sway' 'swaymsg exit'
+
+##### nerdiest shit
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
