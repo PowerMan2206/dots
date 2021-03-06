@@ -13,8 +13,6 @@
 # 7. pray it works
 
 # vars and stuff
-sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.pro-output-0"
-sink2="alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1"
 config="$HOME/.config/waybar/scripts/pipewire-config"
 . "$config"
 
@@ -53,7 +51,7 @@ setmute () {
 
 # yes aliases as well because fuck you
 shopt -s expand_aliases # make aliases work
-alias declare-stuff='declare -p sink nick volume mute > "$config"'
+alias declare-stuff='declare -p sink1 sink2 sink nick volume mute > "$config"'
 alias setvolume='volume=$(pamixer --get-volume)'
 
 # --------------------------------------------------
@@ -70,7 +68,6 @@ else
 	sink="$sink1"
 	nick='Headphones '
 fi
-
 
 declare-stuff
 
