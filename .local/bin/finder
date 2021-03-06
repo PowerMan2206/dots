@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# simple script (if you can even call it that),
+# basically just show a package's commands
+paru -Ql $1 | grep /usr/bin/ | cut -d'/' -f4 | tail -n +2
