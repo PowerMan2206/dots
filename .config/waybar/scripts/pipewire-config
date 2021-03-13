@@ -2,5 +2,5 @@ declare -- sink1="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-s
 declare -- sink2="alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1"
 declare -- sink="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
 declare -- nick="Headphones "
-declare -- volume="50"
+declare -- volume="40"
 declare -- mute=""

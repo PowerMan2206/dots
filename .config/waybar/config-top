@@ -19,15 +19,16 @@
 		"all-outputs": false,
 		"format": "{name}",
 	},
-
+	
+	// clock in pog ISO8601 format
 	"clock": {
 		"interval": 1,
 		"format": "<span color='#FED06E'></span> {:%Y-%m-%d %H:%M:%S}",
 		"format-alt": "<span color='#FED06E'></span> {:%H:%M}",
 		"tooltip": false,
 	},
-
-	// this is really messy and a little laggy, but it kinda works
+	
+	// not messy anymore :D
 	"custom/pipewire-control": {
 		"exec": "~/.config/waybar/scripts/pipewire-control",
 

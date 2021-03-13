@@ -7,40 +7,41 @@
 	// 16px because yes
 	"height": 16,
 
-	// only on my main screen
-	"output": "HDMI-A-1",
-
 	// modules themselves
-	"modules-left": ["cpu", "custom/cpu-speed", "memory", "disk"],
+	"modules-left": ["cpu", "custom/cpu-stuff", "memory", "disk"],
 	"modules-center": ["mpd", "custom/mpdvol"],
 	"modules-right": ["tray"],
 
 	// module configuration
-	// basically copy-pasted from Polybar, look at the notes there
+
+	// cpu usage, pretty simple
 	"cpu": {
 		"interval": 1,
 		"format": " <span color='#2C78BF'></span> {usage}% ",
 		"tooltip": false,
 	},
 
-	"custom/cpu-speed": {
+	// cpu speed and temp
+	"custom/cpu-stuff": {
 		"interval": 1,
-		"exec": "~/.config/waybar/scripts/cpu-speed.sh",
+		"exec": "~/.config/waybar/scripts/cpu-stuff",
 		"tooltip": false,
 	},
 
+	// memory usage in GiB down to the 2nd decimal
 	"memory": {
 		"interval": 1,
 		"format": " | <span color='#F75341'></span> {used:0.2f} GiB | ",
 		"tooltip": false,
 	},
 
+	// available disk space in GiB, updated every 30s
 	"disk": {
-		"interval": 45,
+		"interval": 30,
 		"format": "<span color='#0AAEB3'></span> {free}",
 		"tooltip": false,
 	},
-
+	
 	"mpd": {
 		"format-disconnected": "mpd is offline",
 		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon}",
@@ -50,7 +51,7 @@
 		"tooltip": false,
 		},
 	},
-
+	
 	"custom/mpdvol": {
 		"exec": "~/.config/waybar/scripts/mpdvol",	
 
