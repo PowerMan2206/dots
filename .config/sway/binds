@@ -9,6 +9,9 @@ set $mod Mod4
 # start a terminal
 bindsym $mod+Return exec alacritty #gpu acceleration good
 
+# librewolf
+bindsym $mod+L exec librewolf
+
 # swaylock
 bindsym $mod+Shift+Space exec swaylock-fancy -g
 
@@ -57,8 +60,8 @@ bindsym $mod+Shift+Right move right
 
 # split in a horizontal and vertical orientation
 # yeah it's switched, makes more sense this way
-bindsym $mod+h split v
-bindsym $mod+v split h
+bindsym $mod+v split v
+bindsym $mod+h split h
 # toggle split
 bindsym $mod+e layout toggle split
 
