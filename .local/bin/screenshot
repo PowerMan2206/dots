@@ -1,0 +1,6 @@
+#!/bin/bash
+
+case $1 in
+	area ) grim -g "$(slurp -o 1)" - | wl-copy ;;
+	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy ;;
+esac

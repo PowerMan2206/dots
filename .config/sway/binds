@@ -23,8 +23,8 @@ bindsym $mod+d exec bemenu-run -l 20 -n -i \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
 
 # screenshot stuff
-bindsym Print exec grimshot copy area #select area
-bindsym Shift+Print exec grimshot copy active #active window
+bindsym Print exec screenshot area #select area 
+bindsym Shift+Print exec screenshot window #select window
 
 ### nerd shit
 
@@ -60,8 +60,8 @@ bindsym $mod+Shift+Right move right
 
 # split in a horizontal and vertical orientation
 # yeah it's switched, makes more sense this way
-bindsym $mod+v split v
-bindsym $mod+h split h
+bindsym $mod+v split h
+bindsym $mod+h split v
 # toggle split
 bindsym $mod+e layout toggle split
 
