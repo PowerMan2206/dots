@@ -9,6 +9,9 @@ set $mod Mod4
 # start a terminal
 bindsym $mod+Return exec alacritty #gpu acceleration good
 
+# cursed
+bindsym Mod1+f4 kill
+
 # librewolf
 bindsym $mod+L exec librewolf
 

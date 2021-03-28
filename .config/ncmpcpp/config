@@ -5,6 +5,9 @@ lyrics_directory = ~/.config/lyrics
 # something for the tag editor
 mpd_music_dir = ~/mus
 
+# change volume in 5 step thingys
+volume_change_step = 5
+
 # doesn't work
 mpd_crossfade_time = 1
 

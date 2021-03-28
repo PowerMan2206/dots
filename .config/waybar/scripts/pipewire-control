@@ -60,14 +60,12 @@ alias setvolume='volume=$(pamixer --get-volume)'
 setmute
 setvolume
 
-# check if sink/nick variable is set and if not, default to the first sink 
-# (for some reason it nukes itself if you spam the volume)
-if [ -n "$sink" ] || [ -n "$nick" ]; then
-	:
-else
-	sink="$sink1"
-	nick='Headphones '
-fi
+# check if sink variable is empty and if it is, default to the first sink 
+# (for some reason it nukes itself sometimes)
+#if [ "$sink"='' ]; then
+#	sink="$sink1"
+#	nick='Headphones '	
+#fi
 
 declare-stuff
 

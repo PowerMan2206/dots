@@ -10,5 +10,5 @@
 # also gammastep
 if [ "$(tty)" = "/dev/tty1" ]; then
 	gammastep -m drm -P -O 4000
-	exec sway -d 2> ~/.sway-logfile
+	exec sway > ~/.sway-logfile
 fi
