@@ -47,3 +47,9 @@
 #app-mount .sidebar-2K8pFh {
     border-radius: 0;
 }
+
+.pill-1z4sAY {
+  right: 0;
+  left: auto;
+  transform: scaleX(-1);
+}
