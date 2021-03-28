@@ -27,3 +27,23 @@
     --channeltextarea-background: #232739;
     --activity-card-background: #232739;
 }
+
+/* Powerstuff */
+.content-98HsJk > div:nth-child(2) {
+  order:-1;
+}
+
+#app-mount .guilds-1SWlCJ {
+    right: 0;
+    left: auto;
+}
+
+#app-mount .base-3dtUhz {
+    left: 0;
+    right: 72px;
+    border-radius: 0 8px 0 0;
+}
+
+#app-mount .sidebar-2K8pFh {
+    border-radius: 0;
+}
