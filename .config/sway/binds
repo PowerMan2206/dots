@@ -19,11 +19,7 @@ bindsym $mod+L exec librewolf
 bindsym $mod+Shift+Space exec swaylock-fancy -g
 
 # run bemenu case insensitively on the focused monitor with the colors and all
-bindsym $mod+d exec bemenu-run -l 20 -n -i \
--m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
---fn "monospace 9" \
---fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
---ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
+bindsym $mod+d exec betmenu run
 
 # screenshot stuff
 bindsym Print exec screenshot area #select area 

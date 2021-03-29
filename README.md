@@ -3,10 +3,6 @@ Everyone must have a dotfiles repo, right?
 
 ![screenshot](https://raw.githubusercontent.com/PowerMan2206/dots/master/screenshot.png)
 
-### Note to X users
-
-I am now using Wayland, so anything X-related isn't maintained anymore. Head into the GitHub history thing to see the X files.
-
 ## Packages and stuff
 
 package     | why

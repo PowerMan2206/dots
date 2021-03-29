@@ -16,7 +16,7 @@
     --background-secondary: #151926;
     --background-tertiary: #151926;
     --background-accent: #4f545c;
-    --background-floating: #18191c;
+    --background-floating: #181b28;
     --background-modifier-hover: #212536;
     --background-modifier-active: #232739;
     --background-modifier-selected: #232739;
@@ -28,28 +28,51 @@
     --activity-card-background: #232739;
 }
 
-/* Powerstuff */
+/* Right channels 
 .content-98HsJk > div:nth-child(2) {
-  order:-1;
+	order:-1;
+}
+*/
+
+/* Sliding channels */
+.sidebar-2K8pFh {
+	width: 0px;
+	transition: 0.2s ease;
 }
 
+.wrapper-3NnKdC:hover+.base-3dtUhz>.content-98HsJk>.sidebar-2K8pFh{
+	width:240px;
+}
+
+.sidebar-2K8pFh:hover {
+	width:240px;
+}
+
+/* Right servers 
 #app-mount .guilds-1SWlCJ {
-    right: 0;
-    left: auto;
+	right: 0;
+	left: auto;
 }
 
 #app-mount .base-3dtUhz {
-    left: 0;
-    right: 72px;
-    border-radius: 0 8px 0 0;
+	left: 0;
+	right: 72px;
+	border-radius: 0 8px 0 0;
 }
 
 #app-mount .sidebar-2K8pFh {
-    border-radius: 0;
+	border-radius: 0;
 }
 
 .pill-1z4sAY {
-  right: 0;
-  left: auto;
-  transform: scaleX(-1);
+	right: 0;
+	left: auto;
+	transform: scaleX(-1);
 }
+
+.pill-3N7f9r {
+	right: 0;
+	left: auto;
+	transform: scaleX(-1);
+}
+*/
