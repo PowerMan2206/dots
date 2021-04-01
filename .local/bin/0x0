@@ -2,17 +2,13 @@
 
 # script to upload files/do URL stuff with 0x0.st
 
-case $1 in
-	-f)
-		curl -F file=@"$2" https://0x0.st
-		;;
-	-p)
-		curl -F url="$2" https://0x0.st
-		;;
-	-s)
-		curl -F shorten="$2" https://0x0.st
-		;;
-	*)
-		echo "-f for files, -p for POSTing URLs, -s for shortening URLs"
-		;;
-esac
+set -e
+
+while getopts "f:p:s:" arg; do
+	case $arg in
+		f | file ) curl -F file=@"$OPTARG" https://0x0.st; exit ;;
+		p | post) curl -F url="$OPTARG" https://0x0.st; exit ;;
+		s | short) curl -F shorten="$OPTARG" https://0x0.st; exit ;;
+		*) echo "-f for files, -p for POSTing URLs, -s for shortening URLs"; exit ;;
+	esac
+done
