@@ -3,18 +3,21 @@
 
 # CONFIGURATION (because I'm too lazy to make it automatic)
 #
-# 1. edit $HOME/.config/waybar/scripts/pipewire-config
-# 2. put your main sink into the sink variable
-# 3. same for the nick variable
-# 4. uhh, try to kinda do what I did below. Edit the below two variables
-#    to be what they gotta be, one sink is $sink1, the other is $sink2
-# 5. somethingsomething, you'll figure it out
-# 6. restart Waybar with the launch.sh script
-# 7. pray it works
+# 1. edit the sink variables below
+# 2. put your main sink and its nickname into the sink1 array below
+# 3. same for your other sink
+# 4. somethingsomething, you'll figure it out, do what I did
+# 5. restart Waybar with the launch.sh script
+# 6. pray it works
 
 # vars and stuff
 config="$HOME/.config/waybar/scripts/pipewire-config"
 . "$config"
+
+# here and not in the config file beceuase for some reason 
+# they get deleted if the volume is adjusted too fast (idk either)
+sink1=("alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output" "Headphones ")
+sink2=("alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1" "Speakers 蓼")
 
 # do function stuff
 waybarstuff () {
@@ -26,14 +29,14 @@ waybarstuff () {
 nextsink () {
 	# you get the point, just scrolls through them
 	case "$sink" in
-		"$sink1" )
-			sink="$sink2"
-			nick='Speakers 蓼'
+		"${sink1[0]}" )
+			sink="${sink2[0]}"
+			nick="${sink2[1]}"
 			;;
-		
-		"$sink2" ) 
-			sink="$sink1"
-			nick='Headphones '
+			
+		"${sink2[0]}" ) 
+			sink="${sink1[0]}"
+			nick="${sink1[1]}"
 			;;
 	esac
 
@@ -62,44 +65,49 @@ setvolume
 
 # check if sink variable is empty and if it is, default to the first sink 
 # (for some reason it nukes itself sometimes)
-#if [ "$sink"='' ]; then
-#	sink="$sink1"
-#	nick='Headphones '	
-#fi
-
-declare-stuff
+case "$sink" in
+	"" )
+		sink="${sink1[0]}"
+		nick="${sink1[1]}"
+		declare-stuff
+		;;
+	* ) declare-stuff
+esac
 
 pactl set-default-sink "$sink"
 
-case "$1" in
-	-c )
-		nextsink
-		setmute
-		setvolume
-		declare-stuff
-		exit
-		;;
-	
-	-m )
-		pamixer -t
-		setmute
-		declare-stuff
-		exit
-		;;
-	
-	-i )
-		pamixer -i "$2"
-		setvolume
-		declare-stuff
-		exit
-		;;
-	-d )
-		pamixer -d "$2"
-		setvolume
-		declare-stuff
-		exit
-		;;
-esac
+while getopts "cmi:d:" arg; do
+	case "$arg" in
+		c )
+			nextsink
+			setmute
+			setvolume
+			declare-stuff
+			exit
+			;;
+		
+		m )
+			pamixer -t
+			setmute
+			declare-stuff
+			exit
+			;;
+		
+		i )
+			pamixer -i "$OPTARG"
+			setvolume
+			declare-stuff
+			exit
+			;;
+		d )
+			pamixer -d "$OPTARG"
+			setvolume
+			declare-stuff
+			exit
+			;;
+		* ) echo cringe; exit ;;
+	esac
+done
 
 waybarstuff
 

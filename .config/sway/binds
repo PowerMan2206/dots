@@ -18,12 +18,12 @@ bindsym $mod+L exec librewolf
 # swaylock
 bindsym $mod+Shift+Space exec swaylock-fancy -g
 
-# run bemenu case insensitively on the focused monitor with the colors and all
+# run bemenu
 bindsym $mod+d exec betmenu run
 
 # screenshot stuff
-bindsym Print exec screenshot area #select area 
-bindsym Shift+Print exec screenshot window #select window
+bindsym --release Print exec screenshot area #select area 
+bindsym Shift+Print exec screenshot window #focused window
 
 ### nerd shit
 
