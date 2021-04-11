@@ -7,7 +7,6 @@ alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 alias watch-file='watch -n 0.1 cat "$1"'
 
 #stuff
-alias micro='micro -colorscheme simple'
 alias yt='youtube-dl'
 alias yt-opus='youtube-dl -x --audio-format=opus'
 alias gc='git clone'
