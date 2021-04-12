@@ -1,21 +1,20 @@
 #!/bin/bash
 # thanks to sorpigal for basically rewriting a part of this to use declare
 
-# CONFIGURATION (because I'm too lazy to make it automatic)
+# CONFIGURATION
 #
 # 1. edit the sink variables below
 # 2. put your main sink and its nickname into the sink1 array below
 # 3. same for your other sink
-# 4. somethingsomething, you'll figure it out, do what I did
-# 5. restart Waybar with the launch.sh script
-# 6. pray it works
+# 4. restart Waybar with the launch.sh script
+# 5. pray it works
 
 # vars and stuff
 config="$HOME/.config/waybar/scripts/pipewire-config"
 . "$config"
 
 # here and not in the config file beceuase for some reason 
-# they get deleted if the volume is adjusted too fast (idk either)
+# they get deleted if the volume is adjusted too fast
 sink1=("alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output" "Headphones ")
 sink2=("alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1" "Speakers 蓼")
 
@@ -65,14 +64,12 @@ setvolume
 
 # check if sink variable is empty and if it is, default to the first sink 
 # (for some reason it nukes itself sometimes)
-case "$sink" in
-	"" )
-		sink="${sink1[0]}"
-		nick="${sink1[1]}"
-		declare-stuff
-		;;
-	* ) declare-stuff
-esac
+if [[ "$sink" == "" ]]; then
+	sink="${sink1[0]}"
+	nick="${sink1[1]}"
+fi
+
+declare-stuff
 
 pactl set-default-sink "$sink"
 
