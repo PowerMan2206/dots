@@ -10,5 +10,5 @@
 # also gammastep
 if [ "$(tty)" = "/dev/tty1" ]; then
 	gammastep -m drm -P -O 3500
-	exec sway > ~/.sway-logfile
+	WLR_DRM_NO_MODIFIERS=1 exec sway -d > ~/.sway-logfile 2> ~/.sway-logfile2
 fi
