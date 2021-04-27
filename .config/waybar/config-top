@@ -13,7 +13,7 @@
 	"modules-right": ["custom/pipewire-control"],
 
 	// module configuration
-	// basically copy-pasted from Polybar, look at the notes there
+	// basically copy-pasted from Polybar
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": false,
