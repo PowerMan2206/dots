@@ -15,3 +15,7 @@ export PATH="$PATH:$HOME/.local/bin"
 source ~/.bash_aliases
 
 PS1="\w $ "
+
+command_not_found_handle() { 
+	echo "Command doesn't exist, idiot"
+}
