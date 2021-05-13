@@ -1,10 +1,9 @@
 {
     "name": "Sweet",
-    "description": "A source to change Discord's base colors, modified to Sweet.",
-    "version": "2.0.0dev",
-    "author": "LuckFire#4800, PowerMan2206",
-    "theme": "index.css",
-    "consent": "false",
-    "splashTheme": "splash.css",
+    "description": "A source to simply change Discord's colors, modified to Sweet.",
+    "version": "1.0.1",
+    "author": "LuckFire#4800, PowerMan2206#8632",
+    "theme": "index.scss",
+    "consent": "true",
     "license": "MIT"
 }

@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -16,6 +12,7 @@ source ~/.bash_aliases
 
 PS1="\w $ "
 
+
 command_not_found_handle() { 
-	echo "Command doesn't exist, idiot"
+	echo "$(tput setaf 1)Command doesn't exist, idiot$(tput sgr0)"
 }

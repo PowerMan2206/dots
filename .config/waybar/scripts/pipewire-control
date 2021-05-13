@@ -15,8 +15,8 @@ config="/tmp/pipewire-control-config"
 
 # here and not in the config file beceuase for some reason 
 # they get deleted if the volume is adjusted too fast
-sink1=("alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.output_analog-stereo-output" "Headphones ")
-sink2=("alsa_output.pci-0000_09_00.1.output_hdmi-stereo-extra1" "Speakers 蓼")
+sink1=("alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output" "Headphones ")
+sink2=("alsa_output.pci-0000_09_00.1.hdmi-stereo-extra1" "Speakers 蓼")
 
 # do function stuff
 waybarstuff () {

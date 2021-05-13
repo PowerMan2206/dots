@@ -12,8 +12,9 @@ bindsym $mod+Return exec alacritty #gpu acceleration good
 # cursed
 bindsym Mod1+f4 kill
 
-# librewolf
+# stuff
 bindsym $mod+L exec librewolf
+bindsym $mod+T exec thunar
 
 # swaylock
 bindsym $mod+Shift+Space exec swaylock-fancy -g
@@ -24,7 +25,6 @@ bindsym $mod+d exec bemenu-run -l 20 -n -i \
 --fn "monospace 9" \
 --fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
-
 
 # screenshot stuff
 bindsym --release Print exec screenshot area #select area 
@@ -71,8 +71,17 @@ bindsym $mod+e layout toggle split
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# exit sway
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit Sway?' -b 'Yes, exit Sway' 'swaymsg exit'
+
+# menu thing
+bindsym $mod+Shift+e exec swaynag -m 'select action' \
+-f 'monospace 9' \
+--background 181b28 --text e8e7e4 --border 181b28 \
+--button-background 181b28 --button-text e8e7e4 \
+--border-bottom ef2f27 --border-bottom-size 1 \
+-b 'exit sway' 'swaymsg exit' \
+-b 'poweroff' 'poweroff' \
+-b 'reboot' 'reboot' \
+-s x
 
 ##### nerdiest shit
 
