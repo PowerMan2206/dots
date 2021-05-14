@@ -15,15 +15,12 @@ window#waybar {
 #workspaces button {
     padding: 0 2px;
 }
-
 #workspaces button.focused {
     background-color: #64727d;
 }
-
 #workspaces button:hover {
     background: #3d464c;
 }
-
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }

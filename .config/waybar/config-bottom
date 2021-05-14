@@ -31,14 +31,14 @@
 	// memory usage in GiB down to the 2nd decimal
 	"memory": {
 		"interval": 1,
-		"format": " | <span color='#F75341'></span> {used:0.2f} GiB | ",
+		"format": " | <span color='#F75341'></span> {used:0.2f} GiB",
 		"tooltip": false,
 	},
 
 	// available disk space in GiB, updated every 30s
 	"disk": {
 		"interval": 30,
-		"format": "<span color='#0AAEB3'></span> {free}",
+		"format": " | <span color='#0AAEB3'></span> {free}",
 		"tooltip": false,
 	},
 	
@@ -48,8 +48,8 @@
 		"state-icons": {
 			"playing": "契",
 			"paused": "",
-		"tooltip": false,
 		},
+		"tooltip": false,
 	},
 	
 	"custom/mpdvol": {

@@ -10,10 +10,9 @@
 	// modules themselves
 	"modules-left": ["sway/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/pipewire-control"],
+	"modules-right": ["pulseaudio"],
 
 	// module configuration
-	// basically copy-pasted from Polybar
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": false,
@@ -28,15 +27,17 @@
 		"tooltip": false,
 	},
 	
-	// not messy anymore :D
-	"custom/pipewire-control": {
-		"exec": "~/.config/waybar/scripts/pipewire-control",
-
-		"on-click-right": "~/.config/waybar/scripts/pipewire-control -m",
-		"on-click": "~/.config/waybar/scripts/pipewire-control -c",
+	// better than the mess before
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-icons": {
+			"hdmi": "Speakers 蓼 ",
+			"default": "Headphones  ",
+		},
+		"format-muted": "(muted) {icon}",
+		"scroll-step": 5,
+		"on-click-right": "pamixer -t",
 		"on-click-middle": "pavucontrol",
-		"on-scroll-up": "~/.config/waybar/scripts/pipewire-control -i 5",
-		"on-scroll-down": "~/.config/waybar/scripts/pipewire-control -d 5",
 		"tooltip": false,
 	},
 }

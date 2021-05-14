@@ -81,7 +81,7 @@ bindsym $mod+Shift+e exec swaynag -m 'select action' \
 -b 'exit sway' 'swaymsg exit' \
 -b 'poweroff' 'poweroff' \
 -b 'reboot' 'reboot' \
--s x
+-s 'x  '
 
 ##### nerdiest shit
 
