@@ -1,6 +1,10 @@
 #!/bin/bash
 
+save() { 
+	tee $(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy 
+}
+
 case $1 in
-	area ) grim -g "$(slurp -o 1)" - | wl-copy ;;
-	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy ;;
-esac
+	area ) grim -g "$(slurp -o 1)" - | save ;;
+	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | save ;;
+esac 
