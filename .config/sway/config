@@ -28,18 +28,18 @@ gaps inner 3
 exec swayidle -w timeout 900 'swaylock-fancy -g' #grayscale lockscreen without text
 
 # arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
-output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 80 bg ~/walls/sweet_tux_1080p.png fill
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.png stretch
+output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 80 bg ~/walls/sweet_tux_1080p.png fill
 
 # make the mouse not suck ass
 input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
 input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.966
+# use correct cursor, idk if it actually works
+seat seat0 xcursor_theme win8
 
 # change keyboard rate thing
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_rate 30
-# use correct cursor, idk if it actually works
-seat seat0 xcursor_theme win8
 
 # autostart 
 exec mako #notifications

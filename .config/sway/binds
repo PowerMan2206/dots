@@ -33,9 +33,9 @@ bindsym Shift+Print exec screenshot window #focused window
 ### nerd shit
 
 # pactl to control pulseaudio volume with an XF86 keyboard
-bindsym XF86AudioRaiseVolume exec ~/.config/waybar/scripts/pipewire-control -i 5
-bindsym XF86AudioLowerVolume exec ~/.config/waybar/scripts/pipewire-control -d 5
-bindsym XF86AudioMute exec ~/.config/waybar/scripts/pipewire-control -m
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
 
 # above but for mpd control
 bindsym XF86AudioPlay exec mpc toggle
