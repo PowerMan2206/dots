@@ -18,7 +18,7 @@ alias tb='nc termbin.com 9999'
 alias screen-record='wf-recorder -g "$(slurp)"'
 alias w2x='waifu2x-ncnn-vulkan'
 alias upload-screenshot="wl-paste > /tmp/scr.png && 0x0 -f /tmp/scr.png"
-alias neofetch='neofetch && echo | sed 's/Arch/Cock/g''
+alias neofetch='neofetch | sed 's/Arch/Cock/g' && echo'
 alias cam='(mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0 &> /dev/null &)'
 
 #commands to switcharoo the keyboard layout because sway-input wack
