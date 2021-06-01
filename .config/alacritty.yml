@@ -118,11 +118,6 @@ mouse:
   # hide mouse when typing
   hide_when_typing: true
 
-  url:
-    # open a URL with the XDG default program
-    launcher:
-      program: xdg-open
-
 # there was a fuckton of keybindings here that I didn't feel like 
 # configuring so I'll just have to live with the defaults
 
