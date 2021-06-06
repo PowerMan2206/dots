@@ -13,8 +13,8 @@ bindsym $mod+Return exec alacritty #gpu acceleration good
 bindsym Mod1+f4 kill
 
 # stuff
-bindsym $mod+L exec librewolf
-bindsym $mod+T exec thunar
+bindsym $mod+q exec qutebrowser
+bindsym $mod+t exec thunar
 
 # swaylock
 bindsym $mod+Shift+Space exec swaylock-fancy -g

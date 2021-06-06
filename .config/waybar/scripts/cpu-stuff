@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# shows the CPU speed in MHz and temp in C
-echo $(lscpu | grep "CPU MHz" | cut -d":" -f2 | tr -d ' ' | cut -d"." -f1) MHz $(sensors | grep "Tctl" | cut -d":" -f2 | tr -d ' ' | cut -d"+" -f2)
+# shows the CPU temp in C
+echo  $(sensors | grep "Tctl" | cut -d":" -f2 | tr -d ' ' | cut -d"+" -f2)

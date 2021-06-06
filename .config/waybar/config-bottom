@@ -14,10 +14,10 @@
 
 	// module configuration
 
-	// cpu usage, pretty simple
+	// cpu usage and average speed
 	"cpu": {
 		"interval": 1,
-		"format": " <span color='#2C78BF'></span> {usage}% ",
+		"format": " <span color='#2C78BF'></span> {usage}% {avg_frequency}GHz ",
 		"tooltip": false,
 	},
 
