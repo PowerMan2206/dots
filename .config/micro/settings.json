@@ -1,3 +1,11 @@
 {
-    "colorscheme": "simple"
+    "autosu": true,
+    "colorscheme": "simple",
+    "diffgutter": true,
+    "infobar": false,
+    "keepautoindent": true,
+    "mkparents": true,
+    "savecursor": true,
+    "saveundo": true,
+    "scrollmargin": 6
 }

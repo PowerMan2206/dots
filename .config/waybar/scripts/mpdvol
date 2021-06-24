@@ -1,9 +1,0 @@
-#!/bin/bash
-
-print_status() {
-	echo " ("$(mpc volume | sed 's/volume:  //' | sed 's/volume: //' | sed 's/volume://')")"
-}
-
-print_status
-
-mpc idleloop mixer | while read _; do print_status; done

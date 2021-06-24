@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # script to upload files/do URL stuff with 0x0.st
 
 set -e

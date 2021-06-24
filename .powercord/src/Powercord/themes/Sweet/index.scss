@@ -5,17 +5,21 @@
 
 /* Horizontal server list stuff */
 :root {
-    --HSL-server-icon-size: 42px;  /* Size of the server icons | DEFAULT: 40px */
+    --HSL-server-icon-size: 48px;  /* Size of the server icons | DEFAULT: 40px */
     --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */	
 }
 
-/* Right channels 
+* {
+	font-family: monospace !important;
+}
+
+/* Right channels */
 .content-98HsJk > div:nth-child(2) {
 	order:-1;
 }
-*/
 
-/* Sliding channels */
+
+/* Sliding channels 
 .sidebar-2K8pFh {
 	width: 0px;
 }
@@ -27,6 +31,7 @@
 .sidebar-2K8pFh:hover {
 	width:240px;
 }
+*/
 
 /* Right servers 
 #app-mount .guilds-1SWlCJ {

@@ -1,4 +1,4 @@
-#system stuff
+# system stuff
 alias sudo='sudo ' #idk what this exactly does but its useful
 alias ls='exa --icons'
 alias c='clear'
@@ -8,7 +8,7 @@ alias watch-file='watch -n 0.1 cat "$1"'
 alias dmount='udisksctl mount -b'
 alias dumount='udisksctl unmount -b'
 
-#stuff
+# stuff
 alias yt='youtube-dl'
 alias yt-opus='youtube-dl -x --audio-format=opus'
 alias gc='git clone'
@@ -19,13 +19,16 @@ alias screen-record='wf-recorder -g "$(slurp)"'
 alias w2x='waifu2x-ncnn-vulkan'
 alias upload-screenshot="wl-paste > /tmp/scr.png && 0x0 -f /tmp/scr.png"
 alias neofetch='neofetch | sed 's/Arch/Cock/g' && echo'
-alias cam='(mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0 &> /dev/null &)'
+alias cam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0 &> /dev/null & exit'
+alias ffmpeg='ffmpeg -loglevel warning'
+alias doom='chocolate-doom -iwad ~/stupid-shit/doom/DOOM.WAD & exit'
+alias doom2='chocolate-doom -iwad ~/stupid-shit/doom/DOOM2.WAD & exit'
 
-#commands to switcharoo the keyboard layout because sway-input wack
+# commands to switcharoo the keyboard layout because sway-input wack
 alias layout-hr="swaymsg input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard xkb_layout hr"
 alias layout-us="swaymsg input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard xkb_layout us"
 
-#pacman
+# pacman
 alias pcs='sudo pacman -S'
 alias pcsyu='sudo pacman -Syu'
 alias pcsi='pacman -Si'
@@ -36,7 +39,7 @@ alias pcq='pacman -Q'
 alias pcqo='pacman -Qo'
 alias pcqi='pacman -Qi'
 alias pcqs='pacman -Qs'
-#paru
+# paru
 alias p='paru' #running paru by itself is like an -Syu but shorter
 alias prs='paru -S'
 alias prsyu='paru -Syu'

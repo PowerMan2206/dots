@@ -7,9 +7,9 @@ env:
 window:
   # padding is nice
   padding:
-    x: 6
+    x: 5
     y: 5
-  # makes padding look good
+  # makes padding look bad
   dynamic_padding: false
 
 scrolling:
@@ -20,26 +20,18 @@ scrolling:
 
 # font config
 font:
-
-  # normal fonts
   normal:
     family: monospace
-    #style: Regular
-
-  # bold fonts
+    style: Regular
   bold:
     family: monospace
-    #style: Bold
-    
-  # italic fonts  
+    style: Bold
   italic:
     family: monospace
-    #style: Italic
-    
-  # bold italic fonts  
+    style: Italic
   italic:
     family: monospace
-    #style: Bold Italic
+    style: Bold Italic
     
   size: 8.5
 
@@ -97,14 +89,13 @@ cursor:
 
   blink_interval: 500
 
-  # make the cursor stay the same when unfocused
+  # make the cursor blocky when unfocused
   unfocused_hollow: false
 
   # thiccness of the cursor
   thickness: 0.1
 
-# alacritty reads the config file in-real-time 
-# (no need for a restart when configuring)
+# make alacritty read the config file in-real-time 
 live_config_reload: true
 
 # path to your shell
@@ -116,7 +107,7 @@ live_config_reload: true
 
 mouse:
   # hide mouse when typing
-  hide_when_typing: true
+  hide_when_typing: false
 
 # there was a fuckton of keybindings here that I didn't feel like 
 # configuring so I'll just have to live with the defaults

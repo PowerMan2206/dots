@@ -9,7 +9,7 @@
 
 	// modules themselves
 	"modules-left": ["cpu", "custom/cpu-stuff", "memory", "disk"],
-	"modules-center": ["mpd", "custom/mpdvol"],
+	"modules-center": ["mpd"],
 	"modules-right": ["tray"],
 
 	// module configuration
@@ -44,17 +44,13 @@
 	
 	"mpd": {
 		"format-disconnected": "mpd is offline",
-		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon}",
+		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon}", // {volume} doesn't work for some reason
 		"state-icons": {
 			"playing": "契",
 			"paused": "",
 		},
-		"tooltip": false,
-	},
-	
-	"custom/mpdvol": {
-		"exec": "~/.config/waybar/scripts/mpdvol",	
-
+		"on-click": "mpc toggle",
+		"on-click-right": "alacritty -e ncmpcpp",
 		"on-scroll-up": "mpc volume +5",
 		"on-scroll-down": "mpc volume -5",
 		"tooltip": false,

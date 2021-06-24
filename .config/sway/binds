@@ -17,7 +17,7 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec thunar
 
 # swaylock
-bindsym $mod+Shift+Space exec swaylock-fancy -g
+bindsym $mod+Shift+Space exec 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
 
 # run bemenu case insensitive on the focused monitor with the colors and all
 bindsym $mod+d exec bemenu-run -l 20 -n -i \
@@ -72,7 +72,7 @@ bindsym $mod+e layout toggle split
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# menu thing
+# power menu thing
 bindsym $mod+Shift+e exec swaynag -m 'select action' \
 -f 'monospace 9' \
 --background 181b28 --text e8e7e4 --border 181b28 \
@@ -82,8 +82,6 @@ bindsym $mod+Shift+e exec swaynag -m 'select action' \
 -b 'poweroff' 'poweroff' \
 -b 'reboot' 'reboot' \
 -s 'x  '
-
-##### nerdiest shit
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

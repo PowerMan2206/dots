@@ -18,6 +18,30 @@ c.auto_save.interval = 10000 # time interval (ms) between auto-saves of config/c
 c.auto_save.session = True
 
 
+### REDIRECTING
+
+import qutebrowser.api.interceptor
+
+def rewrite(request: qutebrowser.api.interceptor.Request):
+    if request.request_url.host() == 'www.youtube.com': 
+        request.request_url.setScheme('http') 
+        request.request_url.setHost('localhost') 
+        request.request_url.setPort(10412)
+        try: 
+            request.redirect(request.request_url) 
+        except: 
+            pass
+
+    if request.request_url.host() == 'twitter.com': 
+        request.request_url.setHost('nitter.nixnet.services') 
+        try: 
+            request.redirect(request.request_url) 
+        except: 
+            pass
+    
+qutebrowser.api.interceptor.register(rewrite)
+
+
 ### COLORS
 
 # color vars
@@ -153,10 +177,10 @@ c.colors.statusbar.progress.bg = bg # background of the progress bar
 
 c.colors.webpage.bg = bg # empty webpages
 
-
+""" haha this is useless with darkreader
 ### DARK MODE
 
-c.colors.webpage.darkmode.enabled = True # render all web contents using a dark theme
+c.colors.webpage.darkmode.enabled = False # render all web contents using a dark theme
 
 ## which algorithm to use
 ##   - lightness-cielab: Modify colors by converting them to CIELAB color space and inverting the L value. Not available with Qt < 5.14.
@@ -191,7 +215,7 @@ c.colors.webpage.darkmode.policy.images = 'never'
 c.colors.webpage.darkmode.threshold.background = 128 # opposite of `colors.webpage.darkmode.threshold.text`
 ## threshold for inverting text with dark mode
 c.colors.webpage.darkmode.threshold.text = 128
-
+"""
 
 ### COMMAND/COMPLETION STUFF
 
@@ -213,7 +237,7 @@ c.completion.delay = 0
 # c.completion.favorite_paths = []
 
 ## height (px or % of the window) of the completion
-c.completion.height = '40%'
+c.completion.height = '39%' # wacky value but it looks nice
 
 ## minimum amount of characters needed to update completions
 c.completion.min_chars = 1
@@ -256,10 +280,10 @@ c.content.blocking.enabled = True # enable the ad/host blocker
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-c.content.blocking.method = 'adblock'
+c.content.blocking.method = 'both'
 
 ## list of URLs to host blocklists for the host blocker 
-# c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 ## list of URLs to ABP-style adblocking rulesets
 c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
@@ -270,7 +294,7 @@ c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt',
 ##   - `socks://`, `http://`, whatever
 ##   - system: Use the system wide proxy.
 ##   - none: Don't use any proxy
-c.content.proxy = 'none'
+#c.content.proxy = 'socks://localhost:9050'
 
 ## user agent to send
 # c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
@@ -336,7 +360,6 @@ c.content.local_content_can_access_file_urls = True
 c.content.local_content_can_access_remote_urls = False
 
 c.content.local_storage = True # enable support for HTML 5 local storage and Web SQL
-
 ## allow websites to request persistent storage quota via `navigator.webkitPersistentStorage.requestQuota`
 ##   - true
 ##   - false
@@ -449,7 +472,7 @@ c.downloads.remove_finished = 75000 # duration (ms) to wait before removing fini
 ### FONTS
 
 c.fonts.default_family = ["monospace"] # default font families to use
-c.fonts.default_size = '9pt' # default font size to use
+c.fonts.default_size = '11px' # default font size to use
 
 c.fonts.completion.category = 'bold default_size default_family' # completion categories
 c.fonts.completion.entry = 'default_size default_family' # completion widget
@@ -467,7 +490,7 @@ c.fonts.tabs.unselected = 'default_size default_family' # unselected tabs
 ## font families
 c.fonts.web.family.cursive = 'monospace' # cursive fonts
 c.fonts.web.family.fantasy = 'monospace' # fantasy fonts
-c.fonts.web.family.fixed = 'monospace' # fixed fonts
+c.fonts.web.family.fixed = 'monospace' # monospace fonts
 c.fonts.web.family.sans_serif = 'monospace' # sans-serif fonts
 c.fonts.web.family.serif = 'monospace' # serif fonts
 c.fonts.web.family.standard = 'monospace' # standard fonts
@@ -486,7 +509,7 @@ c.statusbar.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0} # padding (
 ## position of the status bar
 ##   - top
 ##   - bottom
-c.statusbar.position = 'bottom'
+c.statusbar.position = 'top'
 
 ## when to show the statusbar
 ##   - always: Always show the statusbar.
@@ -507,7 +530,7 @@ c.statusbar.widgets = ['keypress', 'url', 'history', 'scroll']#, 'progress']
 
 ## maximum/minimum width (px) of tabs 
 ## -1 for no maximum/default minimum size behaviour
-c.tabs.max_width = -1
+c.tabs.max_width = 250
 c.tabs.min_width = -1
 
 c.tabs.background = True # open new tabs (middleclick/ctrl+click) in the background
@@ -525,7 +548,7 @@ c.tabs.close_mouse_button = 'middle'
 ##   - ignore: Don't do anything.
 c.tabs.close_mouse_button_on_bar = 'new-tab' # not like I'm gonna use this lol
 
-c.tabs.favicons.scale = 1.2 # scaling factor for favicons in the tab bar
+c.tabs.favicons.scale = 1.0 # scaling factor for favicons in the tab bar
 
 ## when to show favicons in the tab bar
 ##   - always: Always show favicons.
@@ -535,7 +558,7 @@ c.tabs.favicons.show = 'always'
 
 c.tabs.focus_stack_size = -1 # maximum stack size to remember for tab switches, -1 for no maximum
 
-c.tabs.indicator.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 3} # padding (px) for tab indicators
+c.tabs.indicator.padding = {'top': 1, 'bottom': 1, 'left': 1, 'right': 3} # padding (px) for tab indicators
 
 c.tabs.indicator.width = 3 # width (px) of the progress indicator, 0 to disable
 
@@ -584,7 +607,7 @@ c.tabs.position = 'top'
 ##   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
-c.tabs.select_on_remove = 'prev'
+c.tabs.select_on_remove = 'next'
 
 ## when to show the tab bar
 ##   - always: Always show the tab bar.
@@ -668,7 +691,7 @@ c.logging.level.ram = 'debug'
 ##   - qt-quick: Tell Qt Quick to use a software renderer instead of OpenGL. (`QT_QUICK_BACKEND=software`)
 ##   - chromium: Tell Chromium to disable GPU support and use Skia software rendering instead. (`--disable-gpu`)
 ##   - none: Don't force software rendering.
-c.qt.force_software_rendering = 'chromium'
+c.qt.force_software_rendering = 'none'
 
 c.qt.highdpi = True # turn on Qt HighDPI scaling
 
@@ -810,19 +833,8 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 
 ### BINDS
 
-config.bind('<Alt-1>', 'tab-focus 1')
-config.bind('<Alt-2>', 'tab-focus 2')
-config.bind('<Alt-3>', 'tab-focus 3')
-config.bind('<Alt-4>', 'tab-focus 4')
-config.bind('<Alt-5>', 'tab-focus 5')
-config.bind('<Alt-6>', 'tab-focus 6')
-config.bind('<Alt-7>', 'tab-focus 7')
-config.bind('<Alt-8>', 'tab-focus 8')
-config.bind('<Alt-9>', 'tab-focus -1')
-config.bind('<Alt-m>', 'tab-mute')
-
 ## normal mode
-config.bind(':', 'set-cmd-text :')
+config.bind('<Ctrl+E>', 'set-cmd-text :') # I am evil
 config.bind('c', 'config-source')
 config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
 config.bind('<Alt+Left>', 'tab-prev')
@@ -833,20 +845,19 @@ config.bind('y', 'yank')
 config.bind('+', 'zoom')     # do
 config.bind('=', 'zoom-in')  # not
 config.bind('-', 'zoom-out') # ask
-config.bind('g', 'set-cmd-text :open {url:pretty}')
-config.bind('o', 'set-cmd-text -s :open')
-config.bind('O', 'set-cmd-text -s :open -t')
+config.bind('e', 'set-cmd-text :open {url:pretty}')
+config.bind('g', 'greasemonkey-reload')
+config.bind('<Return>', 'set-cmd-text -s :open')
+config.bind('<Shift+Return>', 'set-cmd-text -s :open -t')
 config.bind('u', 'undo')
 config.bind('U', 'undo -w')
-config.bind('b', 'set-cmd-text -s :quickmark-load -t')
-config.bind('B', 'set-cmd-text -s :quickmark-load')
 config.bind('<Ctrl+B>', 'set-cmd-text -s :quickmark-add {url}')
 config.bind('x', 'set-cmd-text -s :tab-give')
 config.bind('h', 'history -t')
-config.bind('f', 'set-cmd-text /')
-config.bind('<Ctrl+F>', 'set-cmd-text ?')
-config.bind('n', 'search-next')
-config.bind('p', 'search-prev')
+config.bind('<Ctrl+F>', 'set-cmd-text /')
+config.bind('<Ctrl+Shift+F>', 'set-cmd-text ?')
+config.bind('<Ctrl+P>', 'search-prev')
+config.bind('<Ctrl+N>', 'search-next')
 config.bind('<Ctrl+A>', 'mode-enter caret ;; selection-toggle ;; move-to-end-of-document')
 config.bind('r', 'reload')
 config.bind('<Ctrl+R>', 'reload -f')
@@ -854,14 +865,26 @@ config.bind('<f11>', 'fullscreen')
 config.bind('<f12>', 'devtools right')
 config.bind('<Ctrl+Q>', 'quit')
 config.bind('n', 'open -w')
+config.bind('N', 'open -p')
 config.bind('<Ctrl+T>', 'open -t')
 config.bind('<Ctrl+D>', 'tab-clone')
-config.bind('<Ctrl+N>', 'open -p')
 config.bind('<Ctrl+Shift+W>', 'close')
 config.bind('<Ctrl+V>', 'mode-enter passthrough')
 config.bind('<Ctrl+W>', 'tab-close')
 config.bind('<Ctrl+Up>', 'scroll-to-perc 0')
 config.bind('<Ctrl+Down>', 'scroll-to-perc 100')
+config.bind('i', 'mode-enter insert')
+
+config.bind('<Alt-1>', 'tab-focus 1')
+config.bind('<Alt-2>', 'tab-focus 2')
+config.bind('<Alt-3>', 'tab-focus 3')
+config.bind('<Alt-4>', 'tab-focus 4')
+config.bind('<Alt-5>', 'tab-focus 5')
+config.bind('<Alt-6>', 'tab-focus 6')
+config.bind('<Alt-7>', 'tab-focus 7')
+config.bind('<Alt-8>', 'tab-focus 8')
+config.bind('<Alt-9>', 'tab-focus -1')
+config.bind('<Alt-m>', 'tab-mute')
 
 ## command mode
 config.bind('<Up>', 'completion-item-focus prev', mode='command')
