@@ -26,9 +26,10 @@ include $HOME/.config/sway/binds
 # autostart 
 exec mako #notifications
 exec ~/.config/waybar/launch.sh #bar
-exec discord-canary #discord
+exec discord-canary
 exec lxpolkit #polkit thing 
 exec thunar --daemon #running it from a terminal leaves the terminal usable
+exec qbittorrent #for legal stuff
 
 # lock screen
 exec swayidle -w timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' #fake Windows lol

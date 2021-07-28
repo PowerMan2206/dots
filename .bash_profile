@@ -1,10 +1,6 @@
-#
-# ~/.bash_profile
-#
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-(mpv ~/walls/winxpstart.opus > /dev/null 2> /dev/null &)
+(mpv ~/walls/winxpstart.opus &> /dev/null &)
 
 # start sway if running from tty1 and output to a logfile
 # also gammastep

@@ -280,13 +280,13 @@ c.content.blocking.enabled = True # enable the ad/host blocker
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-c.content.blocking.method = 'both'
-
-## list of URLs to host blocklists for the host blocker 
-c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.method = 'adblock'
 
 ## list of URLs to ABP-style adblocking rulesets
 c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
+
+## list of URLs to host blocklists for the host blocker 
+# c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 # c.content.blocking.whitelist = [] # a list of patterns that should always be loaded, despite the ad/host-blocker
 
@@ -297,8 +297,8 @@ c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt',
 #c.content.proxy = 'socks://localhost:9050'
 
 ## user agent to send
-# c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
-c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
+c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
+# c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
 
 c.content.canvas_reading = False # allow websites to read canvas elements
 
@@ -770,7 +770,7 @@ c.messages.timeout = 5000 # duration (ms) to show messages in the statusbar for,
 c.prompt.filebrowser = True # show a filebrowser in download prompts
 c.prompt.radius = 0 # rounding radius (in pixels) for the edges of prompts
 
-c.scrolling.smooth = False # enable smooth scrolling for web pages, does not work with`:scroll-px`
+c.scrolling.smooth = True # enable smooth scrolling for web pages, does not work with`:scroll-px`
 ## when/how to show the scrollbar
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
