@@ -29,7 +29,9 @@ exec ~/.config/waybar/launch.sh #bar
 exec discord-canary
 exec lxpolkit #polkit thing 
 exec thunar --daemon #running it from a terminal leaves the terminal usable
-exec qbittorrent #for legal stuff
+# move alacritty with rtorrent to ws10
+for_window [app_id="alacritty_rtorrent"] move workspace $ws10
+exec alacritty --class alacritty_rtorrent -e rtorrent
 
 # lock screen
 exec swayidle -w timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' #fake Windows lol

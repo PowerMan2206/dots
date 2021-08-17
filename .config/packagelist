@@ -4,7 +4,6 @@ exa
 gammastep
 grim
 imv
-inotify-tools
 lm_sensors
 lxsession
 mako
@@ -23,10 +22,11 @@ pipewire-pulse
 slurp
 sway
 swayidle
-swaylock-fancy-git
+swaylock
 waybar
 wf-recorder
 wl-clipboard
 qutebrowser
 python-adblock
 pdfjs
+rtorrent

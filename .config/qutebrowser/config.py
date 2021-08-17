@@ -836,17 +836,17 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 ## normal mode
 config.bind('<Ctrl+E>', 'set-cmd-text :') # I am evil
 config.bind('c', 'config-source')
+config.bind('g', 'greasemonkey-reload')
 config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
 config.bind('<Alt+Left>', 'tab-prev')
 config.bind('<Alt+Right>', 'tab-next')
-config.bind('<Ctrl+Alt+Left>', 'tab-move -')
-config.bind('<Ctrl+Alt+Right>', 'tab-move +')
+config.bind('<Shift+Alt+Left>', 'tab-move -')
+config.bind('<Shift+Alt+Right>', 'tab-move +')
 config.bind('y', 'yank')
 config.bind('+', 'zoom')     # do
 config.bind('=', 'zoom-in')  # not
 config.bind('-', 'zoom-out') # ask
 config.bind('e', 'set-cmd-text :open {url:pretty}')
-config.bind('g', 'greasemonkey-reload')
 config.bind('<Return>', 'set-cmd-text -s :open')
 config.bind('<Shift+Return>', 'set-cmd-text -s :open -t')
 config.bind('u', 'undo')
