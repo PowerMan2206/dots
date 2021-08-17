@@ -44,7 +44,7 @@
 	
 	"mpd": {
 		"format-disconnected": "mpd is offline",
-		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon}", // {volume} doesn't work for some reason
+		"format": "<span color='#8C8C8C'>{elapsedTime:%M:%S}/{totalTime:%M:%S}</span> {artist} - {title} {stateIcon} <span color='#8C8C8C'>({volume}%)</span>",
 		"state-icons": {
 			"playing": "契",
 			"paused": "",
