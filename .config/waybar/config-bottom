@@ -50,7 +50,8 @@
 			"paused": "",
 		},
 		"on-click": "mpc toggle",
-		"on-click-right": "alacritty -e ncmpcpp",
+		"on-click-middle": "alacritty -e ncmpcpp",
+		"on-click-right": "mpc cdprev", //basically repeats the song
 		"on-scroll-up": "mpc volume +5",
 		"on-scroll-down": "mpc volume -5",
 		"tooltip": false,

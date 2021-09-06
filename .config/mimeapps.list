@@ -1,0 +1,15 @@
+[Default Applications]
+text/plain=micro.desktop;
+image/png=imv-folder.desktop
+image/jpeg=imv-folder.desktop;
+image/gif=imv-folder.desktop;
+image/bmp=imv-folder.desktop;
+
+video/mp4=mpv.desktop;
+audio/x-opus+ogg=mpv.desktop
+
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop

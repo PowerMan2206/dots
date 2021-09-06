@@ -38,7 +38,7 @@ def rewrite(request: qutebrowser.api.interceptor.Request):
             request.redirect(request.request_url) 
         except: 
             pass
-    
+
 qutebrowser.api.interceptor.register(rewrite)
 
 
