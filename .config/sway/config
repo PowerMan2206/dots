@@ -23,15 +23,16 @@ set $ws10 "10"
 # yoink the binds
 include $HOME/.config/sway/binds
 
+# make some windows do special stuff
+for_window [app_id="pavucontrol"] floating enable
+for_window [class="discord"] move workspace $ws2
+
 # autostart 
 exec mako #notifications
 exec ~/.config/waybar/launch.sh #bar
 exec discord-canary
 exec lxpolkit #polkit thing 
 exec thunar --daemon #running it from a terminal leaves the terminal usable
-# move alacritty with rtorrent to ws10
-for_window [app_id="alacritty_rtorrent"] move workspace $ws10
-exec alacritty --class alacritty_rtorrent -e rtorrent
 
 # lock screen
 exec swayidle -w timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' #fake Windows lol
@@ -50,5 +51,3 @@ seat seat0 xcursor_theme win8
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_rate 30
 
-# make some windows always float
-for_window [app_id="pavucontrol"] floating enable

@@ -25,7 +25,7 @@ import qutebrowser.api.interceptor
 def rewrite(request: qutebrowser.api.interceptor.Request):
     if request.request_url.host() == 'www.youtube.com': 
         request.request_url.setScheme('http') 
-        request.request_url.setHost('localhost') 
+        request.request_url.setHost('192.168.5.220') 
         request.request_url.setPort(10412)
         try: 
             request.redirect(request.request_url) 
@@ -280,13 +280,13 @@ c.content.blocking.enabled = True # enable the ad/host blocker
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-c.content.blocking.method = 'adblock'
+c.content.blocking.method = 'both'
 
 ## list of URLs to ABP-style adblocking rulesets
 c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
 
 ## list of URLs to host blocklists for the host blocker 
-# c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 # c.content.blocking.whitelist = [] # a list of patterns that should always be loaded, despite the ad/host-blocker
 
@@ -294,7 +294,7 @@ c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt',
 ##   - `socks://`, `http://`, whatever
 ##   - system: Use the system wide proxy.
 ##   - none: Don't use any proxy
-#c.content.proxy = 'socks://localhost:9050'
+#c.content.proxy = 'socks://192.168.5.220:9050'
 
 ## user agent to send
 c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
@@ -585,14 +585,14 @@ c.tabs.mousewheel_switching = True # switch between tabs using the mouse wheel
 ##   - last: At the end.
 c.tabs.new_position.related = 'next'
 
-c.tabs.new_position.stacking = False # stack related tabs on top of each other when opened consecutively
-
 ## position of new tabs which are not opened from another tab
 ##   - prev: Before the current tab.
 ##   - next: After the current tab.
 ##   - first: At the beginning.
 ##   - last: At the end.
 c.tabs.new_position.unrelated = 'last'
+
+c.tabs.new_position.stacking = False # stack related tabs on top of each other when opened consecutively
 
 c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 5} # padding (px) around text for tabs
 
@@ -607,7 +607,7 @@ c.tabs.position = 'top'
 ##   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
-c.tabs.select_on_remove = 'next'
+c.tabs.select_on_remove = 'last-used'
 
 ## when to show the tab bar
 ##   - always: Always show the tab bar.

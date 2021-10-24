@@ -3,11 +3,11 @@
     // base
     --background-primary: #181b28;
     --background-secondary: #151926;
-    --background-secondary-alt: #151926;
-    --background-tertiary: #151926;
+    --background-secondary-alt: #4f545c;
+    --background-tertiary: #1b1f2d;
     --background-accent: #4f545c;
     --background-floating: #151926;
-    --userarea-background: var(--background-tertiary);
+    --userarea-background: var(--background-secondary);
     --header-primary: #ffffff;
     --header-secondary: #b9bbbe;
     --elevation-low: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
@@ -18,7 +18,7 @@
     --activity-card-background: #232739;
 
     // interactive
-    --interactive-normal: #b9bbbe;
+    --interactive-normal: #e8e7e4;
     --interactive-hover: #dcddde;
     --interactive-active: #ffffff;
     --interactive-muted: #4f545c;
@@ -30,7 +30,7 @@
     --background-modifier-accent: hsla(0, 0%, 100%, 0.06);
     
     // text
-    --text-link: #59dffc;
-    --text-normal: #dcddde;
+    --text-link: #53fde9;
+    --text-normal: #e8e7e4;
     --text-muted: #72767d;
 }

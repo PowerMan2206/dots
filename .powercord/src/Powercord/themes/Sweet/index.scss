@@ -1,5 +1,9 @@
 @import "./src/base";
 
+/*
+	EVERYTHING BELOW THIS IS MY STUFF
+*/
+
 /* Horizontal Server List by Gibbu#1211, https://github.com/DiscordStyles/HorizontalServerList */
 @import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
 
@@ -9,6 +13,7 @@
     --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */	
 }
 
+/* Monospaced font ftw */
 * {
 	font-family: monospace !important;
 }
@@ -17,7 +22,6 @@
 .content-98HsJk > div:nth-child(2) {
 	order:-1;
 }
-
 
 /* Sliding channels 
 .sidebar-2K8pFh {

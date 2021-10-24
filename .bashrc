@@ -9,6 +9,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # source the aliases
 source ~/.bash_aliases
+source ~/.bash_aliases_secret
 
 PS1="\w $ "
 
