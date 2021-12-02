@@ -45,7 +45,7 @@ qutebrowser.api.interceptor.register(rewrite)
 ### COLORS
 
 # color vars
-bg = '#181b28' # bachground
+bg = '#181b28' # background
 bgb = '#212537' # background bright(er)
 bgbb = '#6c7396' # background bright(er)(er)
 fg = '#e8e7e4' # foreground
@@ -175,7 +175,7 @@ c.colors.statusbar.caret.selection.fg = fg
 
 c.colors.statusbar.progress.bg = bg # background of the progress bar
 
-c.colors.webpage.bg = bg # empty webpages
+c.colors.webpage.bg = bg
 
 """ haha this is useless with darkreader
 ### DARK MODE
@@ -300,7 +300,7 @@ c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack
 c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
 # c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
 
-c.content.canvas_reading = False # allow websites to read canvas elements
+c.content.canvas_reading = True # allow websites to read canvas elements
 
 # c.content.cache.size = None # size (b) of the HTTP network cache, null to use the default value
 
@@ -488,15 +488,15 @@ c.fonts.tabs.selected = 'default_size default_family' # selected tabs
 c.fonts.tabs.unselected = 'default_size default_family' # unselected tabs
 
 ## font families
-c.fonts.web.family.cursive = 'monospace' # cursive fonts
-c.fonts.web.family.fantasy = 'monospace' # fantasy fonts
+c.fonts.web.family.cursive = 'default_family' # cursive fonts
+c.fonts.web.family.fantasy = 'default_family' # fantasy fonts
 c.fonts.web.family.fixed = 'monospace' # monospace fonts
-c.fonts.web.family.sans_serif = 'monospace' # sans-serif fonts
-c.fonts.web.family.serif = 'monospace' # serif fonts
-c.fonts.web.family.standard = 'monospace' # standard fonts
+c.fonts.web.family.sans_serif = 'sans' # sans-serif fonts
+c.fonts.web.family.serif = 'sans' # serif fonts
+c.fonts.web.family.standard = 'default_family' # standard fonts
 
 ## default font sizes (px)
-c.fonts.web.size.default = 15
+c.fonts.web.size.default = 16
 c.fonts.web.size.default_fixed = 13
 c.fonts.web.size.minimum = 4
 c.fonts.web.size.minimum_logical = 6 # when zooming out
@@ -770,7 +770,7 @@ c.messages.timeout = 5000 # duration (ms) to show messages in the statusbar for,
 c.prompt.filebrowser = True # show a filebrowser in download prompts
 c.prompt.radius = 0 # rounding radius (in pixels) for the edges of prompts
 
-c.scrolling.smooth = True # enable smooth scrolling for web pages, does not work with`:scroll-px`
+c.scrolling.smooth = False # enable smooth scrolling for web pages, does not work with`:scroll-px`
 ## when/how to show the scrollbar
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
@@ -837,7 +837,8 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 config.bind('<Ctrl+E>', 'set-cmd-text :') # I am evil
 config.bind('c', 'config-source')
 config.bind('g', 'greasemonkey-reload')
-config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
+config.bind('s', 'mode-enter insert')
+config.bind('<Escape>', 'search ;; fullscreen --leave')
 config.bind('<Alt+Left>', 'tab-prev')
 config.bind('<Alt+Right>', 'tab-next')
 config.bind('<Shift+Alt+Left>', 'tab-move -')
@@ -869,11 +870,10 @@ config.bind('N', 'open -p')
 config.bind('<Ctrl+T>', 'open -t')
 config.bind('<Ctrl+D>', 'tab-clone')
 config.bind('<Ctrl+Shift+W>', 'close')
-config.bind('<Ctrl+V>', 'mode-enter passthrough')
+config.bind('<Ctrl+P>', 'mode-enter passthrough')
 config.bind('<Ctrl+W>', 'tab-close')
 config.bind('<Ctrl+Up>', 'scroll-to-perc 0')
 config.bind('<Ctrl+Down>', 'scroll-to-perc 100')
-config.bind('i', 'mode-enter insert')
 
 config.bind('<Alt-1>', 'tab-focus 1')
 config.bind('<Alt-2>', 'tab-focus 2')

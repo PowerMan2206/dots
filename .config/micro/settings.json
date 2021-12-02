@@ -6,5 +6,5 @@
     "mkparents": true,
     "savecursor": true,
     "saveundo": true,
-    "scrollmargin": 4
+    "scrollmargin": 5
 }

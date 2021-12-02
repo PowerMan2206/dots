@@ -5,7 +5,7 @@ save() {
 }
 
 case $1 in
-	area ) grim -g "$(slurp -o 1)" - | save ;;
+	area ) grim -c -g "$(slurp -b 181b28ba -c e8e7e4 -d -w 1)" - | save ;;
 	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | save ;;
 	dots )
 		for i in {1..3}; do

@@ -23,8 +23,8 @@ bindsym $mod+d exec bemenu-run -l 20 -n -i \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
 
 # screenshot stuff
-bindsym --release Print exec screenshot area #select area 
-bindsym --release Shift+Print exec screenshot window #focused window
+bindsym --release $mod+s exec screenshot area #select area
+bindsym --release $mod+Shift+s exec screenshot window #focused window
 
 ### nerd shit
 
@@ -76,8 +76,8 @@ bindsym $mod+Shift+e exec swaynag -m 'select action' \
 --button-background 181b28 --button-text e8e7e4 \
 --border-bottom ef2f27 --border-bottom-size 1 \
 -b 'exit sway' 'swaymsg exit' \
--b 'poweroff' 'poweroff' \
 -b 'reboot' 'reboot' \
+-b 'poweroff' 'poweroff' \
 -s 'x  '
 
 # switch to workspace

@@ -1,6 +1,5 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-(mpv ~/walls/winxpstart.opus &> /dev/null &)
 date=$(date +"%Y-%m-%d_%H:%M:%S")
 
 # environment variable stuff

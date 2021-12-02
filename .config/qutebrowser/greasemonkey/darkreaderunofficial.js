@@ -19,6 +19,7 @@
 // @exclude       *njuskalo*
 // @exclude       *snopyta*
 // @exclude       *objection*
+// @exclude       *telegram*
 //
 // @require       https://cdn.jsdelivr.net/npm/darkreader/darkreader.min.js
 // @noframes
