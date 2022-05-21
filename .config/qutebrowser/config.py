@@ -33,7 +33,7 @@ def rewrite(request: qutebrowser.api.interceptor.Request):
             pass
 
     if request.request_url.host() == 'twitter.com': 
-        request.request_url.setHost('nitter.nixnet.services') 
+        request.request_url.setHost('nitter.net') 
         try: 
             request.redirect(request.request_url) 
         except: 
@@ -175,7 +175,7 @@ c.colors.statusbar.caret.selection.fg = fg
 
 c.colors.statusbar.progress.bg = bg # background of the progress bar
 
-c.colors.webpage.bg = bg
+c.colors.webpage.bg = fg # make work with bg later
 
 """ haha this is useless with darkreader
 ### DARK MODE
@@ -474,6 +474,7 @@ c.downloads.remove_finished = 75000 # duration (ms) to wait before removing fini
 c.fonts.default_family = ["monospace"] # default font families to use
 c.fonts.default_size = '11px' # default font size to use
 
+## in qute
 c.fonts.completion.category = 'bold default_size default_family' # completion categories
 c.fonts.completion.entry = 'default_size default_family' # completion widget
 c.fonts.contextmenu = 'default_size default_family' # context menu
@@ -487,19 +488,19 @@ c.fonts.statusbar = 'default_size default_family' # statusbar
 c.fonts.tabs.selected = 'default_size default_family' # selected tabs
 c.fonts.tabs.unselected = 'default_size default_family' # unselected tabs
 
-## font families
+## default font sizes (px)
+c.fonts.web.size.default = 15
+c.fonts.web.size.default_fixed = 12
+c.fonts.web.size.minimum = 4
+c.fonts.web.size.minimum_logical = 6 # when zooming out
+
+## on websites
 c.fonts.web.family.cursive = 'default_family' # cursive fonts
 c.fonts.web.family.fantasy = 'default_family' # fantasy fonts
 c.fonts.web.family.fixed = 'monospace' # monospace fonts
 c.fonts.web.family.sans_serif = 'sans' # sans-serif fonts
 c.fonts.web.family.serif = 'sans' # serif fonts
 c.fonts.web.family.standard = 'default_family' # standard fonts
-
-## default font sizes (px)
-c.fonts.web.size.default = 16
-c.fonts.web.size.default_fixed = 13
-c.fonts.web.size.minimum = 4
-c.fonts.web.size.minimum_logical = 6 # when zooming out
 
 
 ### STATUSBAR AND TABS
@@ -699,22 +700,22 @@ c.qt.highdpi = True # turn on Qt HighDPI scaling
 ##   - always: Always use low-end device mode.
 ##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
 ##   - never: Never use low-end device mode.
-c.qt.low_end_device_mode = 'never'
+c.qt.chromium.low_end_device_mode = 'never'
 
 ## which Chromium process model to use
 ##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
 ##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of 
 ##                       this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
 ##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
-c.qt.process_model = 'process-per-site-instance'
+c.qt.chromium.process_model = 'process-per-site-instance'
 
-c.qt.workarounds.remove_service_workers = False # delete the QtWebEngine Service Worker directory on every start
+c.qt.workarounds.remove_service_workers = True # delete the QtWebEngine Service Worker directory on every start
 
 # c.session.default_name = None # name of the session to save by default
 
 # c.session.lazy_restore = False # load a restored tab as soon as it takes focus
 
-# c.content.user_stylesheets = [] # list of user stylesheet filenames to use, uhhhhh
+c.content.user_stylesheets = ["bright-foreground.css"] # list of user stylesheet filenames to use, uhhhhh
 
 c.editor.command = ['alacritty', '-e', 'micro', '{file}'] # editor (and arguments) to use for the `edit-*` commands
 c.editor.encoding = 'utf-8' # encoding to use for the editor
@@ -729,7 +730,7 @@ c.backend = 'webengine'
 ##   - minor: Show changelog for major and minor upgrades (e.g. v2.0.0 -> v2.1.0).
 ##   - patch: Show changelog for major, minor and patch upgrades (e.g. v2.0.0 -> v2.0.1).
 ##   - never: Never show changelog after upgrades.
-c.changelog_after_upgrade = 'patch'
+c.changelog_after_upgrade = 'never'
 
 
 ### OTHER STUFF
@@ -824,7 +825,7 @@ c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaig
 
 c.window.transparent = False # set the main window background to transparent
 
-c.zoom.default = '90%' # default zoom level
+c.zoom.default = '100%' # default zoom level
 c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%'] # available zoom levels
 
 ## number of zoom increments to divide the mouse wheel movements to
@@ -834,10 +835,13 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 ### BINDS
 
 ## normal mode
+config.bind('s', 'mode-enter insert')
+config.bind('<Ctrl+U>', 'mode-enter passthrough')
+config.bind('<Ctrl+A>', 'mode-enter caret ;; selection-toggle ;; move-to-end-of-document')
+
 config.bind('<Ctrl+E>', 'set-cmd-text :') # I am evil
 config.bind('c', 'config-source')
 config.bind('g', 'greasemonkey-reload')
-config.bind('s', 'mode-enter insert')
 config.bind('<Escape>', 'search ;; fullscreen --leave')
 config.bind('<Alt+Left>', 'tab-prev')
 config.bind('<Alt+Right>', 'tab-next')
@@ -853,14 +857,15 @@ config.bind('<Shift+Return>', 'set-cmd-text -s :open -t')
 config.bind('u', 'undo')
 config.bind('U', 'undo -w')
 config.bind('<Ctrl+B>', 'set-cmd-text -s :quickmark-add {url}')
+config.bind('<Ctrl+Shift+B>', 'quickmark-del')
 config.bind('x', 'set-cmd-text -s :tab-give')
-config.bind('h', 'history -t')
+config.bind('<Ctrl+H>', 'history -t')
 config.bind('<Ctrl+F>', 'set-cmd-text /')
 config.bind('<Ctrl+Shift+F>', 'set-cmd-text ?')
 config.bind('<Ctrl+P>', 'search-prev')
 config.bind('<Ctrl+N>', 'search-next')
-config.bind('<Ctrl+A>', 'mode-enter caret ;; selection-toggle ;; move-to-end-of-document')
 config.bind('r', 'reload')
+config.bind('<F5>', 'reload')
 config.bind('<Ctrl+R>', 'reload -f')
 config.bind('<f11>', 'fullscreen')
 config.bind('<f12>', 'devtools right')
@@ -870,7 +875,6 @@ config.bind('N', 'open -p')
 config.bind('<Ctrl+T>', 'open -t')
 config.bind('<Ctrl+D>', 'tab-clone')
 config.bind('<Ctrl+Shift+W>', 'close')
-config.bind('<Ctrl+P>', 'mode-enter passthrough')
 config.bind('<Ctrl+W>', 'tab-close')
 config.bind('<Ctrl+Up>', 'scroll-to-perc 0')
 config.bind('<Ctrl+Down>', 'scroll-to-perc 100')
@@ -892,6 +896,7 @@ config.bind('<Down>', 'completion-item-focus next', mode='command')
 config.bind('<Return>', 'command-accept', mode='command')
 config.bind('<Tab>', 'completion-item-focus next', mode='command')
 config.bind('<Escape>', 'mode-leave', mode='command')
+config.bind('<Ctrl-D>', 'completion-item-del', mode='command')
 
 ## insert mode, not much more needed, eh?
 config.bind('<Escape>', 'mode-leave', mode='insert')

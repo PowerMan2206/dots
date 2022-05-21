@@ -14,7 +14,7 @@
 
 	// module configuration
 	"sway/workspaces": {
-		"disable-scroll": true,
+		"disable-scroll": false,
 		"all-outputs": false,
 		"format": "{name}",
 	},

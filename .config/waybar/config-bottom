@@ -8,16 +8,23 @@
 	"height": 16,
 
 	// modules themselves
-	"modules-left": ["cpu", "custom/cpu-stuff", "memory", "disk"],
+	"modules-left": ["sway/language", "cpu", "custom/cpu-stuff", "memory", "disk"],
 	"modules-center": ["mpd"],
 	"modules-right": ["tray"],
 
 	// module configuration
+		
+	// hacky but it works
+	"sway/language": {
+		"format": "{}",
+		"on-click": "~/.local/bin/layout-switch", // because xkb_switch_layout is being cringe and `next` doesnt work
+		"tooltip": false,
+	},
 
 	// cpu usage and average speed
 	"cpu": {
 		"interval": 1,
-		"format": " <span color='#2C78BF'></span> {usage}% {avg_frequency}GHz ",
+		"format": "<span color='#2C78BF'></span> {usage}% {avg_frequency}GHz ",
 		"tooltip": false,
 	},
 

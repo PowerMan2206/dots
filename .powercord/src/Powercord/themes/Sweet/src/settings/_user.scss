@@ -3,45 +3,45 @@
     .stickerImageSection-7EUs8E {
         background-color: var(--background-secondary);
     }
-    .gemIndicatorContainer-2jdECl {
+    .gemIndicatorContainer-PqApbX {
         background-color: var(--background-floating);
     }
 
     // Billing
-    .paymentPane-3bwJ6A {
+    .paymentPane-ut5qKZ {
         background-color: var(--background-secondary);
 
-        .paginator-166-09, .bottomDivider-1K9Gao {
+        .paginator-1eqD2g, .bottomDivider-ZmTm-j {
             background-color: var(--background-secondary);
         }
 
-        .bottomDivider-1K9Gao {
+        .bottomDivider-ZmTm-j {
             border-bottom-color: var(--background-primary);
         }
     }
-    .codeRedemptionRedirect-1wVR4b {
+    .codeRedemptionRedirect-3SBiCp {
         background-color: var(--background-secondary);
         border-color: var(--background-tertiary);
     }
 
     // Voice & Video
-    .previewOverlay-2O7_KC {
+    .previewOverlay-2reuWf {
         background-color: var(--background-secondary);
         border-color: var(--background-tertiary);
     }
 
     // Game Activity
-    .game-1ipmAa.card-FDVird {
+    .game-3x3aDt.card-2ART2V {
         box-shadow: 0 1px 0 0 var(--background-modifier-accent);
 
-        .removeGame-2JFGPn {
+        .removeGame-3Le1LJ {
             background-color: var(--background-primary);
             box-shadow: 0 0 0 1px var(--background-tertiary), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
         }
     }
 
     // Cards
-    .card-FDVird::before {
+    .card-2ART2V::before {
         background-color: var(--background-secondary);
         border-color: var(--background-tertiary);
     }

@@ -1,67 +1,39 @@
+/* Horizontal Server List by Gibbu#1211, https://github.com/DiscordStyles/HorizontalServerList */
+@use "./HorizontalServerList.css";
+
 @import "./src/base";
 
-/*
-	EVERYTHING BELOW THIS IS MY STUFF
-*/
-
-/* Horizontal Server List by Gibbu#1211, https://github.com/DiscordStyles/HorizontalServerList */
-@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
-
-/* Horizontal server list stuff */
 :root {
     --HSL-server-icon-size: 48px;  /* Size of the server icons | DEFAULT: 40px */
     --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */	
 }
 
-/* Monospaced font ftw */
+/* Monospaced font */
 * {
 	font-family: monospace !important;
 }
 
-/* Right channels */
-.content-98HsJk > div:nth-child(2) {
-	order:-1;
+/* Top user thing */
+.panels-3wFtMD, .sidebar-1tnWFu {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Fix broken (?) compact */
+.header-2jRmjb > div {
+  display: inline;
 }
 
 /* Sliding channels 
-.sidebar-2K8pFh {
+.sidebar-1tnWFu {
 	width: 0px;
 }
 
-.wrapper-3NnKdC:hover+.base-3dtUhz>.content-98HsJk>.sidebar-2K8pFh{
+.wrapper-1_HaEi:hover+.base-2jDfDU>.content-1SgpWY>.sidebar-1tnWFu{
 	width:240px;
 }
 
-.sidebar-2K8pFh:hover {
+.sidebar-1tnWFu:hover {
 	width:240px;
-}
-*/
-
-/* Right servers 
-#app-mount .guilds-1SWlCJ {
-	right: 0;
-	left: auto;
-}
-
-#app-mount .base-3dtUhz {
-	left: 0;
-	right: 72px;
-	border-radius: 0 8px 0 0;
-}
-
-#app-mount .sidebar-2K8pFh {
-	border-radius: 0;
-}
-
-.pill-1z4sAY {
-	right: 0;
-	left: auto;
-	transform: scaleX(-1);
-}
-
-.pill-3N7f9r {
-	right: 0;
-	left: auto;
-	transform: scaleX(-1);
 }
 */

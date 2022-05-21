@@ -11,7 +11,7 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 2px;
+    padding: 0 1px;
 }
 #workspaces button.focused {
     background-color: #64727d;
@@ -21,4 +21,8 @@ window#waybar {
 }
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#language {
+	padding: 0 6px;
 }

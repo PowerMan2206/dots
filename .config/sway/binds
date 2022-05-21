@@ -12,19 +12,24 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec thunar
 
-# swaylock
+# layout switcharoo
+bindsym $mod+l exec layout-switch
+
+# little trolling
 bindsym $mod+Shift+Space exec 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
 
-# run bemenu case insensitive on the focused monitor with the colors and all
-bindsym $mod+d exec bemenu-run -l 20 -n -i \
--m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
---fn "monospace 9" \
---fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
---ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27"
+# bemenu stuff
+bindsym $mod+d exec 'beemenu bemenu-run'
+
+# emoji stuff
+bindsym $mod+m exec bemenu-emoji.sh
+
+# to open youtube videos and shit in mpv
+bindsym $mod+y exec mpv $(wl-paste)
 
 # screenshot stuff
-bindsym --release $mod+s exec screenshot area #select area
-bindsym --release $mod+Shift+s exec screenshot window #focused window
+bindsym $mod+s exec screenshot area #select area
+bindsym $mod+Shift+s exec screenshot window #focused window
 
 ### nerd shit
 
@@ -70,15 +75,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+c reload
 
 # power menu thing
-bindsym $mod+Shift+e exec swaynag -m 'select action' \
--f 'monospace 9' \
---background 181b28 --text e8e7e4 --border 181b28 \
---button-background 181b28 --button-text e8e7e4 \
---border-bottom ef2f27 --border-bottom-size 1 \
--b 'exit sway' 'swaymsg exit' \
--b 'reboot' 'reboot' \
--b 'poweroff' 'poweroff' \
--s 'x  '
+bindsym $mod+Shift+e exec powermenu
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

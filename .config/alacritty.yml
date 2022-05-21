@@ -41,16 +41,16 @@ colors:
   primary:
     background: '0x181b28'
     foreground: '0xe8e7e4'
-    
-  # cursor colors
-  cursor:
-    text: '0x44475a'
-    cursor: '0xf8f8f2'
 
   # selection colors
   selection:
-    text: '0xf8f8f2'
-    background: '0x44475a'
+    text: '0x181b28'
+    background: '0xe8e7e4'
+    
+  # cursor colors
+  cursor:
+    text: '0xe8e7e4'
+    cursor: '0xe8e7e4'
 
 # Srcery colors
   # Normal colors

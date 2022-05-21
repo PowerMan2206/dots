@@ -21,6 +21,8 @@ other: look into `.config/packagelist`, install with `paru -S - < packagelist` (
 
 note: run `gsettings set org.gnome.desktop.interface gtk-theme Sweet` if the GTK theme is broken (which it most probably will be)
 
+note 2: also run `gsettings set org.gnome.desktop.interface cursor-theme win8` if the cursor is sometimes broken (again, probably is)
+
 ## installation
 
 you can treat this repo as your home directory, so if you cloned the repo to `~/dots` you can install it by running

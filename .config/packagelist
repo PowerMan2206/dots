@@ -29,4 +29,5 @@ wl-clipboard
 qutebrowser
 python-adblock
 pdfjs
-qt5ct
+qt5-wayland
+jq
