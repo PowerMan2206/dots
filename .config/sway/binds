@@ -5,7 +5,7 @@
 # set the modifier key to Win
 set $mod Mod4
 
-# start a terminal
+# obvious, no?
 bindsym $mod+Return exec alacritty
 
 # stuff
@@ -16,10 +16,12 @@ bindsym $mod+t exec thunar
 bindsym $mod+l exec layout-switch
 
 # little trolling
-bindsym $mod+Shift+Space exec 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
+bindsym $mod+Shift+Space exec swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png
 
 # bemenu stuff
-bindsym $mod+d exec 'beemenu bemenu-run'
+bindsym $mod+d exec beemenu bemenu-run
+# powermenu thing
+bindsym $mod+Shift+e exec powermenu
 
 # emoji stuff
 bindsym $mod+m exec bemenu-emoji.sh
@@ -28,8 +30,10 @@ bindsym $mod+m exec bemenu-emoji.sh
 bindsym $mod+y exec mpv $(wl-paste)
 
 # screenshot stuff
-bindsym $mod+s exec screenshot area #select area
-bindsym $mod+Shift+s exec screenshot window #focused window
+bindsym $mod+s exec screenshot area
+bindsym $mod+Shift+s exec screenshot window
+
+
 
 ### nerd shit
 
@@ -51,7 +55,7 @@ bindsym $mod+Space floating toggle
 floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym Mod1+f4 kill #cursed
+bindsym Mod1+f4 kill # hehe
 
 # change focus
 bindsym $mod+Left focus left
@@ -65,17 +69,14 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in a horizontal and vertical orientation
-# yeah it's switched, makes more sense this way
+# ok I made it my own kinda
 bindsym $mod+v split h
-bindsym $mod+h split v
+bindsym $mod+c split v
 # toggle split
 bindsym $mod+e layout toggle split
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
-# power menu thing
-bindsym $mod+Shift+e exec powermenu
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

@@ -25,6 +25,7 @@ include $HOME/.config/sway/binds
 
 # make some windows do special stuff
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueberry"] floating enable
 for_window [class="discord"] move workspace $ws2
 
 # autostart 

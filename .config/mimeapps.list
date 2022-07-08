@@ -511,5 +511,5 @@ x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 
 [Added Associations]
 image/x-adobe-dng=gimp.desktop;
-image/png=imv-folder.desktop;
+image/png=gimp.desktop;imv-folder.desktop;
 image/jpeg=imv-folder.desktop;

@@ -21,7 +21,6 @@ alias lofi='mpv --no-video https://www.youtube.com/watch?v=5qap5aO4i9A'
 alias cam='mpv --demuxer-lavf-o=video_size=1280x720,input_format=mjpeg,framerate=30 --untimed av://v4l2:/dev/video0 & exit'
 alias mpv-cd='mpv cdda://'
 alias mpv-dvd='mpv --input-cursor dvdnav://'
-alias torsocks='torsocks -a 192.168.5.220'
 
 # pacman
 alias pcs='sudo pacman -S'

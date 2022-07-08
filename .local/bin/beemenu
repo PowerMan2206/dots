@@ -4,7 +4,6 @@
 
 # don't run if lockfile is present
 if [[ -f /tmp/beemenu.lck ]]; then exit; fi
-
 touch /tmp/beemenu.lck
 
 "$1" -l 20 -n -i -p " " \

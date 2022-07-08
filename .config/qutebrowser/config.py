@@ -297,8 +297,8 @@ c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack
 #c.content.proxy = 'socks://192.168.5.220:9050'
 
 ## user agent to send
-c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
-# c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
+#c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
+c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
 
 c.content.canvas_reading = True # allow websites to read canvas elements
 
@@ -692,7 +692,7 @@ c.logging.level.ram = 'debug'
 ##   - qt-quick: Tell Qt Quick to use a software renderer instead of OpenGL. (`QT_QUICK_BACKEND=software`)
 ##   - chromium: Tell Chromium to disable GPU support and use Skia software rendering instead. (`--disable-gpu`)
 ##   - none: Don't force software rendering.
-c.qt.force_software_rendering = 'none'
+c.qt.force_software_rendering = 'qt-quick'
 
 c.qt.highdpi = True # turn on Qt HighDPI scaling
 
@@ -715,7 +715,7 @@ c.qt.workarounds.remove_service_workers = True # delete the QtWebEngine Service 
 
 # c.session.lazy_restore = False # load a restored tab as soon as it takes focus
 
-c.content.user_stylesheets = ["bright-foreground.css"] # list of user stylesheet filenames to use, uhhhhh
+#c.content.user_stylesheets = [] # list of user stylesheet filenames to use
 
 c.editor.command = ['alacritty', '-e', 'micro', '{file}'] # editor (and arguments) to use for the `edit-*` commands
 c.editor.encoding = 'utf-8' # encoding to use for the editor
@@ -852,6 +852,7 @@ config.bind('+', 'zoom')     # do
 config.bind('=', 'zoom-in')  # not
 config.bind('-', 'zoom-out') # ask
 config.bind('e', 'set-cmd-text :open {url:pretty}')
+config.bind('E', 'set-cmd-text :open -t {url:pretty}')
 config.bind('<Return>', 'set-cmd-text -s :open')
 config.bind('<Shift+Return>', 'set-cmd-text -s :open -t')
 config.bind('u', 'undo')
@@ -865,8 +866,8 @@ config.bind('<Ctrl+Shift+F>', 'set-cmd-text ?')
 config.bind('<Ctrl+P>', 'search-prev')
 config.bind('<Ctrl+N>', 'search-next')
 config.bind('r', 'reload')
+config.bind('R', 'reload -f')
 config.bind('<F5>', 'reload')
-config.bind('<Ctrl+R>', 'reload -f')
 config.bind('<f11>', 'fullscreen')
 config.bind('<f12>', 'devtools right')
 config.bind('<Ctrl+Q>', 'quit')

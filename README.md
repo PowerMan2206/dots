@@ -19,9 +19,10 @@ package       | why
 
 other: look into `.config/packagelist`, install with `paru -S - < packagelist` (on Arch)
 
-note: run `gsettings set org.gnome.desktop.interface gtk-theme Sweet` if the GTK theme is broken (which it most probably will be)
-
-note 2: also run `gsettings set org.gnome.desktop.interface cursor-theme win8` if the cursor is sometimes broken (again, probably is)
+note, run:
+- `gsettings set org.gnome.desktop.interface gtk-theme Sweet` if the GTK theme is broken (which it most probably will be)
+- `gsettings set org.gnome.desktop.interface cursor-theme win8` if the cursor is sometimes broken (again, probably is)
+- `gsettings set org.gnome.desktop.wm.preferences button-layout ""` to get rid of GTK titlebars
 
 ## installation
 

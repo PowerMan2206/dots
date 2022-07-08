@@ -4,6 +4,5 @@
 case "$1" in
 	-f ) curl -F file=@"$2" https://0x0.st ;;
 	-p ) curl -F url="$2" https://0x0.st ;;
-	-s ) curl -F shorten="$2" https://0x0.st ;;
-	*) echo "-f for files, -p for POSTing URLs, -s for shortening URLs" ;;
+	*) echo "-f for files, -p for POSTing URLs" ;;
 esac
