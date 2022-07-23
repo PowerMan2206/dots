@@ -1,8 +1,14 @@
 #!/bin/bash
 
-save() { 
-	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy 
+save() {
+	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy
 }
+
+if [[ $2 == swappy ]]; then
+	save() {
+		swappy -f - -o - | tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy
+	}
+fi
 
 case $1 in
 	area )

@@ -297,8 +297,8 @@ c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack
 #c.content.proxy = 'socks://192.168.5.220:9050'
 
 ## user agent to send
-#c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
-c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
+c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
+#c.content.headers.user_agent = 'oh nywo u fwound my usew agent OwO what wiww i dwo' # funk you lom
 
 c.content.canvas_reading = True # allow websites to read canvas elements
 
@@ -771,13 +771,13 @@ c.messages.timeout = 5000 # duration (ms) to show messages in the statusbar for,
 c.prompt.filebrowser = True # show a filebrowser in download prompts
 c.prompt.radius = 0 # rounding radius (in pixels) for the edges of prompts
 
-c.scrolling.smooth = False # enable smooth scrolling for web pages, does not work with`:scroll-px`
+c.scrolling.smooth = True # enable smooth scrolling for web pages, does not work with`:scroll-px`
 ## when/how to show the scrollbar
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
 ##   - overlay: Show an overlay scrollbar. On macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
-c.scrolling.bar = 'overlay'
+c.scrolling.bar = 'never'
 
 c.search.incremental = True # find text on a page incrementally, renewing the search for each typed character
 c.search.wrap = True # wrap around at the top and bottom of the page when advancing through search
@@ -856,6 +856,7 @@ config.bind('E', 'set-cmd-text :open -t {url:pretty}')
 config.bind('<Return>', 'set-cmd-text -s :open')
 config.bind('<Shift+Return>', 'set-cmd-text -s :open -t')
 config.bind('u', 'undo')
+config.bind('<Ctrl+Z>', 'undo')
 config.bind('U', 'undo -w')
 config.bind('<Ctrl+B>', 'set-cmd-text -s :quickmark-add {url}')
 config.bind('<Ctrl+Shift+B>', 'quickmark-del')

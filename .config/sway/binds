@@ -11,6 +11,7 @@ bindsym $mod+Return exec alacritty
 # stuff
 bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec thunar
+bindsym $mod+g exec gimp
 
 # layout switcharoo
 bindsym $mod+l exec layout-switch
@@ -31,7 +32,9 @@ bindsym $mod+y exec mpv $(wl-paste)
 
 # screenshot stuff
 bindsym $mod+s exec screenshot area
+bindsym $mod+Ctrl+s exec screenshot area swappy
 bindsym $mod+Shift+s exec screenshot window
+bindsym $mod+Ctrl+Shift+s exec screenshot window swappy
 
 
 

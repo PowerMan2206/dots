@@ -13,6 +13,8 @@ swaynag -m 'select action' \
 --button-background 181b28 --button-text e8e7e4 \
 --border-bottom ef2f27 --border-bottom-size 1 \
 -b 'exit sway' 'swaymsg exit' \
+-b 'suspend' 'systemctl suspend' \
+-b 'hibernate' 'systemctl hibernate' \
 -b 'reboot' 'reboot' \
 -b 'poweroff' 'poweroff' \
 -s 'X   '
