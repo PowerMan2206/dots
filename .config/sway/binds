@@ -35,6 +35,7 @@ bindsym $mod+s exec screenshot area
 bindsym $mod+Ctrl+s exec screenshot area swappy
 bindsym $mod+Shift+s exec screenshot window
 bindsym $mod+Ctrl+Shift+s exec screenshot window swappy
+bindsym $mod+r exec color-select
 
 
 

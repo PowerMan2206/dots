@@ -777,7 +777,7 @@ c.scrolling.smooth = True # enable smooth scrolling for web pages, does not work
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
 ##   - overlay: Show an overlay scrollbar. On macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
-c.scrolling.bar = 'never'
+c.scrolling.bar = 'overlay'
 
 c.search.incremental = True # find text on a page incrementally, renewing the search for each typed character
 c.search.wrap = True # wrap around at the top and bottom of the page when advancing through search

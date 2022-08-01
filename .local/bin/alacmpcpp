@@ -1,0 +1,10 @@
+#!/bin/bash
+# kinda wacky but it works
+
+# kill if running
+if [[ $(pidof ncmpcpp) ]]; then
+	pkill ncmpcpp
+	exit
+fi
+
+alacritty -e ncmpcpp &

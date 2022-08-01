@@ -2,10 +2,11 @@
 # powermenu thing by PowerMan2206
 # (no it's not a pun)
 
-# don't run if lockfile is present
-if [[ -f /tmp/powermenu.lck ]]; then exit; fi
-
-touch /tmp/powermenu.lck
+# kill if running
+if [[ $(pidof swaynag) ]]; then
+	pkill swaynag
+	exit
+fi
 
 swaynag -m 'select action' \
 -f 'monospace 9' \
@@ -18,5 +19,3 @@ swaynag -m 'select action' \
 -b 'reboot' 'reboot' \
 -b 'poweroff' 'poweroff' \
 -s 'X   '
-
-rm /tmp/powermenu.lck

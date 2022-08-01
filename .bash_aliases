@@ -1,9 +1,12 @@
 # system stuff
+# I can't be bothered to properly remember these
 alias sudo='sudo ' #idk what this exactly does but its useful
+alias cat='bat -pp' #haha
 alias ls='exa --icons'
 alias lsa='exa --icons -a'
 alias lsl='exa -lhg'
 alias lsal='exa -lhga'
+alias lsla='exa -lhga'
 alias c='clear'
 alias grep='grep -i --color=auto'
 alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'

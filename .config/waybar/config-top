@@ -23,7 +23,8 @@
 	"clock": {
 		"interval": 1,
 		"format": "<span color='#FED06E'></span> {:%Y-%m-%d %H:%M:%S}",
-		"format-alt": "<span color='#FED06E'></span> {:%H:%M}",
+		"on-click": "date +'%Y-%m-%d' | wl-copy",
+		"on-click-right": "date +'%Y-%m-%dT%H:%M:%S' | wl-copy",
 		"tooltip": false,
 	},
 	

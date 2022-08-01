@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# kill if running
+# not actually the thing but good enough
+if [[ $(pidof slurp) ]]; then
+	pkill slurp
+	exit
+fi
+
 save() {
 	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy
 }
@@ -12,7 +19,7 @@ fi
 
 case $1 in
 	area )
-		region="$(slurp -b 181b28ba -c e8e7e4 -d -w 1)" || exit
+		region="$(slurp -b 181b28ba -c e8e7e4 -d -w 1)"
 		grim -g "$region" - | save
 		;;
 	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | save ;;

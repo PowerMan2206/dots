@@ -37,7 +37,3 @@ cp -rT . ~
 **this will overwrite any previous config files you had, make sure to backup!** *(if you care for your own config files)*
 
 otherwise, you can just copy any specific config you want
-
-### thanks to 
-
-[Elk o' war](https://github.com/elkowar) for helping with the `cpu-speed.sh` Waybar script
