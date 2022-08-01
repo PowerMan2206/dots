@@ -20,7 +20,7 @@ alias pubip='curl ifconfig.me && echo'
 alias tb='nc termbin.com 9999'
 alias screen-record='wf-recorder -g "$(slurp)"'
 alias upload-screenshot="wl-paste > /tmp/scr.png && 0x0 -f /tmp/scr.png"
-alias lofi='mpv --no-video https://www.youtube.com/watch?v=5qap5aO4i9A'
+alias lofi='mpv --no-video https://www.youtube.com/watch?v=jfKfPfyJRdk'
 alias cam='mpv --demuxer-lavf-o=video_size=1280x720,input_format=mjpeg,framerate=30 --untimed av://v4l2:/dev/video0 & exit'
 alias mpv-cd='mpv cdda://'
 alias mpv-dvd='mpv --input-cursor dvdnav://'
