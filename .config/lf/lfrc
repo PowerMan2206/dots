@@ -1,0 +1,19 @@
+# delet yucky default keybinds
+source ~/.config/lf/nukedefaults
+
+# add my epic keybinds
+map q quit
+map <c-q> quit
+map R rename
+map i invert
+map <c-c> copy
+map <c-x> cut
+map <c-v> paste
+map c clear
+map r reload
+map d delete
+map <delete> delete
+map <c-f> search
+map <c-p> search-prev
+map <c-n> search-next
+map ` cd ~
