@@ -8,7 +8,7 @@
     "savecursor": true,
     "saveundo": true,
     "scrollbar": true,
-    "scrollmargin": 5,
+    "scrollmargin": 4,
     "scrollspeed": 3,
     "softwrap": true
 }

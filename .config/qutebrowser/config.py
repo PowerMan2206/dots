@@ -23,24 +23,31 @@ c.auto_save.session = True
 import qutebrowser.api.interceptor
 
 def rewrite(request: qutebrowser.api.interceptor.Request):
-    if request.request_url.host() == 'www.youtube.com': 
+    if request.request_url.host() == 'www.youtube.com' or request.request_url.host() == 'youtu.be': 
         request.request_url.setScheme('http') 
         request.request_url.setHost('192.168.5.220') 
-        request.request_url.setPort(10412)
+        request.request_url.setPort(10412) 
         try: 
             request.redirect(request.request_url) 
         except: 
             pass
-
+    
     if request.request_url.host() == 'twitter.com': 
         request.request_url.setHost('nitter.net') 
         try: 
             request.redirect(request.request_url) 
         except: 
             pass
+    
+    if request.request_url.host() == 'imgur.com': 
+        request.request_url.setHost('i.bcow.xyz') 
+        try: 
+            request.redirect(request.request_url) 
+        except: 
+            pass
+    
 
 qutebrowser.api.interceptor.register(rewrite)
-
 
 ### COLORS
 
@@ -280,7 +287,7 @@ c.content.blocking.enabled = True # enable the ad/host blocker
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-c.content.blocking.method = 'both'
+c.content.blocking.method = 'adblock'
 
 ## list of URLs to ABP-style adblocking rulesets
 c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
@@ -348,7 +355,7 @@ c.content.images = True # automatically load images
 c.content.javascript.enabled = True # enable JavaScript 😔
 c.content.javascript.alert = True # show JavaScript alerts
 c.content.javascript.prompt = True # show JavaScript prompts
-c.content.javascript.can_access_clipboard = False # allow JavaScript to read from or write to the clipboard
+c.content.javascript.can_access_clipboard = True # allow JavaScript to read from or write to the clipboard
 c.content.javascript.can_open_tabs_automatically = False # allow JavaScript to open new tabs without user interaction
 ## log levels to use for JavaScript console logging messages
 ## valid: `none`, `debug`, `info`, `warning`, `error`
@@ -527,7 +534,7 @@ c.statusbar.show = 'always'
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
 ##   - text:foo: Display the static text after the colon, `foo` in the example.
-c.statusbar.widgets = ['keypress', 'url', 'history', 'scroll']#, 'progress']
+c.statusbar.widgets = ['url', 'history', 'scroll']
 
 ## maximum/minimum width (px) of tabs 
 ## -1 for no maximum/default minimum size behaviour
@@ -766,12 +773,12 @@ c.input.partial_timeout = 0 # timeout (ms) for partially typed key bindings
 
 c.input.spatial_navigation = True # enable spatial navigation (arrow keys to navigate a page)
 
-c.messages.timeout = 5000 # duration (ms) to show messages in the statusbar for, 0 to never clear messages
+c.messages.timeout = 1 # duration (ms) to show messages in the statusbar for, 0 to never clear messages
 
 c.prompt.filebrowser = True # show a filebrowser in download prompts
 c.prompt.radius = 0 # rounding radius (in pixels) for the edges of prompts
 
-c.scrolling.smooth = True # enable smooth scrolling for web pages, does not work with`:scroll-px`
+c.scrolling.smooth = False # enable smooth scrolling for web pages, does not work with`:scroll-px`
 ## when/how to show the scrollbar
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
@@ -814,7 +821,7 @@ c.url.default_page = 'about:blank' # page to open if :open -t/-b/-w is used with
 
 # c.url.open_base_url = False # open base URL of the searchengine if a searchengine shortcut is invoked without parameters
 
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'} # search engines which can be used via the address bar, {} is the search query
+c.url.searchengines = {'DEFAULT': 'https://searx.be/?q={}'} # search engines which can be used via the address bar, {} is the search query
 
 c.url.start_pages = ['about:blank'] # page(s) to open at the start
 
@@ -847,7 +854,7 @@ config.bind('<Alt+Left>', 'tab-prev')
 config.bind('<Alt+Right>', 'tab-next')
 config.bind('<Shift+Alt+Left>', 'tab-move -')
 config.bind('<Shift+Alt+Right>', 'tab-move +')
-config.bind('y', 'yank')
+config.bind('z', 'yank')
 config.bind('+', 'zoom')     # do
 config.bind('=', 'zoom-in')  # not
 config.bind('-', 'zoom-out') # ask

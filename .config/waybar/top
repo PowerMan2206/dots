@@ -23,9 +23,9 @@
 	"clock": {
 		"interval": 1,
 		"format": "<span color='#FED06E'></span> {:%Y-%m-%d %H:%M:%S}",
-		"on-click": "date +'%Y-%m-%d' | wl-copy",
-		"on-click-right": "date +'%Y-%m-%dT%H:%M:%S' | wl-copy",
-		"tooltip": false,
+		"on-click": "echo -n $(date +'%Y-%m-%d') | wl-copy; notify-send 'date copied'",
+		"on-click-middle": "echo -n $(date +'%Y-%m-%d %H:%M:%S') | wl-copy; notify-send 'all copied'",
+		"on-click-right": "echo -n $(date +'%H:%M:%S') | wl-copy; notify-send 'time copied'",
 	},
 	
 	// better than the mess before
@@ -35,10 +35,10 @@
 			"hdmi": "Speakers 蓼 ",
 			"default": "Headphones  ",
 		},
-		"format-muted": "(muted) {icon}",
+		"format-muted": "<span color='#FF0000'>(muted)</span> {icon}",
 		"scroll-step": 5,
-		"on-click-right": "pamixer -t",
-		"on-click-middle": "pavucontrol",
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol",
 		"tooltip": false,
 	},
 }

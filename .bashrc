@@ -5,8 +5,9 @@
 source ~/.bash_aliases
 source ~/.bash_aliases_secret
 
-tabs -4 # non-cringe tabs
 PS1="\w $ "
+tabs -4 # non-cringe tabs
+source "$HOME/.config/lf/lfcd.sh"
 
 # search for package with command if it doesn't exist
 command_not_found_handle() { 

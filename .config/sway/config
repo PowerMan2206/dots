@@ -29,15 +29,17 @@ for_window [app_id="blueberry"] floating enable
 for_window [class="discord"] move workspace $ws2
 for_window [app_id="weechat"] move workspace $ws2
 
+# speedy GTK startup
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 # autostart 
 exec remind $HOME/.config/remind/reminders.rem #i don't rember 😔
 exec ~/.config/waybar/launch.sh #bar
 exec lxpolkit #polkit thing 
 exec mako #notifications
-exec discord-canary
-exec "alacritty --class weechat -e weechat"
+exec discord
 exec thunar --daemon #running it from a terminal leaves the terminal usable
-exec gammastep -O 3500
+exec "gammastep -O 4000k"
 
 # we do a
 exec swayidle -w timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' #fake Windows lol
@@ -47,8 +49,9 @@ output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 80 bg ~/walls/sweet_tux_1080p.png fill
 
 # make the mouse not suck ass
-input 1133:49291:Logitech_G502_HERO_SE accel_profile flat
-input 1133:49291:Logitech_G502_HERO_SE pointer_accel -0.935
+input 9610:114:SINOWEALTH_Wired_Gaming_Mouse accel_profile flat
+input 9610:114:SINOWEALTH_Wired_Gaming_Mouse pointer_accel -0.4
+seat seat0 xcursor_theme win8 16
 
 # change keyboard things
 input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300

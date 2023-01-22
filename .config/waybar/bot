@@ -24,10 +24,9 @@
 	// cpu usage and average speed
 	"cpu": {
 		"interval": 1,
-		"format": "<span color='#2C78BF'></span> {usage}% {avg_frequency}GHz ",
+		"format": "| <span color='#2C78BF'></span> {usage}% {avg_frequency}GHz ",
 		"tooltip": false,
 	},
-
 	// cpu speed and temp
 	"custom/cpu-stuff": {
 		"interval": 1,

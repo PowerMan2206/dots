@@ -1,17 +1,16 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# environment variable stuff
+# setup stuff
 export QT_QPA_PLATFORMTHEME=c0ck4ndb41170r7ur3 #can be litarally whatever
 export QT_QPA_PLATFORM=
 export PATH="$PATH:$HOME/.local/bin"
 export HISTFILESIZE=10000
 export EDITOR=micro
+date=$(date +"%Y-%m-%d_%H:%M:%S")
 
 # start sway if running from tty1 and output to logfiles
-# also gammastep
-date=$(date +"%Y-%m-%d_%H:%M:%S")
 if [ "$(tty)" = "/dev/tty1" ]; then
-	tldr -u & # first place I thought of putting it so deal with it
+	tldr -u &
 	# for some reason I don't need this anymore but it'll be here in case I do in the future again
 	# fuk u nvidia
 	#WLR_DRM_NO_MODIFIERS=1 

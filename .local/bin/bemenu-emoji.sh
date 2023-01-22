@@ -42,7 +42,7 @@ smiling face with heart-eyes                    😍
 star-struck                                     🤩
 face blowing a kiss                             😘
 kissing face                                    😗
-smiling face                                   ☺️
+relaxed                                   ☺️
 kissing face with closed eyes                   😚
 kissing face with smiling eyes                  😙
 smiling face with tear                          🥲

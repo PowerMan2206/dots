@@ -193,7 +193,7 @@ function download_formats()
         local res = format_cache[url]
         return res, table_size(res)
     end
-    mp.osd_message("fetching available formats with youtube-dl...", 60)
+    mp.osd_message("fetching available formats with yt-dlp...", 60)
 
     if not (ytdl.searched) then
         local ytdl_mcd = mp.find_config_file("youtube-dl")

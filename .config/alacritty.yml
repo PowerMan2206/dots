@@ -20,6 +20,8 @@ scrolling:
 
 # font config
 font:
+  size: 7.5
+  
   normal:
     family: monospace
     style: Regular
@@ -32,8 +34,6 @@ font:
   italic:
     family: monospace
     style: Bold Italic
-    
-  size: 8.5
 
 # colors (Srcery, background changed)
 colors:
