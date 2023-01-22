@@ -1,9 +1,0 @@
-{
-    "name": "Sweet",
-    "description": "A source to simply change Discord's colors, modified to Sweet.",
-    "version": "1.0.1",
-    "author": "LuckFire#4800, PowerMan2206#8632",
-    "theme": "index.scss",
-    "consent": "true",
-    "license": "MIT"
-}
