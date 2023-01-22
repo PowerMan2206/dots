@@ -8,12 +8,12 @@ if [[ $(pidof slurp) ]]; then
 fi
 
 save() {
-	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy
+	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy -t image/png
 }
 
 if [[ $2 == swappy ]]; then
 	save() {
-		swappy -f - -o - | tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy
+		swappy -f - -o - | tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy -t image/png
 	}
 fi
 
