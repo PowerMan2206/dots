@@ -3,6 +3,7 @@ bemenu
 exa
 gammastep
 grim
+handlr
 imv
 jq
 lm_sensors
@@ -32,3 +33,4 @@ swaylock
 waybar
 wf-recorder
 wl-clipboard
+xdg-utils-handlr
