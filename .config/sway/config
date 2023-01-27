@@ -27,7 +27,6 @@ include $HOME/.config/sway/binds
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="blueberry"] floating enable
 for_window [class="discord"] move workspace $ws2
-for_window [app_id="weechat"] move workspace $ws2
 
 # speedy GTK startup
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -42,7 +41,10 @@ exec thunar --daemon #running it from a terminal leaves the terminal usable
 exec "gammastep -O 4000k"
 
 # we do a
-exec swayidle -w timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' #fake Windows lol
+exec swayidle \
+timeout 600 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' \
+timeout 900 'swaymsg "output * dpms off"' \
+resume      'swaymsg "output * dpms on"'
 
 # arrange monitors correctly and set wallpapers
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.png stretch

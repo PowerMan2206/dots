@@ -5,3 +5,4 @@ audio/*=mpv.desktop;
 image/*=imv-dir.desktop;
 text/*=microterm.desktop;
 video/*=mpv.desktop;
+model/*=PrusaSlicer.desktop;
