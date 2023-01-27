@@ -42,9 +42,9 @@ exec "gammastep -O 4000k"
 
 # we do a
 exec swayidle \
-timeout 600 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png' \
-timeout 900 'swaymsg "output * dpms off"' \
-resume      'swaymsg "output * dpms on"'
+timeout 600 'swaymsg "output * dpms off"' \
+resume      'swaymsg "output * dpms on"' \
+timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
 
 # arrange monitors correctly and set wallpapers
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.png stretch
