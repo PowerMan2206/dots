@@ -11,6 +11,8 @@ alias c='clear'
 alias grep='grep -i --color=auto'
 alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 alias watch='watch -n 0.5'
+alias rm='echo "use rb retard"; false'
+alias rb='trash-put' #because tr is taken so its like rubbish
 
 # stuff
 alias gitconfig='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #the thing for a git bare repo
