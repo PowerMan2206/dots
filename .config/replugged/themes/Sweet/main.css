@@ -1,0 +1,72 @@
+/*
+It's not perfect, but it works.
+- PowerMan2206
+*/
+
+/* horizontal server list */
+/* https://github.com/DiscordStyles/HorizontalServerList */
+@import "./HorizontalServerList.css";
+:root {
+    --HSL-server-icon-size: 48px;  /* Size of the server icons | DEFAULT: 40px */
+    --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */	
+}
+
+/* main */
+.theme-dark {
+	/* base */
+	--background-primary: #151926;
+	--background-secondary: #181b28;
+	--background-secondary-alt: #181b28;
+	--background-tertiary: #151926;
+	--background-accent: #151926;
+	--background-floating: #181b28;
+	
+	/* text */
+	--text-normal: #e8e7e4;
+	--text-muted: #72767d;
+	--text-link: #53fde9;
+	
+	/* font */
+	--font-primary: monospace;
+	
+	/* mouse stuff */
+	--background-modifier-active: #262e49;
+	--background-modifier-hover: #242b42;
+	--background-modifier-selected: #21273b;
+	--background-modifier-accent: var(--background-modifier-selected);
+	
+	/* when opening links ig */
+	--modal-background: var(--background-tertiary);
+	--modal-footer-background: var(--background-accent);
+	--button-secondary-background: var(--background-modifier-selected);
+	
+	/* other */
+	--channeltextarea-background: var(--background-secondary);
+	--input-background: var(--background-secondary);
+	--scrollbar-auto-thumb: var(--background-modifier-active);
+	--scrollbar-auto-track: transparent;
+}
+
+/* Top user thing */
+.panels-3wFtMD, .sidebar-1tnWFu {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+/* Full "about me" */
+[class*="lineClamp2Plus-"] {
+    -webkit-line-clamp: unset !important;
+}
+
+/* no nitro >:( */
+/* VendingMachine#8485 */
+[class^="channel-"] > div > [href="/store"], /* Nitro Button above DM List */
+[class^="channelTextArea"] [class^="buttons-"] > button, /* Gift Button */
+[class^="upsellVisible-"], /* Banner Nitro Upsell Header in the user modal */
+[class^="premiumIconWrapper"], /* Nitro Icon in top right on Banners */
+[class^="characterCount-"] [class*="upsell-"], /* "Send longer Messages with Discord Nitro!" */
+[class^="emojiSection-"] [class*="shinyButton-"] /* "Get Nitro" button in Emoji/Sticker modal" */
+{
+    display: none !important;
+}
+
