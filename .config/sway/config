@@ -51,11 +51,15 @@ output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 80 bg ~/walls/sweet_tux_1080p.png fill
 
 # make the mouse not suck ass
-input 9610:114:SINOWEALTH_Wired_Gaming_Mouse accel_profile flat
-input 9610:114:SINOWEALTH_Wired_Gaming_Mouse pointer_accel -0.4
+input type:pointer {
+	accel_profile flat
+	pointer_accel -0.4
+}
 seat seat0 xcursor_theme win8 16
 
 # change keyboard things
-input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_delay 300
-input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard repeat_rate 30
-input 2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard xkb_layout us,hr
+input type:keyboard {
+	repeat_delay 300
+	repeat_rate 30
+	xkb_layout us,hr
+}
