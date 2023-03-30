@@ -6,12 +6,12 @@
 set $mod Mod4
 
 # obvious, no?
-bindsym $mod+Return exec alacritty
+bindsym --no-repeat $mod+Return exec alacritty
 
 # stuff
-bindsym $mod+q exec qutebrowser
-bindsym $mod+t exec thunar
-bindsym $mod+g exec gimp
+bindsym --no-repeat $mod+q exec qutebrowser
+bindsym --no-repeat $mod+t exec thunar
+bindsym --no-repeat $mod+g exec gimp
 
 # layout switcharoo
 bindsym $mod+l exec swaymsg input type:keyboard xkb_switch_layout next
@@ -20,22 +20,22 @@ bindsym $mod+l exec swaymsg input type:keyboard xkb_switch_layout next
 bindsym $mod+Shift+Space exec swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png
 
 # bemenu stuff
-bindsym $mod+d exec beemenu bemenu-run
+bindsym --no-repeat $mod+d exec beemenu bemenu-run
 # powermenu thing
-bindsym $mod+Shift+e exec powermenu
+bindsym --no-repeat $mod+Shift+e exec powermenu
 
 # emoji stuff
-bindsym $mod+m exec bemenu-emoji.sh
+bindsym --no-repeat $mod+m exec bemenu-emoji.sh
 
 # to open youtube videos and shit in mpv
-bindsym $mod+y exec mpv $(wl-paste)
+bindsym --no-repeat $mod+y exec mpv $(wl-paste)
 
 # screenshot stuff
-bindsym $mod+s exec screenshot area
-bindsym $mod+Ctrl+s exec screenshot area swappy
-bindsym $mod+Shift+s exec screenshot window
-bindsym $mod+Ctrl+Shift+s exec screenshot window swappy
-bindsym $mod+r exec color-select
+bindsym --no-repeat $mod+s exec screenshot area
+bindsym --no-repeat $mod+Ctrl+s exec screenshot area swappy
+bindsym --no-repeat $mod+Shift+s exec screenshot window
+bindsym --no-repeat $mod+Ctrl+Shift+s exec screenshot window swappy
+bindsym --no-repeat $mod+r exec color-select
 
 
 
@@ -44,22 +44,22 @@ bindsym $mod+r exec color-select
 # pactl to control pulseaudio volume with an XF86 keyboard
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioMute exec pamixer -t
+bindsym --no-repeat XF86AudioMute exec pamixer -t
 
 # above but for mpd control
-bindsym XF86AudioPlay exec mpc toggle
+bindsym --no-repeat XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
-# fullscreen the focused container
-bindsym $mod+f fullscreen toggle
-# toggle tiling/floating
-bindsym $mod+Space floating toggle
 # drag floating windows
 floating_modifier $mod
+# fullscreen the focused container
+bindsym --no-repeat $mod+f fullscreen toggle
+# toggle tiling/floating
+bindsym --no-repeat $mod+Space floating toggle
 # kill focused window
-bindsym $mod+Shift+q kill
-bindsym Mod1+f4 kill # hehe
+bindsym --no-repeat $mod+Shift+q kill
+bindsym --no-repeat Mod1+f4 kill # hehe
 
 # change focus
 bindsym $mod+Left focus left
@@ -77,7 +77,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+v split h
 bindsym $mod+c split v
 # toggle split
-bindsym $mod+e layout toggle split
+bindsym --no-repeat $mod+e layout toggle split
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
