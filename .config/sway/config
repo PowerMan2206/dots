@@ -59,7 +59,7 @@ seat seat0 xcursor_theme win8 16
 
 # change keyboard things
 input type:keyboard {
-	repeat_delay 300
-	repeat_rate 30
+	repeat_delay 200
+	repeat_rate 40
 	xkb_layout us,hr
 }

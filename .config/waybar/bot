@@ -17,7 +17,7 @@
 	// hacky but it works
 	"sway/language": {
 		"format": "{}",
-		"on-click": "~/.local/bin/layout-switch", // because xkb_switch_layout is being cringe and `next` doesnt work
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
 		"tooltip": false,
 	},
 
