@@ -10,7 +10,7 @@ fi
 
 "$1" -l 20 -n -i -p " " \
 -m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
---fn "monospace 8.5" \
+--fn "monospace 8" \
 --fb "#181b28" --nb "#181b28" --hb "#181b28" --tb "#181b28" \
 --ff "#e8e7e4" --nf "#e8e7e4" --hf "#ef2f27" --tf "#ef2f27" \
 $@
