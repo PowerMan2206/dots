@@ -54,6 +54,7 @@ output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 80 bg ~/walls/s
 input type:pointer {
 	accel_profile flat
 	pointer_accel -0.4
+	scroll_factor 1.5
 }
 seat seat0 xcursor_theme win8 16
 
