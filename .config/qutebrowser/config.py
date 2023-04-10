@@ -724,7 +724,7 @@ c.qt.workarounds.remove_service_workers = True # delete the QtWebEngine Service 
 
 #c.content.user_stylesheets = [] # list of user stylesheet filenames to use
 
-c.editor.command = ['alacritty', '-e', 'micro', '{file}'] # editor (and arguments) to use for the `edit-*` commands
+c.editor.command = ['foot', 'micro', '{file}'] # editor (and arguments) to use for the `edit-*` commands
 c.editor.encoding = 'utf-8' # encoding to use for the editor
 
 ## backend to use to display websites

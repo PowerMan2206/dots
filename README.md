@@ -8,7 +8,7 @@ Everyone must have a dotfiles repo, right?
 package       | why
 --------------|------------
 `sway`        | compositor
-`alacritty`   | terminal
+`foot`        | terminal
 `qutebrowser` | browser
 `pipewire`    | audio stuff
 `bemenu`      | launcher

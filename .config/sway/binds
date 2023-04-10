@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # obvious, no?
-bindsym --no-repeat $mod+Return exec alacritty
+bindsym --no-repeat $mod+Return exec foot
 
 # stuff
 bindsym --no-repeat $mod+q exec qutebrowser

@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=MicroTerm
-Exec=alacritty -e micro "%F"
+Exec=foot micro "%F"
 Terminal=false

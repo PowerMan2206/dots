@@ -7,4 +7,4 @@ if [[ $(pidof ncmpcpp) ]]; then
 	exit
 fi
 
-alacritty -e ncmpcpp &
+foot ncmpcpp &
