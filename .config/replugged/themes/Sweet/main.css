@@ -70,3 +70,22 @@ It's not perfect, but it works.
     display: none !important;
 }
 
+/* hides the "Payment settings" category in settings */
+/* (very bosanski so may break with an update) */
+/* me >:D, аlех#1160 */
+.header-2F5_LB:nth-child(2),
+[aria-label="Nitro"],
+.item-2GWPIy:nth-child(12),
+[aria-label="Subscriptions"],
+[aria-label="Gift Inventory"],
+.item-2GWPIy:nth-child(15) {
+    display: none;
+}
+/* I have no idea how these two work, but they do */
+/* aaronlink127#0127 */
+.separator-2N511j:has( ~ .premiumTab-39eQzY) ~ div {
+    display: none;
+}
+.separator-2N511j:has( ~ .premiumTab-39eQzY) ~ .separator-2N511j ~ div {
+    display: block;
+}
