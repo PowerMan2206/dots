@@ -45,6 +45,7 @@ It's not perfect, but it works.
 	--input-background: var(--background-secondary);
 	--scrollbar-auto-thumb: var(--background-modifier-active);
 	--scrollbar-auto-track: transparent;
+	--primary-630: var(--background-secondary); /* emoji selector thing */
 }
 
 /* Top user thing */

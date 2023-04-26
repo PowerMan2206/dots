@@ -17,3 +17,4 @@ map <c-f> search
 map <c-p> search-prev
 map <c-n> search-next
 map ` cd ~
+map <enter> shell
