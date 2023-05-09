@@ -1,6 +1,5 @@
 #!/bin/bash
 # run bemenu case insensitive on the focused monitor with the colors and all
-# I know I gotta learn jq shut up
 
 # kill if running
 if [[ $(pidof bemenu-run) ]]; then
@@ -8,6 +7,7 @@ if [[ $(pidof bemenu-run) ]]; then
 	exit
 fi
 
+# I know I gotta learn jq shut up
 "$1" -l 20 -n -i -p " " \
 -m $(swaymsg -t get_outputs -p | grep focused | cut -d"'" -f1 | cut -d"-" -f3) \
 --fn "monospace 8" \

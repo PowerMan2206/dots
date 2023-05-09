@@ -24,13 +24,13 @@ case $1 in
 		;;
 	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | save ;;
 	dots )
-		for i in {1..3}; do
+		for i in {1..4}; do
 			read -sn 1
 			wl-paste > scr"$i".png
 			echo "scr$i.png created"
 		done
 		
-		convert scr1.png scr2.png scr3.png -append screenshot.png
-		rm scr1.png scr2.png scr3.png
+		convert scr1.png scr2.png scr3.png scr4.png -append screenshot.png
+		rm scr1.png scr2.png scr3.png scr4.png
 		;;
 esac 
