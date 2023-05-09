@@ -1,0 +1,49 @@
+[general]
+
+framerate = 60
+
+# attempts to decrease sensitivity if the bars peak. 1 = on, 0 = off
+autosens = 1
+
+# manual sensitivity in %
+# if autosens is enabled, this will only be the initial value
+sensitivity = 50
+
+# number of bars (0-200). 0 sets it to auto 
+bar_width = 1
+bar_spacing = 0
+
+
+[output]
+
+# 'bottom', 'top', 'left', 'right'
+orientation = right
+
+# 'stereo' mirrors both channels with low frequencies in center
+# 'mono' outputs left to right lowest to highest frequencies
+# set 'reverse' to 1 to display frequencies the other way around
+channels = mono
+reverse = 1
+
+
+[color]
+
+# 1 = on, 0 = off.
+gradient = 1
+
+
+[smoothing]
+
+# float 0 - 1. default 0.77
+# the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
+# 1 will be very slow and smooth, 0 will be fast but noisy.
+noise_reduction = 0.7
+
+
+[eq]
+
+; 1 = 1 # bass
+; 2 = 1
+; 3 = 1 # midtone
+; 4 = 1
+; 5 = 1 # treble
