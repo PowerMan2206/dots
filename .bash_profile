@@ -1,13 +1,14 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# setup stuff
-export QT_QPA_PLATFORMTHEME=c0ck4ndb41170r7ur3 #can be litarally whatever
-export QT_QPA_PLATFORM=
-export PATH="$PATH:$HOME/.local/bin"
-export HISTFILESIZE=10000
-export EDITOR=micro
-date=$(date +"%Y-%m-%d_%H:%M:%S")
+# variable stuff
+#export QT_QPA_PLATFORMTHEME=
+#export QT_QPA_PLATFORM=
+export PATH="$PATH:$HOME/.local/bin"	#add local bin into PATH
+export HISTFILESIZE=10000				#history file size
+export HISTCONTROL=ignorespace			#space prefixed commands won't be added to history
+export EDITOR=micro						#micro best editor fuck you bread
 
+date=$(date +"%Y-%m-%d_%H:%M:%S") #for the thing below
 # start sway if running from tty1 and output to logfiles
 if [ "$(tty)" = "/dev/tty1" ]; then
 	tldr -u &
