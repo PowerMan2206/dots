@@ -5,7 +5,7 @@
 
 # gaps and no titlebars 
 default_border pixel 2
-gaps inner 3
+gaps inner 4
 gaps outer 0
 
 # sets the workspace names (numbers)

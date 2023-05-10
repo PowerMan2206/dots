@@ -8,7 +8,10 @@
     "savecursor": true,
     "saveundo": true,
     "scrollbar": true,
-    "scrollmargin": 4,
+    "scrollmargin": 5,
     "scrollspeed": 3,
-    "softwrap": true
+    "softwrap": true,
+    "statusformatl": "$(filename) $(modified)($(line),$(col)) | ft:$(opt:filetype) | $(opt:encoding)",
+    "statusformatr": "",
+    "wordwrap": true
 }

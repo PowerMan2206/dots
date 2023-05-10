@@ -34,10 +34,13 @@ gradient = 1
 
 [smoothing]
 
+# so-called "Monstercat smoothing"
+monstercat = 1
+
 # float 0 - 1. default 0.77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 1 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 0.7
+noise_reduction = 0.45
 
 
 [eq]
