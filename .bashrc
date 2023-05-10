@@ -2,12 +2,12 @@
 [[ $- != *i* ]] && return
 
 # source the aliases
-source ~/.bash_aliases
-source ~/.bash_aliases_secret
+. ~/.bash_aliases
+[[ -f ~/.bash_aliases_secret ]] && . ~/.bash_aliases_secret
 
 PS1="\w $ "
 tabs -4 # non-cringe tabs
-source "$HOME/.config/lf/lfcd.sh"
+. "$HOME/.config/lf/lfcd.sh"
 
 # search for package with command if it doesn't exist
 command_not_found_handle() { 

@@ -4,7 +4,6 @@
     "diffgutter": true,
     "keepautoindent": true,
     "mkparents": true,
-    "parsecursor": true,
     "savecursor": true,
     "saveundo": true,
     "scrollbar": true,

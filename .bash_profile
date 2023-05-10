@@ -1,4 +1,5 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ ! -d ~/.sway-logs ]] && mkdir ~/.sway-logs
 
 # variable stuff
 #export QT_QPA_PLATFORMTHEME=
@@ -17,6 +18,6 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 	#WLR_DRM_NO_MODIFIERS=1 
 	WLR_NO_HARDWARE_CURSORS=1 \
 	exec sway -d \
-	> ~/.sway-logs/sway-log-"$date" \
-	2> ~/.sway-logs/sway-log2-"$date"
+	> ~/.sway-logs/sway-log-"$date".log \
+	2> ~/.sway-logs/sway-log2-"$date".log
 fi

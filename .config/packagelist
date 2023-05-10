@@ -1,3 +1,4 @@
+bat
 bemenu
 cava
 exa
@@ -5,8 +6,10 @@ foot
 gammastep
 grim
 handlr
+imagemagick
 imv
 jq
+lf
 libsixel
 lm_sensors
 lxsession
@@ -30,8 +33,10 @@ qutebrowser
 slurp
 swappy
 sway
+swaybg
 swayidle
 swaylock
+tealdeer
 trash-cli
 waybar
 wf-recorder
