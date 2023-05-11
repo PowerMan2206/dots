@@ -7,22 +7,11 @@ if [[ $(pidof slurp) ]]; then
 	exit
 fi
 
-save() {
-	tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy -t image/png
-}
-
-if [[ $2 == swappy ]]; then
-	save() {
-		swappy -f - -o - | tee ~/scrs/$(date +'%Y-%m-%d_%H:%M:%S.png') | wl-copy -t image/png
-	}
-fi
+scrloc="$HOME/scrs/$(date +'%Y-%m-%d_%H:%M:%S').png"
 
 case $1 in
-	area )
-		region="$(slurp -b 181b28ba -c e8e7e4 -d -w 1)"
-		grim -g "$region" - | save
-		;;
-	window ) grim -g "$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)' | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | save ;;
+	area   ) grim -g "$(slurp -b 181b28aa -c e8e7e4 -F monospace -d -w 2)" $scrloc ;;
+	window ) grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $scrloc ;;
 	dots )
 		for i in {1..4}; do
 			read -sn 1
@@ -32,5 +21,12 @@ case $1 in
 		
 		convert scr1.png scr2.png scr3.png scr4.png -append screenshot.png
 		rm scr1.png scr2.png scr3.png scr4.png
+		exit
 		;;
 esac 
+
+# copy to clipboard
+if [[ -f $scrloc ]]; then
+	if [[ $2 == swappy ]]; then swappy -f "$scrloc" -o "$scrloc"; fi
+	cat $scrloc | wl-copy -t image/png
+fi
