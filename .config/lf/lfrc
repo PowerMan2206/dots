@@ -1,20 +1,69 @@
-# delet yucky default keybinds
-source ~/.config/lf/nukedefaults
+source ~/.config/lf/nuked_defaults
+source ~/.config/lf/functions
 
-# add my epic keybinds
+# shell stuff
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+
+# make preview look better
+set cursorpreviewfmt "\033[7;2m"
+
+# use handlr as the open command
+cmd open %handlr open "$fx"
+
+# wow this is such a stupid way to write down dates
+set infotimefmtnew "01-02 15:04"
+set infotimefmtold "2006-01-02 "
+
+
+## KEYBINDS
+
 map q quit
-map <c-q> quit
-map R rename
-map i invert
+map <enter> shell
+map <c-e> read
+map R reload
+map ` cd ~
+map e $$EDITOR "$f"
+map p toggle_preview
+map C %lf -remote "send $id source ~/.config/lf/lfrc" # reload config
+map z $wl-copy "$fx"
+
+map <space> :toggle; down
 map <c-c> copy
 map <c-x> cut
 map <c-v> paste
+map i invert
 map c clear
-map r reload
-map d delete
-map <delete> delete
+
 map <c-f> search
 map <c-p> search-prev
 map <c-n> search-next
-map ` cd ~
-map <enter> shell
+
+map a :push <enter>mkdir<space>
+map t :push <enter>touch<space>
+map d $trash-put "$fx"
+map D delete
+map r rename
+
+map m mark-save
+map \' mark-load
+map \" mark-remove
+
+map xn set info
+map xs set info size
+map xt set info time
+map sn :set sortby natural; set reverse false; top; set info
+map ss :set sortby size; set reverse; top; set info size
+map st :set sortby time; set reverse; top; set info time
+map sr set reverse!
+map . set hidden!
+
+map '<pgup>' page-up
+map '<pgdn>' page-down
+map '<home>' top
+# I have no idea what the fuck is happening but this just doesn't want to work
+# every other command works except this one. `bottom` just doesn't do anything
+# EXCEPT when it's ran as a default bind. So let's leave that and not touch it
+# (for now)
+#map '<end>' bottom
