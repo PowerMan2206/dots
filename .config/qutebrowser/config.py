@@ -636,7 +636,7 @@ c.tabs.title.alignment = 'left'
 
 ## format to use for the tab title
 ## there was a lotta placeholders here but I nuked them
-c.tabs.title.format = '{audio}{private}{index}: {current_title}'
+c.tabs.title.format = '{audio}{current_title}'
 
 c.tabs.tooltips = True # show tooltips on tabs
 
@@ -887,16 +887,6 @@ config.bind('<Ctrl+Shift+W>', 'close')
 config.bind('<Ctrl+W>', 'tab-close')
 config.bind('<Ctrl+Up>', 'scroll-to-perc 0')
 config.bind('<Ctrl+Down>', 'scroll-to-perc 100')
-
-config.bind('<Alt-1>', 'tab-focus 1')
-config.bind('<Alt-2>', 'tab-focus 2')
-config.bind('<Alt-3>', 'tab-focus 3')
-config.bind('<Alt-4>', 'tab-focus 4')
-config.bind('<Alt-5>', 'tab-focus 5')
-config.bind('<Alt-6>', 'tab-focus 6')
-config.bind('<Alt-7>', 'tab-focus 7')
-config.bind('<Alt-8>', 'tab-focus 8')
-config.bind('<Alt-9>', 'tab-focus -1')
 config.bind('<Alt-m>', 'tab-mute')
 
 ## command mode

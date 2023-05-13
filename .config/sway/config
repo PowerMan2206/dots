@@ -47,8 +47,8 @@ resume      'swaymsg "output * dpms on"' \
 timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
 
 # arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 0 0 bg ~/walls/sweet_arch_1080p.png stretch
-output "Samsung Electric Company SyncMaster H9XQ206649" pos 1920 80 bg ~/walls/sweet_tux_1080p.png fill
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 100 bg ~/walls/sweet_tux_1080p.png fill
 
 # make the mouse not suck ass
 input type:pointer {

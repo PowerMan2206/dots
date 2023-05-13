@@ -10,6 +10,7 @@ imagemagick
 imv
 jq
 lf
+libnotify
 libsixel
 lm_sensors
 lxsession
