@@ -16,7 +16,6 @@ cmd open %handlr open "$fx"
 set infotimefmtnew "01-02 15:04"
 set infotimefmtold "2006-01-02 "
 
-
 ## KEYBINDS
 
 map q quit
@@ -42,7 +41,7 @@ map <c-n> search-next
 
 map a :push <enter>mkdir<space>
 map t :push <enter>touch<space>
-map d $trash-put "$fx"
+map d trash
 map D delete
 map r rename
 
