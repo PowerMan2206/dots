@@ -10,7 +10,7 @@ set ifs "\n"
 set cursorpreviewfmt "\033[7;2m"
 
 # use handlr as the open command
-cmd open %handlr open "$fx"
+cmd open $handlr open "$fx"
 
 # wow this is such a stupid way to write down dates
 set infotimefmtnew "01-02 15:04"
@@ -32,7 +32,7 @@ map <space> :toggle; down
 map <c-c> copy
 map <c-x> cut
 map <c-v> paste
-map i invert
+map v invert
 map c clear
 
 map <c-f> search
