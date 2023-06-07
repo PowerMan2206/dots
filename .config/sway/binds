@@ -16,8 +16,8 @@ bindsym --no-repeat $mod+g exec gimp
 # layout switcharoo
 bindsym $mod+l exec swaymsg input type:keyboard xkb_switch_layout next
 
-# little trolling
-bindsym $mod+Shift+Space exec swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png
+# lockscreen stuff
+bindsym $mod+Shift+Space exec lockscreen
 
 # bemenu stuff
 bindsym --no-repeat $mod+d exec beemenu bemenu-run

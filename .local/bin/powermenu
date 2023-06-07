@@ -1,6 +1,6 @@
 #!/bin/bash
 # powermenu thing by PowerMan2206
-# (no it's not a pun)
+# (no it"s not a pun)
 
 # kill if running
 if [[ $(pidof swaynag) ]]; then
@@ -8,14 +8,14 @@ if [[ $(pidof swaynag) ]]; then
 	exit
 fi
 
-swaynag -m 'select action' \
--f 'monospace 9' \
+swaynag -m "" \
+-f "monospace 9" \
 --background 181b28 --text e8e7e4 --border 181b28 \
 --button-background 181b28 --button-text e8e7e4 \
 --border-bottom ef2f27 --border-bottom-size 1 \
--b 'exit sway' 'swaymsg exit' \
--b 'suspend' 'systemctl suspend' \
--b 'hibernate' 'systemctl hibernate' \
--b 'reboot' 'reboot' \
--b 'poweroff' 'poweroff' \
--s 'X   '
+-Z "exit sway" "swaymsg exit" \
+-Z "suspend" "systemctl suspend" \
+-Z "hibernate" "systemctl hibernate" \
+-Z "reboot" "reboot" \
+-Z "poweroff" "poweroff" \
+-s "X   "

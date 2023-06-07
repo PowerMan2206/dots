@@ -17,7 +17,6 @@ alias rb='trash-put' #because tr is taken so its like rubbish
 # stuff
 alias gitconfig='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #the thing for a git bare repo
 alias gc='git clone'
-alias deemix='deemix -b FLAC -p ~/deemix'
 alias pubip='(curl ifconfig.me && echo)'
 alias tb='nc termbin.com 9999'
 alias screen-record='wf-recorder -g "$(slurp)"'

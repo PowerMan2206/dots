@@ -26,7 +26,7 @@ include $HOME/.config/sway/binds
 # make some windows do special stuff
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="blueberry"] floating enable
-for_window [class="discord"] move workspace $ws2
+for_window [class="discord"] move workspace $ws3
 
 # speedy GTK startup
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -40,15 +40,18 @@ exec discord
 exec thunar --daemon #running it from a terminal leaves the terminal usable
 exec "gammastep -O 4000k"
 
-# we do a
 exec swayidle \
 timeout 600 'swaymsg "output * dpms off"' \
 resume      'swaymsg "output * dpms on"' \
-timeout 900 'swaylock -u -i HDMI-A-1:~/walls/fake/beeg.png -i HDMI-A-2:~/walls/fake/smol.png'
+timeout 900 'lockscreen'
 
-# arrange monitors correctly and set wallpapers
-output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+# arrange monitors correctly and set stuff up
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 100 bg ~/walls/sweet_tux_1080p.png fill
+workspace $ws2 output "Samsung Electric Company SyncMaster H9XQ206649"
+output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
+workspace $ws1 output "Dell Inc. DELL S2316H RYCGX5CL0RWT"
+output "RGT 0x1352 0x00000101" transform 270 pos 3600 0 res 1920x1080 scale 1.5 bg ~/walls/sweet_literally_just_nothing.png fill
+workspace $ws3 output "RGT 0x1352 0x00000101"
 
 # make the mouse not suck ass
 input type:pointer {

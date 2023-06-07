@@ -55,7 +55,7 @@ map xt set info time
 map sn :set sortby natural; set reverse false; top; set info
 map ss :set sortby size; set reverse; top; set info size
 map st :set sortby time; set reverse; top; set info time
-map sr set reverse!
+map sr set reverse!; top
 map . set hidden!
 
 map '<pgup>' page-up

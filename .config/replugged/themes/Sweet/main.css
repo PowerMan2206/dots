@@ -7,8 +7,8 @@ It's not perfect, but it works.
 /* https://github.com/DiscordStyles/HorizontalServerList */
 @import "./HorizontalServerList.css";
 :root {
-    --HSL-server-icon-size: 48px;  /* Size of the server icons | DEFAULT: 40px */
-    --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */	
+	--HSL-server-icon-size: 48px;			/* Size of the server icons | DEFAULT: 40px */
+	--HSL-server-spacing: 10px;				/* Spacing between each server icon | DEFAULT: 10px */	
 }
 
 /* main */
@@ -50,13 +50,12 @@ It's not perfect, but it works.
 
 /* Top user thing */
 .panels-3wFtMD, .sidebar-1tnWFu {
-	display: flex;
 	flex-direction: column-reverse;
 }
 
 /* Full "about me" */
 [class*="lineClamp2Plus-"] {
-    -webkit-line-clamp: unset !important;
+	-webkit-line-clamp: unset !important;
 }
 
 /* no nitro >:( */
@@ -68,7 +67,7 @@ It's not perfect, but it works.
 [class^="characterCount-"] [class*="upsell-"], /* "Send longer Messages with Discord Nitro!" */
 [class^="emojiSection-"] [class*="shinyButton-"] /* "Get Nitro" button in Emoji/Sticker modal" */
 {
-    display: none !important;
+	display: none !important;
 }
 
 /* hides the "Payment settings" category in settings */
@@ -80,13 +79,20 @@ It's not perfect, but it works.
 [aria-label="Subscriptions"],
 [aria-label="Gift Inventory"],
 .item-2GWPIy:nth-child(15) {
-    display: none;
+	display: none;
 }
 /* I have no idea how these two work, but they do */
 /* aaronlink127#0127 */
 .separator-2N511j:has( ~ .premiumTab-39eQzY) ~ div {
-    display: none;
+	display: none;
 }
 .separator-2N511j:has( ~ .premiumTab-39eQzY) ~ .separator-2N511j ~ div {
-    display: block;
+	display: block;
+}
+
+
+/* Remove Super Reaction button */
+/* Katze#0002 */
+[aria-label="Add Super Reaction"] {
+  display: none;
 }
