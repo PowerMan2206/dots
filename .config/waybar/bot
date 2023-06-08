@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"output": "!RGT 0x1352 0x00000101",
+	"output": "!DVI-D-1",
 	
 	// bottom bar
 	"position": "bottom",
