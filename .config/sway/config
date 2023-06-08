@@ -43,7 +43,7 @@ exec "gammastep -O 4000k"
 exec swayidle \
 timeout 600 'swaymsg "output * dpms off"' \
 resume      'swaymsg "output * dpms on"' \
-timeout 900 'lockscreen'
+timeout 900 'swaylock'
 
 # arrange monitors correctly and set stuff up
 output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 100 bg ~/walls/sweet_tux_1080p.png fill

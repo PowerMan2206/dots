@@ -17,7 +17,7 @@ bindsym --no-repeat $mod+g exec gimp
 bindsym $mod+l exec swaymsg input type:keyboard xkb_switch_layout next
 
 # lockscreen stuff
-bindsym $mod+Shift+Space exec lockscreen
+bindsym $mod+Shift+Space exec swaylock
 
 # bemenu stuff
 bindsym --no-repeat $mod+d exec beemenu bemenu-run
