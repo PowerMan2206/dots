@@ -50,7 +50,7 @@ output "Samsung Electric Company SyncMaster H9XQ206649" pos 0 100 bg ~/walls/swe
 workspace $ws2 output "Samsung Electric Company SyncMaster H9XQ206649"
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
 workspace $ws1 output "Dell Inc. DELL S2316H RYCGX5CL0RWT"
-output "DVI-D-1" transform 270 pos 3600 0 res 1920x1080 scale 1.5 bg ~/walls/sweet_literally_just_nothing.png fill
+output "DVI-D-1" transform 270 pos 3600 0 res 1280x720 bg ~/walls/sweet_literally_just_nothing.png fill
 workspace $ws3 output "DVI-D-1"
 
 # make the mouse not suck ass
