@@ -1,6 +1,5 @@
 {
 	"layer": "top",
-	"output": "!DVI-D-1",
 
 	// top bar
 	"position": "top",
