@@ -26,7 +26,7 @@ include $HOME/.config/sway/binds
 # make some windows do special stuff
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="blueberry"] floating enable
-for_window [class="discord"] move workspace $ws3
+for_window [class="discord"] move workspace $ws10
 
 # speedy GTK startup
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -51,7 +51,7 @@ workspace $ws2 output "Samsung Electric Company SyncMaster H9XQ206649"
 output "Dell Inc. DELL S2316H RYCGX5CL0RWT" pos 1680 0 bg ~/walls/sweet_arch_1080p.png stretch
 workspace $ws1 output "Dell Inc. DELL S2316H RYCGX5CL0RWT"
 output "DVI-D-1" transform 270 pos 3600 0 res 1280x720 bg ~/walls/sweet_literally_just_nothing.png fill
-workspace $ws3 output "DVI-D-1"
+workspace $ws10 output "DVI-D-1"
 
 # make the mouse not suck ass
 input type:pointer {
