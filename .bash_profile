@@ -16,7 +16,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 	# for some reason I don't need this anymore but it'll be here in case I do in the future again
 	# fuk u nvidia
 	#WLR_DRM_NO_MODIFIERS=1 
-	WLR_NO_HARDWARE_CURSORS=1 \
+	#WLR_NO_HARDWARE_CURSORS=1
 	exec sway -d \
 	> ~/.sway-logs/sway-log-"$date".log \
 	2> ~/.sway-logs/sway-log2-"$date".log
