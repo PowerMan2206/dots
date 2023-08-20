@@ -28,7 +28,7 @@ bindsym --no-repeat $mod+Shift+e exec powermenu
 bindsym --no-repeat $mod+m exec bemenu-emoji.sh
 
 # to open youtube videos and shit in mpv
-bindsym --no-repeat $mod+y exec mpv $(wl-paste)
+bindsym --no-repeat $mod+y exec mpv --ytdl-format=22 $(wl-paste)
 
 # screenshot stuff
 bindsym --no-repeat $mod+s exec screenshot area

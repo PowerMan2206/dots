@@ -10,7 +10,7 @@ fi
 scrloc="$HOME/scrs/$(date +'%Y-%m-%d_%H:%M:%S').png"
 
 case $1 in
-	area   ) grim -g "$(slurp -b 181b28aa -c e8e7e4 -F monospace -d -w 2)" $scrloc ;;
+	area   ) grim -g "$(slurp -b 181b28aa -c e8e7e4 -F monospace -d -w 1)" $scrloc ;;
 	window ) grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $scrloc ;;
 	dots )
 		for i in {1..4}; do
