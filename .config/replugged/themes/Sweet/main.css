@@ -90,9 +90,12 @@ It's not perfect, but it works.
 	display: block;
 }
 
-
 /* Remove Super Reaction button */
 /* Katze#0002 */
 [aria-label="Add Super Reaction"] {
-  display: none;
+	display: none;
+}
+/* I hate the Super Reaction antichrist */
+#message-add-reaction-1 {
+	display: none;
 }
