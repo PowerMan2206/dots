@@ -5,6 +5,7 @@ It's not perfect, but it works.
 
 /* horizontal server list */
 /* https://github.com/DiscordStyles/HorizontalServerList */
+/* https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css */
 @import "./HorizontalServerList.css";
 :root {
 	--HSL-server-icon-size: 48px;			/* Size of the server icons | DEFAULT: 40px */
