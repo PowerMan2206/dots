@@ -5,11 +5,11 @@ It's not perfect, but it works.
 
 /* horizontal server list */
 /* https://github.com/DiscordStyles/HorizontalServerList */
-/* https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css */
-@import "./HorizontalServerList.css";
+@import "https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css";
 :root {
 	--HSL-server-icon-size: 48px;			/* Size of the server icons | DEFAULT: 40px */
 	--HSL-server-spacing: 10px;				/* Spacing between each server icon | DEFAULT: 10px */	
+	
 }
 
 /* main */
@@ -50,7 +50,7 @@ It's not perfect, but it works.
 }
 
 /* Top user thing */
-.panels-3wFtMD, .sidebar-1tnWFu {
+.panels__58331, .sidebar_ded4b5 {
 	flex-direction: column-reverse;
 }
 
@@ -61,18 +61,18 @@ It's not perfect, but it works.
 
 /* no nitro >:( */
 /* VendingMachine#8485 */
-[class^="channel-"] > div > [href="/store"], /* Nitro Button above DM List */
-[class^="channelTextArea"] [class^="buttons-"] > button, /* Gift Button */
-[class^="upsellVisible-"], /* Banner Nitro Upsell Header in the user modal */
+[class^="channel_"] > div > [href="/store"], /* Nitro Button above DM List */
+[class^="channelTextArea"] [class^="buttons_"] > button, /* Gift Button */
+[class^="upsellVisible_"], /* Banner Nitro Upsell Header in the user modal */
 [class^="premiumIconWrapper"], /* Nitro Icon in top right on Banners */
-[class^="characterCount-"] [class*="upsell-"], /* "Send longer Messages with Discord Nitro!" */
-[class^="emojiSection-"] [class*="shinyButton-"] /* "Get Nitro" button in Emoji/Sticker modal" */
+[class^="characterCount_"] [class*="upsell_"], /* "Send longer Messages with Discord Nitro!" */
+[class^="emojiSection_"] [class*="shinyButton_"] /* "Get Nitro" button in Emoji/Sticker modal" */
 {
 	display: none !important;
 }
 
 /* hides the "Payment settings" category in settings */
-/* (very bosanski so may break with an update) */
+/* (very bosanski so ~~may~~ will break with an update) */
 /* me >:D, аlех#1160 */
 .header-2F5_LB:nth-child(2),
 [aria-label="Nitro"],
@@ -84,10 +84,10 @@ It's not perfect, but it works.
 }
 /* I have no idea how these two work, but they do */
 /* aaronlink127#0127 */
-.separator-2N511j:has( ~ .premiumTab-39eQzY) ~ div {
+.separator_fdbcfd:has( ~ .premiumTab__57bdc) ~ div {
 	display: none;
 }
-.separator-2N511j:has( ~ .premiumTab-39eQzY) ~ .separator-2N511j ~ div {
+.separator_fdbcfd:has( ~ .premiumTab__57bdc) ~ .separator_fdbcfd ~ div {
 	display: block;
 }
 
@@ -98,5 +98,12 @@ It's not perfect, but it works.
 }
 /* I hate the Super Reaction antichrist */
 #message-add-reaction-1 {
+	display: none;
+}
+
+/* Appearence tab Nitro stuff */
+/* Kinda bleh but it works */
+.background__097ec,
+.selectionGroup__36139 {
 	display: none;
 }
