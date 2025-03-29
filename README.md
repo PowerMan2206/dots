@@ -3,6 +3,8 @@ Everyone must have a dotfiles repo, right?
 
 ![screenshot](https://raw.githubusercontent.com/PowerMan2206/dots/master/screenshot.png)
 
+**STILL IN PROCESS OF MIGRATION:** I used to run i3, then switched to Sway, now I'm back on i3. It might take a bit to get everything back in place (and better)
+
 ## Packages and stuff
 
 package       | why
@@ -16,6 +18,7 @@ package       | why
 `polybar`     | bar
 `redshift`    | no eye hurty thing
 `mpd/ncmpcpp` | music playback
+`fastfetch`   | system info
 
 Others are in `.config/packagelist`, install them with `paru -S - < packagelist` (or whatever AUR helper you have)
 
