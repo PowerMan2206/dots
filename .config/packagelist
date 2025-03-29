@@ -1,4 +1,5 @@
 alacritty
+bash-completion
 bat
 brightnessctl-git
 cava
@@ -29,7 +30,7 @@ pamixer
 pavucontrol
 picom
 pipewire
-pipewire-jack2
+pipewire-jack
 pipewire-pulse
 polybar
 redshift

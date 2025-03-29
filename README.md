@@ -37,3 +37,12 @@ cp -rT . ~
 ***THIS WILL OVERWRITE ANY CONFIG FILES YOU HAVE!***
 
 Otherwise, you can just copy any specific config you want
+
+## Configuration
+
+Of course, this is a bit personalized to my specific setup, so you should do these steps for everything to work correctly:
+
+- run `nitrogen` and set your `walls` directory and wallpapers on each monitor
+- run `systemctl enable --now --user pipewire-pulse.service` to be able to use PulseAudio tools
+- edit the i3 (`.config/i3/config`) and Polybar (`.config/polybar/launch.sh`) files and set your monitor names on them
+- edit the `.local/bin/current-sink.sh` script (used in Polybar) and set your sink names and pretty names (current one can be seen with `pactl get-default-sink`)
