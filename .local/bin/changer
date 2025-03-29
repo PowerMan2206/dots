@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# where the pipes are
+brififo="/tmp/xob-brightness"
+volfifo="/tmp/xob-volume"
+
+case $1 in
+	"brightness" )
+		brightnessctl --min-value=40 -e 4 set $2
+		# goofy ahh way to clamp 0-100 to 5-100
+		calc "round( (100/95) * $(brightnessctl g -P) - (500/95) )" | xargs > $brififo
+		;;
+		
+	"volume" )
+		pamixer $2 5
+		pamixer --get-volume > $volfifo
+		;;
+esac

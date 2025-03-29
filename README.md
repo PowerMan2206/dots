@@ -7,21 +7,19 @@ Everyone must have a dotfiles repo, right?
 
 package       | why
 --------------|--------------
-`sway`        | compositor
-`foot`        | terminal
-`qutebrowser` | browser
+`i3`          | window manager
+`picom`       | compositor
+`alacritty`   | terminal
+`firefox`     | browser
 `pipewire`    | audio stuff
-`bemenu`      | launcher
-`waybar`      | bar
-`gammastep`   | no eye hurty thing
+`dmenu`       | launcher
+`polybar`     | bar
+`redshift`    | no eye hurty thing
 `mpd/ncmpcpp` | music playback
 
 Others are in `.config/packagelist`, install them with `paru -S - < packagelist` (or whatever AUR helper you have)
 
-Note, run:
-- `gsettings set org.gnome.desktop.interface gtk-theme Sweet` if the GTK theme is broken (which it most probably will be)
-- `gsettings set org.gnome.desktop.interface cursor-theme win8` if the cursor is sometimes broken (again, probably is)
-- `gsettings set org.gnome.desktop.wm.preferences button-layout ""` to get rid of GTK titlebars
+Colors are a mix of [srcery](https://srcery.sh) and [Sweet](https://github.com/EliverLara/Sweet)
 
 ## Installation
 

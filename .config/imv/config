@@ -1,0 +1,40 @@
+[options]
+# use binds only in this config file
+suppress_default_binds = true
+
+overlay_font = monospace:11
+overlay_text = "[${imv_current_index}/${imv_file_count}] (${imv_width}x${imv_height}) [${imv_scale}%] \"$imv_current_file\""
+
+background = checks
+
+[binds]
+# regular
+q = quit
+<Left> = prev
+<Right> = next
+
+# panning
+<Shift+Left> = pan 100 0
+<Shift+Down> = pan 0 -100
+<Shift+Up> = pan 0 100
+<Shift+Right> = pan -100 0
+
+#  R O T A T E
+r = rotate by 90
+<Shift+R> = rotate by -90
+
+# zoomin'
+<Up> = zoom 3
+<Down> = zoom -3
+
+# gif stuff
+<space> = toggle_playing
+# <comma> = prev_frame # why no work
+<period> = next_frame
+
+# other
+f = fullscreen
+c = center
+a = zoom actual
+s = reset
+i = overlay

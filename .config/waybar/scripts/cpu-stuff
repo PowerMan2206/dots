@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# shows the CPU temp in C
-echo "$(sensors | grep "Tctl" | cut -d":" -f2 | tr -d ' ' | cut -d"+" -f2)"

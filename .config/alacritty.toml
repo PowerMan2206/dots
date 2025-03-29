@@ -1,0 +1,44 @@
+[env]
+# correct scaling scross monitors
+WINIT_X11_SCALE_FACTOR = "1"
+
+[window]
+padding = { x = 5, y = 5 }
+
+[font]
+size = 10
+normal = { family = "monospace", style = "Regular" }
+bold = { family = "monospace", style = "Bold" }
+italic = { family = "monospace", style = "Italic" }
+bold_italic = { family = "monospace", style = "Bold Italic" }
+
+[cursor]
+style = { shape = "Underline", blinking = "Always" }
+blink_interval = 500
+thickness = 0.1
+
+
+[colors]
+[colors.primary]
+foreground = "#e8e7e4"
+background = "#181b28"
+
+[colors.normal]
+black = "#1c1b19"
+red = "#ef2f27"
+green = "#519f50"
+yellow = "#fbb829"
+blue = "#2c78bf"
+magenta = "#e02c6d"
+cyan = "#0aaeb3"
+white = "#d0bfa1"
+
+[colors.bright]
+black = "#918175"
+red = "#f75341"
+green = "#98bc37"
+yellow = "#fed06e"
+blue = "#68a8e4"
+magenta = "#ff5c8f"
+cyan = "#53fde9"
+white = "#fce8c3"

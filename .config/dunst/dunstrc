@@ -1,0 +1,15 @@
+[global]
+
+font = monospace 9
+width = 300
+
+origin = top-right
+offset = (10, 32)
+gap_size = 4
+
+foreground = "#e8e7e4"
+background = "#1b1f2d"
+highlight = "#f00"
+
+
+# good 'nuf of a config if you ask me

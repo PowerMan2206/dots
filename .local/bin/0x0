@@ -1,8 +1,0 @@
-#!/bin/bash
-# script to upload files/do URL stuff with 0x0.st
-
-case "$1" in
-	-f ) curl -F file=@"$2" https://0x0.st ;;
-	-p ) curl -F url="$2" https://0x0.st ;;
-	*) echo "-f for files, -p for POSTing URLs" ;;
-esac

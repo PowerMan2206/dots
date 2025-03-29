@@ -2,7 +2,7 @@ source ~/.config/lf/nuked_defaults
 source ~/.config/lf/functions
 
 # shell stuff
-set shell sh
+set shell bash
 set shellopts '-eu'
 set ifs "\n"
 
@@ -26,7 +26,7 @@ map ` cd ~
 map e $$EDITOR "$f"
 map p toggle_preview
 map C %lf -remote "send $id source ~/.config/lf/lfrc" # reload config
-map z $wl-copy "$fx"
+map y $echo "$fx" | xclip
 
 map <space> :toggle; down
 map <c-c> copy
@@ -61,8 +61,4 @@ map . set hidden!
 map '<pgup>' page-up
 map '<pgdn>' page-down
 map '<home>' top
-# I have no idea what the fuck is happening but this just doesn't want to work
-# every other command works except this one. `bottom` just doesn't do anything
-# EXCEPT when it's ran as a default bind. So let's leave that and not touch it
-# (for now)
-#map '<end>' bottom
+map '<end>' bottom

@@ -1,32 +1,17 @@
 #!/bin/bash
 
-# kill if running
-# not actually the thing but good enough
-if [[ $(pidof slurp) ]]; then
-	pkill slurp
-	exit
-fi
-
 scrloc="$HOME/scrs/$(date +'%Y-%m-%d_%H:%M:%S').png"
 
-case $1 in
-	area   ) grim -g "$(slurp -b 181b28aa -c e8e7e4 -F monospace -d -w 1)" $scrloc ;;
-	window ) grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $scrloc ;;
-	dots )
-		for i in {1..4}; do
-			read -sn 1
-			wl-paste > scr"$i".png
-			echo "scr$i.png created"
-		done
-		
-		convert scr1.png scr2.png scr3.png scr4.png -append screenshot.png
-		rm scr1.png scr2.png scr3.png scr4.png
-		exit
-		;;
-esac 
+# slop has the fg color I usually use
+# #e8e7e4
+position="$(slop -t 20 -c 0.909,0.905,0.894,0.5 -l -q)"
+
+# don't take a screenshot if it's cancelled
+if [[ "$position" != "" ]]; then
+	maim -g "$position" $scrloc
+fi
 
 # copy to clipboard
-if [[ -f $scrloc ]]; then
-	if [[ $2 == swappy ]]; then swappy -f "$scrloc" -o "$scrloc"; fi
-	cat $scrloc | wl-copy -t image/png
+if [[ -f "$scrloc" ]]; then
+	cat $scrloc | xclip -selection c -t image/png
 fi

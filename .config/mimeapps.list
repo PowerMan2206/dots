@@ -1,12 +1,11 @@
-[Added Associations]
-
 [Default Applications]
 application/*=microterm.desktop;
-application/pdf=org.qutebrowser.qutebrowser.desktop;
-application/vnd.comicbook+zip=org.gnome.Evince.desktop;
 application/x-bittorrent=org.qbittorrent.qBittorrent.desktop;
+application/pdf=firefox.desktop;
 audio/*=mpv.desktop;
 image/*=imv-dir.desktop;
 model/*=PrusaSlicer.desktop;
 text/*=microterm.desktop;
 video/*=mpv.desktop;
+text/plain=microterm.desktop;
+application/octet-stream=microterm.desktop;
