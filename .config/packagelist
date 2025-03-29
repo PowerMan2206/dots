@@ -11,6 +11,7 @@ handlr
 i3
 imagemagick
 imv
+inotify-tools
 lf
 libnotify
 lm_sensors
@@ -20,12 +21,16 @@ mpc
 mpd
 mpv
 ncmpcpp
+networkmanager
+network-manager-applet
 nitrogen
 noto-fonts
 pamixer
-pamixer
 pavucontrol
 picom
+pipewire
+pipewire-jack2
+pipewire-pulse
 polybar
 redshift
 remind
@@ -34,5 +39,7 @@ tealdeer
 thunar
 trash-cli
 xdg-utils-handlr
-xev
+xob
 xorg
+xorg-xinit
+xss-lock
