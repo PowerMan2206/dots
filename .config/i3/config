@@ -49,5 +49,9 @@ exec_always --no-startup-id xset r rate 250 40
 # exec_always because for some reason sometimes it
 # stops working, so this is a fast way to reapply it
 
+# so that mouse doesn't follow focus
+# (but focus still follows mouse, different thing)
+mouse_warping none
+
 # lockscreen thing
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 181b28 --nofork

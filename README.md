@@ -45,4 +45,4 @@ Of course, this is a bit personalized to my specific setup, so you should do the
 - run `nitrogen` and set your `walls` directory and wallpapers on each monitor
 - run `systemctl enable --now --user pipewire-pulse.service` to be able to use PulseAudio tools
 - edit the i3 (`.config/i3/config`) and Polybar (`.config/polybar/launch.sh`) files and set your monitor names on them
-- edit the `.local/bin/current-sink.sh` script (used in Polybar) and set your sink names and pretty names (current one can be seen with `pactl get-default-sink`)
+- edit the `.config/polybar/scripts/current-sink.sh` script and set your sink names and pretty names (current one can be seen with `pactl get-default-sink`)

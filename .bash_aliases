@@ -14,7 +14,7 @@ alias rm='echo "use rb retard"; false'
 alias rb='trash-put' #because tr is taken so its like "rubbish"
 
 # stuff
-alias gitconfig='git --git-dir=$HOME/dots --work-tree=$HOME' #the thing for a git bare repo
+alias gitdots='git --git-dir="$HOME/dots" --work-tree="$HOME" ' #the thing for a git bare repo
 alias gc='git clone'
 alias pubip='(curl ifconfig.me && echo)'
 alias tb='nc termbin.com 9999'
