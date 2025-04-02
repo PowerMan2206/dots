@@ -4,9 +4,9 @@
 memory="$(free -m | grep Mem | tr -s ' ')"
 
 total_raw="$(echo $memory | cut -d' ' -f2)"
-total="$(calc "round(${total_raw} / 1024,2)" | xargs)"
+ used_raw="$(echo $memory | cut -d' ' -f3)"
 
-used_raw="$(echo $memory | cut -d' ' -f3)"
-used="$(calc "round(${used_raw} / 1024,2)" | xargs)"
+total="$(calc "round(${total_raw} / 1000,2)" | xargs)"
+ used="$(calc "round(${used_raw}  / 1000,2)" | xargs)"
 
-echo "${used}/${total} GiB"
+echo "${used}/${total} GB"
