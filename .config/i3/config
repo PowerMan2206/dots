@@ -33,7 +33,7 @@ exec --no-startup-id battery-watcher.sh # shit works
 exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id discord
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id $HOME/.config/xob/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift -PO 4000k
@@ -41,8 +41,8 @@ exec --no-startup-id thunar --daemon # running it from a terminal leaves the ter
 exec --no-startup-id tldr -u # I always forget so
 
 # also 2nd monitor and stuff
-exec --no-startup-id "xrandr --output HDMI-1-1 --auto --above eDP"
-exec --no-startup-id "nitrogen --restore"
+exec_always --no-startup-id "xrandr --output HDMI-1-1 --auto --above eDP"
+exec_always --no-startup-id "nitrogen --restore"
 
 # keyboard repetition thingy that I prefer
 exec_always --no-startup-id xset r rate 250 40

@@ -22,7 +22,8 @@ bindsym $mod+l exec --no-startup-id "i3lock -c 181b28"
 # control volume with keybinds
 bindsym XF86AudioRaiseVolume exec --no-startup-id changer volume -i
 bindsym XF86AudioLowerVolume exec --no-startup-id changer volume -d
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
+bindsym XF86AudioMute        exec --no-startup-id pamixer -t
+bindsym XF86AudioMicMute     exec --no-startup-id pamixer --source "alsa_input.pci-0000_34_00.6.analog-stereo" pamixer -t
 # same for screen brightness
 bindsym XF86MonBrightnessUp   exec --no-startup-id changer brightness +5% 
 bindsym XF86MonBrightnessDown exec --no-startup-id changer brightness 5%- 
