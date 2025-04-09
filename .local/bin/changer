@@ -7,9 +7,17 @@ mpdfifo="/tmp/xob-mpd"
 
 case $1 in
 	"brightness" )
-		brightnessctl --min-value=40 -e 4 set $2
-		# goofy ahh way to clamp 0-100 to 5-100
-		calc "round( (100/95) * $(brightnessctl g -P) - (500/95) )" | xargs > $brififo
+		if [[ $2 ]]; then
+			brightnessctl --min-value=40 -e 4 set $2
+			# goofy ahh way to clamp 0-100 to 5-100
+			calc "round( (100/95) * $(brightnessctl g -P) - (500/95) )" | xargs > $brififo
+		else
+			# I gotta do this whole song and dance (along with the Polybar backlight module)
+			# for the change when scrolling to be accurate
+			while
+				calc "round( $(brightnessctl g) / 8 )" | xargs
+			do ! inotifywait -qq /sys/class/backlight/nvidia_wmi_ec_backlight/brightness; done
+		fi
 		;;
 		
 	"volume" )

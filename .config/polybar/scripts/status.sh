@@ -6,7 +6,7 @@ case $1 in
 	
 	"camera" )
 		if [[ -c "/dev/video1" ]]; then
-			echo -e "%{F#ef2f27}󰄀 "
+			echo -e "%{F#ef2f27}%{O1}󰄀 %{O-1}"
 		else
 			echo -e "%{F#918175}󰗟 "
 		fi

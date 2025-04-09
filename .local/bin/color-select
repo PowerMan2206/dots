@@ -1,0 +1,20 @@
+#!/bin/bash
+# select a color on the screen and copy its RBG value to clipboard
+# why yes it is inefficient spaghetti code
+
+# kill if running
+if [[ $(pidof slop) ]]; then
+	pkill slurp
+	exit
+fi
+
+maim /tmp/color-select_tmp.png
+coords="$(slop -t 0 -q -f "%x %y")"
+x="$(echo $coords | cut -d' ' -f1)"
+y="$(echo $coords | cut -d' ' -f2)"
+alphavalue="$(magick /tmp/color-select_tmp.png -format "%[hex:u.p{$x,$y}]\n" info:)"
+valuetmp="${alphavalue,,}"
+value="#${valuetmp::-2}"
+notify-send "$value copied to clipboard"
+echo -n "$value" | xclip -selection c
+rm /tmp/color-select_tmp.png

@@ -3,6 +3,10 @@
 # in case of rerunning the script
 pkill xob
 
+# bosnian way to display the right volume for mpd
+mpc play &
+mpc pause
+
 # where the pipes will be
 brififo="/tmp/xob-brightness"
 volfifo="/tmp/xob-volume"

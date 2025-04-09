@@ -36,6 +36,8 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 # screenshot stuff
 bindsym $mod+s exec --no-startup-id screenshot
 
+# color select stuff
+bindsym $mod+r exec --no-startup-id color-select
 
 
 ## nerd shit

@@ -34,8 +34,9 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id discord
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id $HOME/.config/xob/launch.sh
+exec_always --no-startup-id $HOME/.config/xob/launch.sh
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id redshift -PO 4000k
 exec --no-startup-id thunar --daemon # running it from a terminal leaves the terminal usable
 exec --no-startup-id tldr -u # I always forget so

@@ -9,4 +9,12 @@ total_raw="$(echo $memory | cut -d' ' -f2)"
 total="$(calc "round(${total_raw} / 1000,2)" | xargs)"
  used="$(calc "round(${used_raw}  / 1000,2)" | xargs)"
 
+# wonky way to have trailing zeroes for a cleaner look
+# ex.  3.9 --> 3.90
+useddot="$(echo $used | grep -o "\..*$")"
+case ${#useddot} in
+	0 ) used=${used}.00 ;;
+	2 ) used=${used}0   ;;
+esac
+
 echo "${used}/${total} GB"
