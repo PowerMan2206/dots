@@ -4,7 +4,7 @@
 pkill xob
 
 # bosnian way to display the right volume for mpd
-mpc play &
+mpc play
 mpc pause
 
 # where the pipes will be

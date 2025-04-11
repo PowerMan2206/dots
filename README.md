@@ -49,3 +49,4 @@ Of course, this is a bit personalized to my specific setup, so you should do the
 - edit `.config/polybar/scripts/current-sink.sh` and set your sink names and pretty names (can be seen with `pamixer --list-inks`)
 - edit `.config/polybar/scripts/scripts.sh` and set your microphone source name (can be seen with `pamixer --list-sources`) and other stuff if needed
 - run the micro command `plugin install wc` (Ctrl-E) to get the word-count plugin, I didn't include it so that I don't gotta worry if it's ever updated
+- some stuff i'm forgetting idk see what is broken
